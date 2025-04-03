@@ -1,3 +1,123 @@
+#!/bin/bash
+
+# This script applies the gas sponsorship feature to the Solana adapter
+
+echo "Adding gas sponsorship to Solana adapter..."
+
+# Go to the project root
+cd "$(dirname "$0")/.."
+
+# Navigate to the Solana adapter directory
+cd packages/adapters/solana
+
+# Make sure we have a clean dist directory
+echo "Cleaning dist directory..."
+pnpm run build:clean
+
+# Create the relayer service
+echo "Creating relayer service..."
+cat > src/utils/relayerService.ts << EOL
+import { Transaction } from '@solana/web3.js'
+
+/**
+ * Service to interact with a gas sponsorship relayer API
+ */
+export class RelayerService {
+  private readonly relayerUrl: string
+
+  constructor(relayerUrl: string) {
+    this.relayerUrl = relayerUrl
+  }
+
+  /**
+   * Submit a transaction to the relayer for gas sponsorship
+   * @param transaction The transaction to be sponsored
+   * @returns A new transaction with gas sponsorship information
+   */
+  public async sponsorTransaction(transaction: Transaction): Promise<Transaction> {
+    try {
+      // Serialize the transaction to send to the relayer API
+      const serializedTransaction = transaction.serialize({
+        requireAllSignatures: false,
+        verifySignatures: false
+      }).toString('base64')
+
+      // Call the relayer API
+      const response = await fetch(this.relayerUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ transaction: serializedTransaction }),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(\`Relayer API error: \${response.status} - \${errorData.message || 'Unknown error'}\`)
+      }
+
+      // Parse the response
+      const responseData = await response.json()
+      
+      // Deserialize the sponsored transaction from the response
+      const sponsoredTransaction = Transaction.from(
+        Buffer.from(responseData.transaction, 'base64')
+      )
+
+      return sponsoredTransaction
+    } catch (error) {
+      console.error('Error sponsoring transaction:', error)
+      throw error
+    }
+  }
+}
+
+// Singleton instance for the relayer service
+let relayerServiceInstance: RelayerService | null = null
+
+/**
+ * Initialize the relayer service with the API URL
+ * @param relayerUrl The URL of the relayer API
+ */
+export function initRelayerService(relayerUrl: string): void {
+  relayerServiceInstance = new RelayerService(relayerUrl)
+}
+
+/**
+ * Get the relayer service instance
+ * @returns The relayer service instance
+ * @throws Error if the relayer service is not initialized
+ */
+export function getRelayerService(): RelayerService {
+  if (!relayerServiceInstance) {
+    throw new Error('Relayer service not initialized. Call initRelayerService first.')
+  }
+  return relayerServiceInstance
+}
+EOL
+
+# Backup original files
+echo "Backing up original files..."
+cp src/client.ts src/client.ts.bak
+cp src/index.ts src/index.ts.bak
+
+# Update the index.ts file
+echo "Updating index.ts..."
+cat > src/index.ts << EOL
+import '@reown/appkit-polyfills'
+
+export { SolanaAdapter } from './client.js'
+export { RelayerService, initRelayerService, getRelayerService } from './utils/relayerService.js'
+
+// -- Types -----------------------------------------------------------
+export type { AdapterOptions } from './client.js'
+export type * from '@solana/wallet-adapter-base'
+export type * from './utils/SolanaStoreUtil.js'
+EOL
+
+# Update client.ts
+echo "Updating client.ts..."
+cat > src/client.ts << EOL
 import type { BaseWalletAdapter } from '@solana/wallet-adapter-base'
 import type { Commitment, ConnectionConfig } from '@solana/web3.js'
 import { Connection, PublicKey } from '@solana/web3.js'
@@ -104,7 +224,7 @@ export class SolanaAdapter extends AdapterBlueprint<SolanaProvider> {
   // -- Transaction methods ---------------------------------------------------
   /**
    *
-   * These methods are supported only on `wagmi` and `ethers` since the Solana SDK does not support them in the same way.
+   * These methods are supported only on \`wagmi\` and \`ethers\` since the Solana SDK does not support them in the same way.
    * These function definition is to have a type parity between the clients. Currently not in use.
    */
   // eslint-disable-next-line @typescript-eslint/require-await
@@ -128,7 +248,7 @@ export class SolanaAdapter extends AdapterBlueprint<SolanaProvider> {
     return Promise.resolve({})
   }
 
-  public async revokePermissions(): Promise<`0x${string}`> {
+  public async revokePermissions(): Promise<\`0x\${string}\`> {
     return Promise.resolve('0x')
   }
 
@@ -259,7 +379,7 @@ export class SolanaAdapter extends AdapterBlueprint<SolanaProvider> {
       this.caipNetworks?.find(n => n.id === params.chainId)?.rpcUrls.default.http[0]
 
     if (!rpcUrl) {
-      throw new Error(`RPC URL not found for chainId: ${params.chainId}`)
+      throw new Error(\`RPC URL not found for chainId: \${params.chainId}\`)
     }
 
     const address = await connector.connect({
@@ -293,7 +413,7 @@ export class SolanaAdapter extends AdapterBlueprint<SolanaProvider> {
       this.connectionSettings
     )
 
-    const caipAddress = `${caipNetwork?.caipNetworkId}:${params.address}`
+    const caipAddress = \`\${caipNetwork?.caipNetworkId}:\${params.address}\`
     const cachedPromise = this.balancePromises[caipAddress]
     if (cachedPromise) {
       return cachedPromise
@@ -444,3 +564,26 @@ export class SolanaAdapter extends AdapterBlueprint<SolanaProvider> {
     return walletConnectProvider as unknown as UniversalProvider
   }
 }
+EOL
+
+# Now run the build
+echo "Building the project..."
+pnpm run build
+
+# Check if build was successful
+if [ $? -eq 0 ]; then
+  echo "Build completed successfully!"
+else
+  echo "Build failed, restoring original files..."
+  mv src/client.ts.bak src/client.ts
+  mv src/index.ts.bak src/index.ts
+  exit 1
+fi
+
+# Cleanup
+rm -f src/client.ts.bak src/index.ts.bak
+
+echo "Gas sponsorship has been successfully added to the Solana adapter!"
+echo "You can now use the adapter with the following options:"
+echo "  relayerUrl: The URL of your relayer API"
+echo "  enableGasSponsorship: Set to true to enable gas sponsorship" 

@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-gray-800 rounded-lg p-6 shadow-lg;
+  }
+
+  .input {
+    @apply bg-gray-900 border border-gray-700 rounded p-2 text-white w-full focus:outline-none focus:ring-2 focus:ring-solana-green;
+  }
+
+  .btn {
+    @apply py-2 px-4 rounded font-medium transition duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-solana-green text-white hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply border border-gray-600 hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-sm {
+    @apply py-1 px-2 text-sm;
+  }
+}
+
+/* Override wallet adapter button styles */
+.wallet-adapter-button {
+  @apply bg-solana-green text-white hover:bg-opacity-90 rounded py-2 px-4 font-medium transition duration-200;
+  background-color: #14f195 !important; /* Force override */
+}
+
+.wallet-adapter-modal {
+  @apply bg-gray-800 text-white;
+}
+
+.wallet-adapter-modal-wrapper {
+  @apply bg-gray-800;
+}
+
+.wallet-adapter-modal-button-close {
+  @apply bg-gray-700;
+}
