@@ -1,8 +1,8 @@
 import ActionButtonList from './components/ActionButton'
 import Footer from './components/Footer'
-import InfoList from './components/InfoList'
+// import InfoList from './components/InfoList'
 import { useAppKitTheme } from './config'
-
+import { SignMessage } from './components/SignMessage'
 export default function App() {
   const { themeMode } = useAppKitTheme()
   document.documentElement.className = themeMode
@@ -26,7 +26,8 @@ export default function App() {
       </div>
 
       <ActionButtonList />
-      <InfoList />
+      {/* <InfoList /> */}
+      <SignMessage />
       <Footer />
     </div>
   )

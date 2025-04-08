@@ -26,8 +26,6 @@ import InfoList from './components/InfoList'
 // @ts-expect-error Get projectId
 export const projectId = import.meta.env.VITE_PROJECT_ID || 'b56e18d47c72ab683b10814fe9495694' // this is a public projectId only to use on localhost
 
-const networks = [solana, solanaTestnet, solanaDevnet]
-
 // Setup solana adapter
 const solanaAdapter = new SolanaAdapter({
   wallets: [
@@ -41,7 +39,7 @@ const solanaAdapter = new SolanaAdapter({
 // Create modal
 const modal = createAppKit({
   adapters: [solanaAdapter],
-  networks,
+  networks: [solana, solanaTestnet, solanaDevnet],
   metadata: {
     name: 'AppKit React Example',
     description: 'AppKit React Solana Example',

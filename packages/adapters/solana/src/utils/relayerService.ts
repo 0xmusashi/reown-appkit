@@ -1,4 +1,6 @@
 import { Transaction } from '@solana/web3.js'
+import axios from 'axios'
+import bs58 from 'bs58'
 
 /**
  * Service to interact with a gas sponsorship relayer API
@@ -18,39 +20,26 @@ export class RelayerService {
   public async sponsorTransaction(transaction: Transaction): Promise<Transaction> {
     try {
       // Serialize the transaction to send to the relayer API
-      const serializedTransaction = transaction
-        .serialize({
-          requireAllSignatures: false,
-          verifySignatures: false
-        })
-        .toString('base64')
+      const serializedTransaction = transaction.serialize({
+        requireAllSignatures: false,
+        verifySignatures: false
+      });
+
+      // Encode the serialized transaction into Base58
+      const base58EncodedTransaction = bs58.encode(serializedTransaction);
 
       // Call the relayer API
-      const response = await fetch(this.relayerUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ transaction: serializedTransaction })
-      })
-
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(
-          `Relayer API error: ${response.status} - ${errorData.message || 'Unknown error'}`
-        )
+      try {
+        const response = await axios.post(`${this.relayerUrl}/signTransaction`, {transaction: base58EncodedTransaction})
+  
+        const sponsoredTransaction = Transaction.from(bs58.decode(response.data.data.signedTransaction))
+  
+        return sponsoredTransaction
+      } catch (error) {
+        return transaction;
       }
-
-      // Parse the response
-      const responseData = await response.json()
-
-      // Deserialize the sponsored transaction from the response
-      const sponsoredTransaction = Transaction.from(Buffer.from(responseData.transaction, 'base64'))
-
-      return sponsoredTransaction
     } catch (error) {
-      console.error('Error sponsoring transaction:', error)
-      throw error
+      return transaction;
     }
   }
 }
