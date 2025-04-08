@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
 
 import AccountInfo from './components/AccountInfo'
+import Counter from './components/Counter'
 import NetworkSelect from './components/NetworkSelect'
 import SendTransaction from './components/SendTransaction'
 import SignMessage from './components/SignMessage'
@@ -27,11 +28,13 @@ const AppContent: React.FC = () => {
     isConnected,
     isLoading,
     network,
+    publicKey,
     connect,
     disconnect,
     switchNetwork,
     signMessage,
     sendTransaction,
+    sendRawTransaction,
     refreshBalance
   } = useSolanaWallet(selectedNetwork, enableGasSponsorship)
 
@@ -108,6 +111,12 @@ const AppContent: React.FC = () => {
               isConnected={isConnected}
               enableGasSponsorship={enableGasSponsorship}
             />
+
+            <Counter
+              isConnected={isConnected}
+              publicKey={publicKey}
+              sendTransaction={sendRawTransaction}
+            />
           </div>
         </div>
 
@@ -120,7 +129,8 @@ const AppContent: React.FC = () => {
 }
 
 const App: React.FC = () => {
-  const [network, setNetwork] = useState<NetworkType>('devnet')
+  // Using useState but ignoring the setter since it's only used for the initial value
+  const [network] = useState<NetworkType>('devnet')
 
   // Convert our NetworkType to WalletAdapterNetwork
   const walletNetwork = useMemo(() => networkMapping[network], [network])

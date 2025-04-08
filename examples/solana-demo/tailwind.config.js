@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'solana-green': '#14F195'
+        'solana-green': '#14F195',
+        'solana-green-light': '#57F9B9'
       }
     }
   },

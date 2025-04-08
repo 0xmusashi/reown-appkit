@@ -24,17 +24,19 @@ export interface UseSolanaWalletResult {
   network: NetworkType
   isConnected: boolean
   isLoading: boolean
+  publicKey: PublicKey | null
   connect: () => Promise<void>
   disconnect: () => Promise<void>
   switchNetwork: (network: NetworkType) => void
   signMessage: (message: string) => Promise<string>
   sendTransaction: (recipient: string, amount: number) => Promise<{ hash: string }>
+  sendRawTransaction: (transaction: Transaction) => Promise<string>
   refreshBalance: () => Promise<void>
 }
 
 export function useSolanaWallet(
   network: NetworkType = 'devnet',
-  enableGasSponsorship: boolean = true
+  _enableGasSponsorship: boolean = true
 ): UseSolanaWalletResult {
   const {
     publicKey,
@@ -42,7 +44,6 @@ export function useSolanaWallet(
     connecting,
     disconnect: walletDisconnect,
     signMessage: walletSignMessage,
-    signTransaction,
     sendTransaction: walletSendTransaction,
     wallet,
     select,
@@ -168,6 +169,36 @@ export function useSolanaWallet(
     [connected, walletSignMessage]
   )
 
+  // Send raw transaction (for interacting with custom programs)
+  const sendRawTransaction = useCallback(
+    async (transaction: Transaction) => {
+      if (!connected || !publicKey || !connection) {
+        throw new Error('Wallet not connected')
+      }
+
+      try {
+        // Get latest blockhash
+        const { blockhash } = await connection.getLatestBlockhash()
+        transaction.recentBlockhash = blockhash
+        transaction.feePayer = publicKey
+
+        // Sign and send transaction
+        const signature = await walletSendTransaction(transaction, connection)
+
+        // Refresh balance after sending
+        setTimeout(() => {
+          fetchBalance().catch(console.error)
+        }, 2000)
+
+        return signature
+      } catch (error) {
+        console.error('Error sending raw transaction:', error)
+        throw error
+      }
+    },
+    [connected, publicKey, connection, walletSendTransaction, fetchBalance]
+  )
+
   // Send transaction
   const sendTransaction = useCallback(
     async (recipient: string, amount: number) => {
@@ -226,11 +257,13 @@ export function useSolanaWallet(
     network: currentNetwork,
     isConnected: connected,
     isLoading: isLoading || connecting,
+    publicKey,
     connect,
     disconnect,
     switchNetwork,
     signMessage,
     sendTransaction,
+    sendRawTransaction,
     refreshBalance
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 
@@ -16,26 +16,12 @@ const AccountInfo: React.FC<AccountInfoProps> = ({
   address,
   balance,
   isConnected,
-  onConnect,
+  onConnect: _onConnect,
   onDisconnect,
   onRefreshBalance,
   isLoading
 }) => {
-  const [localIsLoading, setLocalIsLoading] = useState(false)
-
-  const handleConnect = async () => {
-    setLocalIsLoading(true)
-    try {
-      await onConnect()
-    } catch (error) {
-      console.error('Error connecting:', error)
-    } finally {
-      setLocalIsLoading(false)
-    }
-  }
-
-  // Use the local loading state or the prop from parent
-  const buttonDisabled = isLoading || localIsLoading
+  const buttonDisabled = isLoading
 
   return (
     <div className="card mb-6">

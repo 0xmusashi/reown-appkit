@@ -1,4 +1,5 @@
-import React, { FC, ReactNode, useMemo } from 'react'
+/** @jsxImportSource react */
+import { FC, ReactNode, useMemo } from 'react'
 
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'
