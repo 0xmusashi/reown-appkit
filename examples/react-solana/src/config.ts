@@ -19,10 +19,6 @@ import {
   useWalletInfo
 } from '@reown/appkit/react'
 
-import ActionButtonList from './components/ActionButton'
-import Footer from './components/Footer'
-import InfoList from './components/InfoList'
-
 // @ts-expect-error Get projectId
 export const projectId = import.meta.env.VITE_PROJECT_ID || 'b56e18d47c72ab683b10814fe9495694' // this is a public projectId only to use on localhost
 
@@ -33,7 +29,9 @@ const solanaAdapter = new SolanaAdapter({
     new PhantomWalletAdapter(),
     new SolflareWalletAdapter(),
     new TrustWalletAdapter()
-  ]
+  ],
+  relayerUrl: import.meta.env.VITE_RELAYER_URL,
+  enableGasSponsorship: true,
 })
 
 // Create modal

@@ -3,6 +3,8 @@ import Footer from './components/Footer'
 // import InfoList from './components/InfoList'
 import { useAppKitTheme } from './config'
 import { SignMessage } from './components/SignMessage'
+import CounterState from './components/CounterState'
+import IncrementButton from './components/Increment'
 export default function App() {
   const { themeMode } = useAppKitTheme()
   document.documentElement.className = themeMode
@@ -28,6 +30,9 @@ export default function App() {
       <ActionButtonList />
       {/* <InfoList /> */}
       <SignMessage />
+      <CounterState />
+      <IncrementButton />
+
       <Footer />
     </div>
   )

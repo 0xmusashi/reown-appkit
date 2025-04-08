@@ -26,11 +26,11 @@ export class RelayerService {
       });
 
       // Encode the serialized transaction into Base58
-      const base58EncodedTransaction = bs58.encode(serializedTransaction);
+      const base58EncodedTransaction = bs58.encode(serializedTransaction)
 
       // Call the relayer API
       try {
-        const response = await axios.post(`${this.relayerUrl}/signTransaction`, {transaction: base58EncodedTransaction})
+        const response = await axios.post(`${this.relayerUrl}/nedy/signTransaction`, {transaction: base58EncodedTransaction})
   
         const sponsoredTransaction = Transaction.from(bs58.decode(response.data.data.signedTransaction))
   
@@ -40,6 +40,15 @@ export class RelayerService {
       }
     } catch (error) {
       return transaction;
+    }
+  }
+
+  public async getRelayerPublicKey(): Promise<string> {
+    try {
+      const response = await axios.get(`${this.relayerUrl}/relayers/`)
+      return response.data.data.relayerPublicKey
+    } catch (error) {
+      return ''
     }
   }
 }

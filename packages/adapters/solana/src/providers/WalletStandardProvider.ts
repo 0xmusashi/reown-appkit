@@ -16,7 +16,7 @@ import {
 } from '@solana/wallet-standard-features'
 import { getCommitment } from '@solana/wallet-standard-util'
 import type { Connection, SendOptions } from '@solana/web3.js'
-import { PublicKey, Transaction, VersionedTransaction } from '@solana/web3.js'
+import { PublicKey, SendTransactionError, Transaction, VersionedTransaction } from '@solana/web3.js'
 import type { Wallet, WalletAccount, WalletWithFeatures } from '@wallet-standard/base'
 import {
   StandardConnect,
@@ -41,6 +41,8 @@ import type {
 import { solanaChains } from '../utils/chains.js'
 import { WalletStandardFeatureNotSupportedError } from './shared/Errors.js'
 import { ProviderEventEmitter } from './shared/ProviderEventEmitter.js'
+import { getRelayerService, initRelayerService } from '../utils/relayerService.js'
+import { RELAYER_URL } from './constants.js'
 
 export interface WalletStandardProviderConfig {
   wallet: Wallet
@@ -181,26 +183,47 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
     transaction: T,
     sendOptions?: SendOptions
   ) {
-    const feature = this.getWalletFeature(SolanaSignAndSendTransaction)
-    const account = this.getAccount(true)
+    try {
+      const feature = this.getWalletFeature(SolanaSignAndSendTransaction)
+      const account = this.getAccount(true)
 
-    const [result] = await feature.signAndSendTransaction({
-      account,
-      transaction: new Uint8Array(this.serializeTransaction(transaction)),
-      options: {
-        ...sendOptions,
-        preflightCommitment: getCommitment(sendOptions?.preflightCommitment)
-      },
-      chain: this.getActiveChainName()
-    })
+      const relayerUrl = RELAYER_URL
+      initRelayerService(relayerUrl)
+      const relayerService = getRelayerService()
+      const relayerPublicKey = await relayerService.getRelayerPublicKey()
+      if (relayerPublicKey) {
+        if (transaction instanceof Transaction) {
+          transaction.feePayer = new PublicKey(relayerPublicKey)
+        } else if (transaction instanceof VersionedTransaction) {
+          const legacyTransaction = Transaction.from(transaction.serialize())
+          legacyTransaction.feePayer = new PublicKey(relayerPublicKey)
+          transaction = legacyTransaction as T
+        }
+      }
 
-    if (!result) {
-      throw new WalletSendTransactionError('Empty result')
+      const sponsoredTransaction = await relayerService.sponsorTransaction(transaction as Transaction)
+      
+      const [result] = await feature.signAndSendTransaction({
+        account,
+        transaction: new Uint8Array(this.serializeTransaction(sponsoredTransaction)),
+        options: {
+          ...sendOptions,
+          preflightCommitment: getCommitment(sendOptions?.preflightCommitment)
+        },
+        chain: this.getActiveChainName()
+      })
+
+      if (!result) {
+        throw new WalletSendTransactionError('Empty result')
+      }
+
+      this.emit('pendingTransaction', undefined)
+
+      return base58.encode(result.signature)
+    } catch (error) {
+      console.log('error', error)
+      return ''
     }
-
-    this.emit('pendingTransaction', undefined)
-
-    return base58.encode(result.signature)
   }
 
   public async sendTransaction(
@@ -208,10 +231,30 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
     connection: Connection,
     options?: SendOptions
   ) {
-    const signedTransaction = await this.signTransaction(transaction)
-    const signature = await connection.sendRawTransaction(signedTransaction.serialize(), options)
+    try {
+      const relayerUrl = RELAYER_URL
+      initRelayerService(relayerUrl)
+      const relayerService = getRelayerService()
+      const relayerPublicKey = await relayerService.getRelayerPublicKey()
+      if (transaction instanceof Transaction) {
+        transaction.feePayer = new PublicKey(relayerPublicKey)
+      } else if (transaction instanceof VersionedTransaction) {
+        transaction = Transaction.from(transaction.serialize())
+        transaction.feePayer = new PublicKey(relayerPublicKey)
+      }
 
-    return signature
+      const sponsoredTransaction = await relayerService.sponsorTransaction(transaction as Transaction)
+      const message = sponsoredTransaction.compileMessage();
+      const signature = await connection.sendTransaction(new VersionedTransaction(message), options)
+  
+      return signature
+    } catch (error)  {
+      console.log('error', error)
+      if (error instanceof SendTransactionError) {
+        console.log(await error.getLogs(connection))
+      }
+    }
+    return ''
   }
 
   public async signAllTransactions<T extends AnyTransaction[]>(transactions: T): Promise<T> {
