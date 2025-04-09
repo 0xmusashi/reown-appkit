@@ -36,6 +36,8 @@ export function SignMessage() {
       <div>
         <label>Message: </label>
         <input
+          style={{ marginBottom: '10px', width: '240px', backgroundColor: 'white', padding: '10px', borderRadius: '5px', color: 'black' }} 
+          type="text"
           value={message}
           onChange={e => setMessage(e.target.value)}
           placeholder="Enter a message to sign"
@@ -47,6 +49,7 @@ export function SignMessage() {
         className="btn btn-primary"
         onClick={handleSign}
         disabled={!message || isLoading}
+        style={{ cursor: 'pointer' }}
       >
         {isLoading ? 'Signing...' : 'Sign Message'}
       </button>

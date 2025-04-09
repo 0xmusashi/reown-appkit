@@ -211,7 +211,7 @@ export class SolanaAdapter extends AdapterBlueprint<SolanaProvider> {
     try {
       if (this.enableGasSponsorship) {
         const relayerService = getRelayerService()
-        transactionToSend = await relayerService.sponsorTransaction(transaction)
+        transactionToSend = await relayerService.relayerSignTransaction(transaction)
       }
     } catch (error) {
       console.error('Error sponsoring transaction, falling back to original transaction:', error)

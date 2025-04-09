@@ -114,6 +114,18 @@ export class AuthProvider extends ProviderEventEmitter implements SolanaProvider
     return result.signature
   }
 
+  public async signAndSendTransferTransaction(
+    _token: string, 
+    _source: string, 
+    _destination: string,
+    _amount: number,
+    _decimals: number,
+    _connection: Connection,
+    _options?: SendOptions
+  ) {
+    return Promise.reject(new Error('The "signAndSendTransferTransaction" method is not supported on AuthProvider'))
+  }
+
   public async sendTransaction(
     transaction: AnyTransaction,
     connection: Connection,

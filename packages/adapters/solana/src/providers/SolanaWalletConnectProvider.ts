@@ -152,6 +152,30 @@ export class SolanaWalletConnectProvider
     return result.signature
   }
 
+  public async signAndSendTransferTransaction(
+    token: string, 
+    source: string, 
+    destination: string,
+    amount: number,
+    decimals: number,
+    connection: Connection,
+    sendOptions?: SendOptions
+  ) {
+    this.checkIfMethodIsSupported('solana_signAndSendTransferTransaction')
+
+    const result = await this.internalRequest('solana_signAndSendTransferTransaction', {
+      token,
+      source,
+      destination,
+      amount,
+      decimals,
+      connection,
+      sendOptions
+    })
+
+    return result.signature
+  }
+
   public async sendTransaction(
     transaction: AnyTransaction,
     connection: Connection,
@@ -353,6 +377,7 @@ export namespace SolanaWalletConnectProvider {
       { signature: string }
     >
     solana_signAllTransactions: Request<{ transactions: string[] }, { transactions: string[] }>
+    solana_signAndSendTransferTransaction: Request<{ token: string; source: string; destination: string; amount: number; decimals: number; connection: Connection; sendOptions?: SendOptions }, { signature: string }>
   }
 
   export type RequestMethod = keyof RequestMethods

@@ -1,6 +1,7 @@
 import { Transaction } from '@solana/web3.js'
 import axios from 'axios'
 import bs58 from 'bs58'
+import Decimal from 'decimal.js'
 
 /**
  * Service to interact with a gas sponsorship relayer API
@@ -17,7 +18,7 @@ export class RelayerService {
    * @param transaction The transaction to be sponsored
    * @returns A new transaction with gas sponsorship information
    */
-  public async sponsorTransaction(transaction: Transaction): Promise<Transaction> {
+  public async relayerSignTransaction(transaction: Transaction): Promise<Transaction> {
     try {
       // Serialize the transaction to send to the relayer API
       const serializedTransaction = transaction.serialize({
@@ -40,6 +41,23 @@ export class RelayerService {
       }
     } catch (error) {
       return transaction;
+    }
+  }
+
+  public async relayerTransferTransaction(
+    token: string, 
+    source: string, 
+    destination: string,
+    amount: number,
+    decimals: number
+  ): Promise<Transaction | null> {
+    try {
+      const transferAmount = new Decimal(amount).mul(new Decimal(10).pow(decimals)).toNumber()
+      const response = await axios.post(`${this.relayerUrl}/nedy/transferTransaction`, {token, source, destination, amount: transferAmount})
+      console.log('response', response)
+      return Transaction.from(bs58.decode(response.data.data.transaction))
+    } catch (error) {
+      return null
     }
   }
 

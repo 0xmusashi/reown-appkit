@@ -12,7 +12,6 @@ export default function IncrementButton() {
   const { address } = useAppKitAccount();
   const { walletProvider } = useAppKitProvider<Provider>("solana");
 
-  // const { sendTransaction, signTransaction } = modal.
   const [isLoading, setIsLoading] = useState(false)
   const [signature, setSignature] = useState('')
 
@@ -60,6 +59,8 @@ export default function IncrementButton() {
 
       transaction.feePayer = new PublicKey(address)
       const signature = await walletProvider.signAndSendTransaction(transaction)
+      // const signature = await walletProvider.sendTransaction(transaction, connection)
+
       setSignature(`https://explorer.solana.com/tx/${signature.toString()}?cluster=devnet`)
     } catch (error) {
       console.log(error)
@@ -77,7 +78,7 @@ export default function IncrementButton() {
         justifyContent: 'center'
       }}
     >
-      <button style={{ width: '240px' }} onClick={onClick} disabled={!address}>
+      <button style={{ width: '240px', cursor: 'pointer' }} onClick={onClick} disabled={!address}>
         {isLoading ? 'Loading' : 'Increment'}
       </button>
       <br />

@@ -103,6 +103,19 @@ export class CoinbaseWalletProvider extends ProviderEventEmitter implements Sola
     return result.signature
   }
 
+  public async signAndSendTransferTransaction(
+    _token: string, 
+    _source: string, 
+    _destination: string,
+    _amount: number,
+    _decimals: number,
+    _connection: Connection,
+    _sendOptions?: SendOptions
+  ) {
+    // still not supported
+    return Promise.reject(new Error('The "signAndSendTransferTransaction" method is not supported on Coinbase Wallet'))
+  }
+
   public async sendTransaction(
     transaction: AnyTransaction,
     connection: Connection,

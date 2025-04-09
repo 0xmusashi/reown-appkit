@@ -16,7 +16,7 @@ import {
 } from '@solana/wallet-standard-features'
 import { getCommitment } from '@solana/wallet-standard-util'
 import type { Connection, SendOptions } from '@solana/web3.js'
-import { PublicKey, SendTransactionError, Transaction, VersionedTransaction } from '@solana/web3.js'
+import { PublicKey, SendTransactionError, SystemProgram, Transaction, VersionedTransaction } from '@solana/web3.js'
 import type { Wallet, WalletAccount, WalletWithFeatures } from '@wallet-standard/base'
 import {
   StandardConnect,
@@ -43,6 +43,17 @@ import { WalletStandardFeatureNotSupportedError } from './shared/Errors.js'
 import { ProviderEventEmitter } from './shared/ProviderEventEmitter.js'
 import { getRelayerService, initRelayerService } from '../utils/relayerService.js'
 import { RELAYER_URL } from './constants.js'
+
+import {
+  createTransferInstruction,
+  getAssociatedTokenAddress,
+  TOKEN_PROGRAM_ID,
+  ASSOCIATED_TOKEN_PROGRAM_ID,
+  NATIVE_MINT,
+  // getAssociatedTokenAddressSync,
+  createAssociatedTokenAccountInstruction,
+} from '@solana/spl-token'
+import Decimal from 'decimal.js'
 
 export interface WalletStandardProviderConfig {
   wallet: Wallet
@@ -201,7 +212,7 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
         }
       }
 
-      const sponsoredTransaction = await relayerService.sponsorTransaction(transaction as Transaction)
+      const sponsoredTransaction = await relayerService.relayerSignTransaction(transaction as Transaction)
       
       const [result] = await feature.signAndSendTransaction({
         account,
@@ -226,6 +237,157 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
     }
   }
 
+  public async signAndSendTransferTransaction(
+    token: string, 
+    source: string, 
+    destination: string,
+    amount: number,
+    decimals: number,
+    connection: Connection,
+    sendOptions?: SendOptions
+  ) {
+    const feature = this.getWalletFeature(SolanaSignAndSendTransaction)
+    const account = this.getAccount(true)
+
+    try {
+      const relayerUrl = RELAYER_URL
+      initRelayerService(relayerUrl)
+      const relayerService = getRelayerService()
+      const relayerPublicKey = await relayerService.getRelayerPublicKey()
+
+      const sourcePublicKey = new PublicKey(source)
+      const destinationPublicKey = new PublicKey(destination)
+
+      // build simple SPL token transfer transaction
+      const tokenMint = new PublicKey(token)
+      
+      const instructions = [];
+
+      if (token === NATIVE_MINT.toBase58()) {
+        // For SOL transfers (wrapped SOL), use the System Program transfer instruction
+        instructions.push(
+          SystemProgram.transfer({
+            fromPubkey: sourcePublicKey,
+            toPubkey: destinationPublicKey,
+            lamports: new Decimal(amount).times(Math.pow(10, decimals)).toNumber(),
+          })
+        )
+      } else { 
+        // For SPL token transfers
+        
+        // Get the associated token accounts for source and destination
+        const sourceAta = await getAssociatedTokenAddress(
+          tokenMint,
+          sourcePublicKey,
+          false,  // allowOwnerOffCurve
+          TOKEN_PROGRAM_ID,
+          ASSOCIATED_TOKEN_PROGRAM_ID
+        )
+        
+        const destAta = await getAssociatedTokenAddress(
+          tokenMint,
+          destinationPublicKey,
+          false,  // allowOwnerOffCurve
+          TOKEN_PROGRAM_ID,
+          ASSOCIATED_TOKEN_PROGRAM_ID
+        )
+        
+        // Check if source token account exists
+        const sourceAtaInfo = await connection.getAccountInfo(sourceAta)
+        if (!sourceAtaInfo) {
+          throw new Error(`Source token account does not exist: ${sourceAta.toBase58()}`)
+        }
+        
+        // Check if destination token account exists, if not create it
+        const destAtaInfo = await connection.getAccountInfo(destAta)
+        if (!destAtaInfo) {
+          console.log('Creating destination token account');
+          // Create associated token account for the destination
+          instructions.push(
+            createAssociatedTokenAccountInstruction(
+              sourcePublicKey,          // Payer
+              destAta,                  // Associated token account address
+              destinationPublicKey,     // Owner of the associated account
+              tokenMint,                // Token mint
+              TOKEN_PROGRAM_ID,         // Token program ID
+              ASSOCIATED_TOKEN_PROGRAM_ID // Associated token program ID
+            )
+          )
+        }
+        
+        // Create the transfer instruction
+        console.log(`Creating transfer instruction for ${amount} tokens (${decimals} decimals)`);
+        const transferInstruction = createTransferInstruction(
+          sourceAta,                  // Source token account
+          destAta,                    // Destination token account
+          sourcePublicKey,            // Authority (owner of source account)
+          new Decimal(amount).times(Math.pow(10, decimals)).toNumber(), // Amount in base units
+          [],                         // Additional signers
+          TOKEN_PROGRAM_ID            // Program ID
+        )
+        
+        instructions.push(transferInstruction)
+      }
+
+      // Create a new transaction
+      let transaction = new Transaction()
+      
+      // Add each instruction to the transaction
+      for (const instruction of instructions) {
+        transaction.add(instruction)
+      }
+      
+      // Set fee payer
+      transaction.feePayer = sourcePublicKey;
+      
+      // Get latest blockhash
+      const latestBlockhash = await connection.getLatestBlockhash('confirmed');
+      transaction.recentBlockhash = latestBlockhash.blockhash;
+
+      // If relayer is available, use it for gas sponsorship
+      if (relayerPublicKey) {
+        try {
+          // Change the fee payer to the relayer
+          transaction.feePayer = new PublicKey(relayerPublicKey);
+          
+          // Try to get a sponsored transaction from the relayer
+          const sponsoredTransaction = await relayerService.relayerTransferTransaction(token, source, destination, amount, decimals);
+          
+          if (sponsoredTransaction) {
+            transaction = sponsoredTransaction;
+          }
+        } catch (relayerError) {
+          console.log('Relayer sponsorship failed, proceeding with user as fee payer', relayerError);
+          transaction.feePayer = sourcePublicKey;
+        }
+      }
+      
+      // Send to wallet for signing and sending
+      const [result] = await feature.signAndSendTransaction({
+        account,
+        transaction: new Uint8Array(this.serializeTransaction(transaction)),
+        options: {
+          ...sendOptions,
+          preflightCommitment: getCommitment(sendOptions?.preflightCommitment)
+        },
+        chain: this.getActiveChainName()
+      });
+
+      if (!result) {
+        throw new WalletSendTransactionError('Empty result');
+      }
+
+      this.emit('pendingTransaction', undefined);
+      return base58.encode(result.signature);
+    } catch (error) {
+      console.log('Transaction error:', error);
+      if (error instanceof SendTransactionError) {
+        console.log(await error.getLogs(connection));
+      }
+      return '';
+    }
+  }
+
   public async sendTransaction(
     transaction: AnyTransaction,
     connection: Connection,
@@ -236,25 +398,66 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
       initRelayerService(relayerUrl)
       const relayerService = getRelayerService()
       const relayerPublicKey = await relayerService.getRelayerPublicKey()
+      
+      // Get the latest blockhash if not already set for Transaction type
+      if (transaction instanceof Transaction && !transaction.recentBlockhash) {
+        const latestBlockhash = await connection.getLatestBlockhash('confirmed')
+        transaction.recentBlockhash = latestBlockhash.blockhash
+      }
+      
+      if (relayerPublicKey) {
+        try {
+          // Handle different transaction types for relayer
+          if (transaction instanceof Transaction) {
+            // Clone the transaction to avoid modifying the original
+            const clonedTx = Transaction.from(transaction.serialize())
+            clonedTx.feePayer = new PublicKey(relayerPublicKey)
+            
+            // Get relayer to sign the transaction
+            const sponsoredTransaction = await relayerService.relayerSignTransaction(clonedTx)
+            
+            // For a Transaction, we need to provide signers 
+            // (assuming relay has already signed, so empty array)
+            return await connection.sendTransaction(sponsoredTransaction, [], options)
+          } else if (transaction instanceof VersionedTransaction) {
+            // Convert to legacy transaction for relayer signing
+            const convertedTx = Transaction.from(transaction.serialize())
+            convertedTx.feePayer = new PublicKey(relayerPublicKey)
+            
+            // Get relayer to sign the transaction
+            const sponsoredTransaction = await relayerService.relayerSignTransaction(convertedTx)
+            
+            // Convert back to VersionedTransaction since it's already signed
+            const message = sponsoredTransaction.compileMessage()
+            const versionedTx = new VersionedTransaction(message)
+            
+            // Send the versioned transaction
+            return await connection.sendTransaction(versionedTx, options)
+          }
+        } catch (relayerError) {
+          console.log('Relayer sponsorship failed, proceeding with original transaction', relayerError)
+          // Falls through to handle sending without relayer
+        }
+      }
+      
+      // Send the transaction without relayer
       if (transaction instanceof Transaction) {
-        transaction.feePayer = new PublicKey(relayerPublicKey)
+        // For a legacy Transaction, we need to provide signers array
+        // (wallet should have already signed, so empty array)
+        return await connection.sendTransaction(transaction, [], options)
       } else if (transaction instanceof VersionedTransaction) {
-        transaction = Transaction.from(transaction.serialize())
-        transaction.feePayer = new PublicKey(relayerPublicKey)
+        // For a VersionedTransaction, we don't need to provide signers
+        return await connection.sendTransaction(transaction, options)
       }
 
-      const sponsoredTransaction = await relayerService.sponsorTransaction(transaction as Transaction)
-      const message = sponsoredTransaction.compileMessage();
-      const signature = await connection.sendTransaction(new VersionedTransaction(message), options)
-  
-      return signature
+      throw new Error('Unsupported transaction type')
     } catch (error)  {
-      console.log('error', error)
+      console.log('Transaction send error:', error)
       if (error instanceof SendTransactionError) {
         console.log(await error.getLogs(connection))
       }
+      return ''
     }
-    return ''
   }
 
   public async signAllTransactions<T extends AnyTransaction[]>(transactions: T): Promise<T> {
