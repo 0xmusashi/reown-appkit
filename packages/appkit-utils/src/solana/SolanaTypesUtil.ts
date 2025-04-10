@@ -64,7 +64,6 @@ export interface Provider
     source: string,
     destination: string,
     amount: number,
-    decimals: number,
     connection: Connection,
     sendOptions?: SendOptions
   ) => Promise<TransactionSignature>

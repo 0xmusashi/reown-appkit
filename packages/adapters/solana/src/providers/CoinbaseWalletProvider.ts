@@ -108,7 +108,6 @@ export class CoinbaseWalletProvider extends ProviderEventEmitter implements Sola
     _source: string, 
     _destination: string,
     _amount: number,
-    _decimals: number,
     _connection: Connection,
     _sendOptions?: SendOptions
   ) {

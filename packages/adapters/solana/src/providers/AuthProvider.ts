@@ -119,7 +119,6 @@ export class AuthProvider extends ProviderEventEmitter implements SolanaProvider
     _source: string, 
     _destination: string,
     _amount: number,
-    _decimals: number,
     _connection: Connection,
     _options?: SendOptions
   ) {

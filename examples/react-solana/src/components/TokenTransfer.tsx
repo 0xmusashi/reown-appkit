@@ -23,7 +23,7 @@ export default function TokenTransfer() {
     setIsLoading(true)
 
     try {
-      const signature = await walletProvider.signAndSendTransferTransaction(TOKEN_MINT, address, recipient, amount, 9, connection)
+      const signature = await walletProvider.signAndSendTransferTransaction(TOKEN_MINT, address, recipient, amount, connection)
       setSignature(`https://explorer.solana.com/tx/${signature.toString()}?cluster=devnet`)
     } catch (error) {
       console.log(error)

@@ -6,6 +6,7 @@ import { SignMessage } from './components/SignMessage'
 import CounterState from './components/CounterState'
 import IncrementButton from './components/Increment'
 import TokenTransfer from './components/TokenTransfer'
+import IncrementSplPaidButton from './components/IncrementSplPaid'
 export default function App() {
   const { themeMode } = useAppKitTheme()
   document.documentElement.className = themeMode
@@ -25,6 +26,7 @@ export default function App() {
       <SignMessage />
       <CounterState />
       <IncrementButton />
+      <IncrementSplPaidButton />
       <TokenTransfer />
 
     </div>

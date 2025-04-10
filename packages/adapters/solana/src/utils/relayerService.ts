@@ -54,10 +54,24 @@ export class RelayerService {
     try {
       const transferAmount = new Decimal(amount).mul(new Decimal(10).pow(decimals)).toNumber()
       const response = await axios.post(`${this.relayerUrl}/nedy/transferTransaction`, {token, source, destination, amount: transferAmount})
-      console.log('response', response)
       return Transaction.from(bs58.decode(response.data.data.transaction))
     } catch (error) {
       return null
+    }
+  }
+
+  public async relayerGetTransactionFee(transaction: Transaction): Promise<number> {
+    try {
+      const serializedTransaction = transaction.serialize({
+        requireAllSignatures: false,
+        verifySignatures: false
+      });
+
+      const base58EncodedTransaction = bs58.encode(serializedTransaction)
+      const response = await axios.post(`${this.relayerUrl}/nedy/estimateTransactionFee`, {transaction: base58EncodedTransaction})
+      return response.data.data.feeInLamports
+    } catch (error) {
+      return 0
     }
   }
 

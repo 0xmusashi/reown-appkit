@@ -8,7 +8,7 @@ const endpoint = `https://api.devnet.solana.com`
 const COUNTER_PROGRAM = 'NZqPEssvQPTGo31JGNzE1P2PhysusspkrGPbJaqKWTN'
 const COUNTER_ACCOUNT = '9NTqfJgad8ntebHsoTDjuCnuysZANX2PBeFMQFBNJjVu'
 
-export default function IncrementButton() {
+export default function IncrementSplPaidButton() {
   const { address } = useAppKitAccount();
   const { walletProvider } = useAppKitProvider<Provider>("solana");
 
@@ -59,7 +59,6 @@ export default function IncrementButton() {
 
       transaction.feePayer = new PublicKey(address)
       const signature = await walletProvider.signAndSendTransaction(transaction)
-      // const signature = await walletProvider.sendTransaction(transaction, connection)
 
       setSignature(`https://explorer.solana.com/tx/${signature.toString()}?cluster=devnet`)
     } catch (error) {
@@ -78,7 +77,7 @@ export default function IncrementButton() {
         justifyContent: 'center'
       }}
     >
-      <p>Gasless Counter Increment</p>
+      <p>SPL Paid Counter Increment</p>
       <br />
       <button style={{ width: '240px', cursor: 'pointer' }} onClick={onClick} disabled={!address}>
         {isLoading ? 'Loading' : 'Increment'}

@@ -157,7 +157,6 @@ export class SolanaWalletConnectProvider
     source: string, 
     destination: string,
     amount: number,
-    decimals: number,
     connection: Connection,
     sendOptions?: SendOptions
   ) {
@@ -168,7 +167,6 @@ export class SolanaWalletConnectProvider
       source,
       destination,
       amount,
-      decimals,
       connection,
       sendOptions
     })
@@ -377,7 +375,7 @@ export namespace SolanaWalletConnectProvider {
       { signature: string }
     >
     solana_signAllTransactions: Request<{ transactions: string[] }, { transactions: string[] }>
-    solana_signAndSendTransferTransaction: Request<{ token: string; source: string; destination: string; amount: number; decimals: number; connection: Connection; sendOptions?: SendOptions }, { signature: string }>
+    solana_signAndSendTransferTransaction: Request<{ token: string; source: string; destination: string; amount: number; connection: Connection; sendOptions?: SendOptions }, { signature: string }>
   }
 
   export type RequestMethod = keyof RequestMethods

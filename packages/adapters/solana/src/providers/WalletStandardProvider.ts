@@ -50,7 +50,7 @@ import {
   TOKEN_PROGRAM_ID,
   ASSOCIATED_TOKEN_PROGRAM_ID,
   NATIVE_MINT,
-  // getAssociatedTokenAddressSync,
+  getMint,
   createAssociatedTokenAccountInstruction,
 } from '@solana/spl-token'
 import Decimal from 'decimal.js'
@@ -213,6 +213,8 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
       }
 
       const sponsoredTransaction = await relayerService.relayerSignTransaction(transaction as Transaction)
+      const transactionFee = await relayerService.relayerGetTransactionFee(transaction as Transaction)
+      console.log('transactionFee', transactionFee)
       
       const [result] = await feature.signAndSendTransaction({
         account,
@@ -242,7 +244,6 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
     source: string, 
     destination: string,
     amount: number,
-    decimals: number,
     connection: Connection,
     sendOptions?: SendOptions
   ) {
@@ -260,6 +261,13 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
 
       // build simple SPL token transfer transaction
       const tokenMint = new PublicKey(token)
+
+      let decimals = 9
+
+      if (token !== NATIVE_MINT.toBase58()) {
+        const mintData = await getMint(connection, tokenMint);
+        decimals = mintData.decimals;
+      }
       
       const instructions = [];
 
@@ -316,7 +324,6 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
         }
         
         // Create the transfer instruction
-        console.log(`Creating transfer instruction for ${amount} tokens (${decimals} decimals)`);
         const transferInstruction = createTransferInstruction(
           sourceAta,                  // Source token account
           destAta,                    // Destination token account
