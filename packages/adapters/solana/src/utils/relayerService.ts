@@ -60,6 +60,22 @@ export class RelayerService {
     }
   }
 
+  public async relayerSignAndSendTransaction(transaction: Transaction): Promise<string> {
+    try {
+      // Serialize the transaction to send to the relayer API
+      const serializedTransaction = transaction.serialize({
+        requireAllSignatures: false,
+        verifySignatures: false
+      });
+
+      const base58EncodedTransaction = bs58.encode(serializedTransaction)
+      const response = await axios.post(`${this.relayerUrl}/nedy/signAndSendTransaction`, {transaction: base58EncodedTransaction})
+      return response.data.data.signature
+    } catch (error) {
+      return ''
+    }
+  }
+
   public async relayerGetTransactionFee(transaction: Transaction): Promise<number> {
     try {
       const serializedTransaction = transaction.serialize({

@@ -213,9 +213,7 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
       }
 
       const sponsoredTransaction = await relayerService.relayerSignTransaction(transaction as Transaction)
-      const transactionFee = await relayerService.relayerGetTransactionFee(transaction as Transaction)
-      console.log('transactionFee', transactionFee)
-      
+
       const [result] = await feature.signAndSendTransaction({
         account,
         transaction: new Uint8Array(this.serializeTransaction(sponsoredTransaction)),
@@ -401,68 +399,47 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
     options?: SendOptions
   ) {
     try {
+      const feature = this.getWalletFeature(SolanaSignAndSendTransaction)
+      const account = this.getAccount(true)
+
       const relayerUrl = RELAYER_URL
       initRelayerService(relayerUrl)
       const relayerService = getRelayerService()
       const relayerPublicKey = await relayerService.getRelayerPublicKey()
-      
-      // Get the latest blockhash if not already set for Transaction type
-      if (transaction instanceof Transaction && !transaction.recentBlockhash) {
-        const latestBlockhash = await connection.getLatestBlockhash('confirmed')
-        transaction.recentBlockhash = latestBlockhash.blockhash
-      }
-      
       if (relayerPublicKey) {
-        try {
-          // Handle different transaction types for relayer
-          if (transaction instanceof Transaction) {
-            // Clone the transaction to avoid modifying the original
-            const clonedTx = Transaction.from(transaction.serialize())
-            clonedTx.feePayer = new PublicKey(relayerPublicKey)
-            
-            // Get relayer to sign the transaction
-            const sponsoredTransaction = await relayerService.relayerSignTransaction(clonedTx)
-            
-            // For a Transaction, we need to provide signers 
-            // (assuming relay has already signed, so empty array)
-            return await connection.sendTransaction(sponsoredTransaction, [], options)
-          } else if (transaction instanceof VersionedTransaction) {
-            // Convert to legacy transaction for relayer signing
-            const convertedTx = Transaction.from(transaction.serialize())
-            convertedTx.feePayer = new PublicKey(relayerPublicKey)
-            
-            // Get relayer to sign the transaction
-            const sponsoredTransaction = await relayerService.relayerSignTransaction(convertedTx)
-            
-            // Convert back to VersionedTransaction since it's already signed
-            const message = sponsoredTransaction.compileMessage()
-            const versionedTx = new VersionedTransaction(message)
-            
-            // Send the versioned transaction
-            return await connection.sendTransaction(versionedTx, options)
-          }
-        } catch (relayerError) {
-          console.log('Relayer sponsorship failed, proceeding with original transaction', relayerError)
-          // Falls through to handle sending without relayer
+        if (transaction instanceof Transaction) {
+          transaction.feePayer = new PublicKey(relayerPublicKey)
+        } else if (transaction instanceof VersionedTransaction) {
+          const legacyTransaction = Transaction.from(transaction.serialize())
+          legacyTransaction.feePayer = new PublicKey(relayerPublicKey)
+          transaction = legacyTransaction as Transaction
         }
       }
-      
-      // Send the transaction without relayer
       if (transaction instanceof Transaction) {
-        // For a legacy Transaction, we need to provide signers array
-        // (wallet should have already signed, so empty array)
-        return await connection.sendTransaction(transaction, [], options)
-      } else if (transaction instanceof VersionedTransaction) {
-        // For a VersionedTransaction, we don't need to provide signers
-        return await connection.sendTransaction(transaction, options)
+        transaction.recentBlockhash = (await connection.getLatestBlockhash('confirmed')).blockhash
       }
 
-      throw new Error('Unsupported transaction type')
-    } catch (error)  {
-      console.log('Transaction send error:', error)
-      if (error instanceof SendTransactionError) {
-        console.log(await error.getLogs(connection))
+      const sponsoredTransaction = await relayerService.relayerSignTransaction(transaction as Transaction)
+      
+      const [result] = await feature.signAndSendTransaction({
+        account,
+        transaction: new Uint8Array(this.serializeTransaction(sponsoredTransaction)),
+        options: {
+          ...options,
+          preflightCommitment: getCommitment(options?.preflightCommitment)
+        },
+        chain: this.getActiveChainName()
+      })
+
+      if (!result) {
+        throw new WalletSendTransactionError('Empty result')
       }
+
+      this.emit('pendingTransaction', undefined)
+
+      return base58.encode(result.signature)
+    } catch (error) {
+      console.log('error', error)
       return ''
     }
   }

@@ -58,8 +58,8 @@ export default function IncrementButton() {
       transaction.recentBlockhash = blockhash
 
       transaction.feePayer = new PublicKey(address)
-      const signature = await walletProvider.signAndSendTransaction(transaction)
-      // const signature = await walletProvider.sendTransaction(transaction, connection)
+      // const signature = await walletProvider.signAndSendTransaction(transaction)
+      const signature = await walletProvider.sendTransaction(transaction, connection)
 
       setSignature(`https://explorer.solana.com/tx/${signature.toString()}?cluster=devnet`)
     } catch (error) {
