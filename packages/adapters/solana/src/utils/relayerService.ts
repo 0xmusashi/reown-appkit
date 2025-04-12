@@ -24,7 +24,7 @@ export class RelayerService {
       const serializedTransaction = transaction.serialize({
         requireAllSignatures: false,
         verifySignatures: false
-      });
+      })
 
       // Encode the serialized transaction into Base58
       const base58EncodedTransaction = bs58.encode(serializedTransaction)
@@ -37,10 +37,36 @@ export class RelayerService {
   
         return sponsoredTransaction
       } catch (error) {
-        return transaction;
+        return transaction
       }
     } catch (error) {
-      return transaction;
+      return transaction
+    }
+  }
+
+  public async relayerSignSplTokenPaidTransaction(transaction: Transaction, margin: number, tokenPriceInfo: any): Promise<Transaction> {
+    try {
+      // Serialize the transaction to send to the relayer API
+      const serializedTransaction = transaction.serialize({
+        requireAllSignatures: false,
+        verifySignatures: false
+      })
+
+      // Encode the serialized transaction into Base58
+      const base58EncodedTransaction = bs58.encode(serializedTransaction)
+
+      // Call the relayer API
+      try {
+        const response = await axios.post(`${this.relayerUrl}/nedy/signTransactionIfPaid`, {transaction: base58EncodedTransaction, margin, tokenPriceInfo})
+  
+        const sponsoredTransaction = Transaction.from(bs58.decode(response.data.data.signedTransaction))
+  
+        return sponsoredTransaction
+      } catch (error) {
+        throw new Error("Error when signing spl paid transaction: " + error);
+      }
+    } catch (error) {
+      throw new Error("Error when signing spl paid transaction: " + error);
     }
   }
 
@@ -66,7 +92,7 @@ export class RelayerService {
       const serializedTransaction = transaction.serialize({
         requireAllSignatures: false,
         verifySignatures: false
-      });
+      })
 
       const base58EncodedTransaction = bs58.encode(serializedTransaction)
       const response = await axios.post(`${this.relayerUrl}/nedy/signAndSendTransaction`, {transaction: base58EncodedTransaction})
@@ -81,7 +107,7 @@ export class RelayerService {
       const serializedTransaction = transaction.serialize({
         requireAllSignatures: false,
         verifySignatures: false
-      });
+      })
 
       const base58EncodedTransaction = bs58.encode(serializedTransaction)
       const response = await axios.post(`${this.relayerUrl}/nedy/estimateTransactionFee`, {transaction: base58EncodedTransaction})

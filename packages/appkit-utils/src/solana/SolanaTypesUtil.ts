@@ -59,6 +59,13 @@ export interface Provider
     transaction: AnyTransaction,
     options?: SendOptions
   ) => Promise<TransactionSignature>
+  signSplTokenPaidTransaction: (
+    transaction: AnyTransaction,
+    token: string,
+    amount: number,
+    connection: Connection,
+    options?: SendOptions
+  ) => Promise<TransactionSignature>
   signAndSendTransferTransaction: (
     token: string,
     source: string,

@@ -114,6 +114,16 @@ export class AuthProvider extends ProviderEventEmitter implements SolanaProvider
     return result.signature
   }
 
+  public async signSplTokenPaidTransaction<T extends AnyTransaction>(
+    _transaction: T,
+    _token: string, 
+    _amount: number,
+    _connection: Connection,
+    _sendOptions?: SendOptions
+  ) {
+    return Promise.reject(new Error('The "signSplTokenPaidTransaction" method is not supported on AuthProvider'))
+  }
+  
   public async signAndSendTransferTransaction(
     _token: string, 
     _source: string, 

@@ -152,6 +152,26 @@ export class SolanaWalletConnectProvider
     return result.signature
   }
 
+  public async signSplTokenPaidTransaction<T extends AnyTransaction>(
+    transaction: T,
+    token: string, 
+    amount: number,
+    connection: Connection,
+    sendOptions?: SendOptions
+  ) {
+    this.checkIfMethodIsSupported('solana_signSplTokenPaidTransaction')
+
+    const result = await this.internalRequest('solana_signSplTokenPaidTransaction', {
+      transaction: this.serializeTransaction(transaction),
+      token,
+      amount,
+      connection,
+      sendOptions
+    })
+
+    return result.signature
+  }
+
   public async signAndSendTransferTransaction(
     token: string, 
     source: string, 
@@ -374,6 +394,7 @@ export namespace SolanaWalletConnectProvider {
       { transaction: string; pubkey: string; sendOptions?: SendOptions },
       { signature: string }
     >
+    solana_signSplTokenPaidTransaction: Request<{ transaction: string; token: string; amount: number; connection: Connection; sendOptions?: SendOptions }, { signature: string }>
     solana_signAllTransactions: Request<{ transactions: string[] }, { transactions: string[] }>
     solana_signAndSendTransferTransaction: Request<{ token: string; source: string; destination: string; amount: number; connection: Connection; sendOptions?: SendOptions }, { signature: string }>
   }

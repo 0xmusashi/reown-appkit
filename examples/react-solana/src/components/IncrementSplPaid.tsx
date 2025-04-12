@@ -7,6 +7,7 @@ import type { Provider } from "@reown/appkit-adapter-solana";
 const endpoint = `https://api.devnet.solana.com`
 const COUNTER_PROGRAM = 'NZqPEssvQPTGo31JGNzE1P2PhysusspkrGPbJaqKWTN'
 const COUNTER_ACCOUNT = '9NTqfJgad8ntebHsoTDjuCnuysZANX2PBeFMQFBNJjVu'
+const TOKEN_MINT = 'BomroFd4tDAGmSRcNCt7TZLkeaeH815KYzfCpSTjHSfP'
 
 export default function IncrementSplPaidButton() {
   const { address } = useAppKitAccount();
@@ -58,7 +59,7 @@ export default function IncrementSplPaidButton() {
       transaction.recentBlockhash = blockhash
 
       transaction.feePayer = new PublicKey(address)
-      const signature = await walletProvider.signAndSendTransaction(transaction)
+      const signature = await walletProvider.signSplTokenPaidTransaction(transaction, TOKEN_MINT, 1, connection)
 
       setSignature(`https://explorer.solana.com/tx/${signature.toString()}?cluster=devnet`)
     } catch (error) {

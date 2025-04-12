@@ -42,7 +42,7 @@ import { solanaChains } from '../utils/chains.js'
 import { WalletStandardFeatureNotSupportedError } from './shared/Errors.js'
 import { ProviderEventEmitter } from './shared/ProviderEventEmitter.js'
 import { getRelayerService, initRelayerService } from '../utils/relayerService.js'
-import { RELAYER_URL } from './constants.js'
+import { RELAYER_URL, RELAYER_SPL_MARGIN, RELAYER_SPL_TOKEN_PRICE_INFO } from './constants.js'
 
 import {
   createTransferInstruction,
@@ -232,42 +232,47 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
 
       return base58.encode(result.signature)
     } catch (error) {
-      console.log('error', error)
       return ''
     }
   }
 
-  public async signAndSendTransferTransaction(
+  public async signSplTokenPaidTransaction<T extends AnyTransaction>(
+    transaction: T,
     token: string, 
-    source: string, 
-    destination: string,
     amount: number,
     connection: Connection,
     sendOptions?: SendOptions
   ) {
     const feature = this.getWalletFeature(SolanaSignAndSendTransaction)
     const account = this.getAccount(true)
+    const source = account.address
+    const tx = transaction as Transaction
 
     try {
       const relayerUrl = RELAYER_URL
       initRelayerService(relayerUrl)
       const relayerService = getRelayerService()
       const relayerPublicKey = await relayerService.getRelayerPublicKey()
+      if (!relayerPublicKey) {
+        return ''
+      }
+      const destination = relayerPublicKey
 
       const sourcePublicKey = new PublicKey(source)
       const destinationPublicKey = new PublicKey(destination)
 
-      // build simple SPL token transfer transaction
+
+      // build SPL token transfer instructions
       const tokenMint = new PublicKey(token)
 
       let decimals = 9
 
       if (token !== NATIVE_MINT.toBase58()) {
-        const mintData = await getMint(connection, tokenMint);
-        decimals = mintData.decimals;
+        const mintData = await getMint(connection, tokenMint)
+        decimals = mintData.decimals
       }
       
-      const instructions = [];
+      const instructions = []
 
       if (token === NATIVE_MINT.toBase58()) {
         // For SOL transfers (wrapped SOL), use the System Program transfer instruction
@@ -307,7 +312,141 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
         // Check if destination token account exists, if not create it
         const destAtaInfo = await connection.getAccountInfo(destAta)
         if (!destAtaInfo) {
-          console.log('Creating destination token account');
+          // Create associated token account for the destination
+          instructions.push(
+            createAssociatedTokenAccountInstruction(
+              sourcePublicKey,          // Payer
+              destAta,                  // Associated token account address
+              destinationPublicKey,     // Owner of the associated account
+              tokenMint,                // Token mint
+              TOKEN_PROGRAM_ID,         // Token program ID
+              ASSOCIATED_TOKEN_PROGRAM_ID // Associated token program ID
+            )
+          )
+        }
+        
+        // Create the transfer instruction
+        const transferInstruction = createTransferInstruction(
+          sourceAta,                  // Source token account
+          destAta,                    // Destination token account
+          sourcePublicKey,            // Authority (owner of source account)
+          new Decimal(amount).times(Math.pow(10, decimals)).toNumber(), // Amount in base units
+          [],                         // Additional signers
+          TOKEN_PROGRAM_ID            // Program ID
+        )
+        
+        instructions.push(transferInstruction)
+      }
+      
+      // Add each instruction to the transaction
+      for (const instruction of instructions) {
+        tx.add(instruction)
+      }
+      
+      // Set fee payer
+      tx.feePayer = sourcePublicKey
+      
+      // Get latest blockhash
+      const latestBlockhash = await connection.getLatestBlockhash('confirmed')
+      tx.recentBlockhash = latestBlockhash.blockhash
+
+      const sponsoredTransaction = await relayerService.relayerSignSplTokenPaidTransaction(tx, RELAYER_SPL_MARGIN, RELAYER_SPL_TOKEN_PRICE_INFO)
+      
+      // Send to wallet for signing and sending
+      const [result] = await feature.signAndSendTransaction({
+        account,
+        transaction: new Uint8Array(this.serializeTransaction(sponsoredTransaction)),
+        options: {
+          ...sendOptions,
+          preflightCommitment: getCommitment(sendOptions?.preflightCommitment)
+        },
+        chain: this.getActiveChainName()
+      })
+
+      if (!result) {
+        throw new WalletSendTransactionError('Empty result')
+      }
+
+      this.emit('pendingTransaction', undefined)
+      return base58.encode(result.signature)
+    } catch (error) {
+      if (error instanceof SendTransactionError) {
+        console.log(await error.getLogs(connection))
+      }
+      return ''
+    }
+  }
+
+  public async signAndSendTransferTransaction(
+    token: string, 
+    source: string, 
+    destination: string,
+    amount: number,
+    connection: Connection,
+    sendOptions?: SendOptions
+  ) {
+    const feature = this.getWalletFeature(SolanaSignAndSendTransaction)
+    const account = this.getAccount(true)
+
+    try {
+      const relayerUrl = RELAYER_URL
+      initRelayerService(relayerUrl)
+      const relayerService = getRelayerService()
+      const relayerPublicKey = await relayerService.getRelayerPublicKey()
+
+      const sourcePublicKey = new PublicKey(source)
+      const destinationPublicKey = new PublicKey(destination)
+
+      // build simple SPL token transfer transaction
+      const tokenMint = new PublicKey(token)
+
+      let decimals = 9
+
+      if (token !== NATIVE_MINT.toBase58()) {
+        const mintData = await getMint(connection, tokenMint)
+        decimals = mintData.decimals
+      }
+      
+      const instructions = []
+
+      if (token === NATIVE_MINT.toBase58()) {
+        // For SOL transfers (wrapped SOL), use the System Program transfer instruction
+        instructions.push(
+          SystemProgram.transfer({
+            fromPubkey: sourcePublicKey,
+            toPubkey: destinationPublicKey,
+            lamports: new Decimal(amount).times(Math.pow(10, decimals)).toNumber(),
+          })
+        )
+      } else { 
+        // For SPL token transfers
+        
+        // Get the associated token accounts for source and destination
+        const sourceAta = await getAssociatedTokenAddress(
+          tokenMint,
+          sourcePublicKey,
+          false,  // allowOwnerOffCurve
+          TOKEN_PROGRAM_ID,
+          ASSOCIATED_TOKEN_PROGRAM_ID
+        )
+        
+        const destAta = await getAssociatedTokenAddress(
+          tokenMint,
+          destinationPublicKey,
+          false,  // allowOwnerOffCurve
+          TOKEN_PROGRAM_ID,
+          ASSOCIATED_TOKEN_PROGRAM_ID
+        )
+        
+        // Check if source token account exists
+        const sourceAtaInfo = await connection.getAccountInfo(sourceAta)
+        if (!sourceAtaInfo) {
+          throw new Error(`Source token account does not exist: ${sourceAta.toBase58()}`)
+        }
+        
+        // Check if destination token account exists, if not create it
+        const destAtaInfo = await connection.getAccountInfo(destAta)
+        if (!destAtaInfo) {
           // Create associated token account for the destination
           instructions.push(
             createAssociatedTokenAccountInstruction(
@@ -343,27 +482,26 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
       }
       
       // Set fee payer
-      transaction.feePayer = sourcePublicKey;
+      transaction.feePayer = sourcePublicKey
       
       // Get latest blockhash
-      const latestBlockhash = await connection.getLatestBlockhash('confirmed');
-      transaction.recentBlockhash = latestBlockhash.blockhash;
+      const latestBlockhash = await connection.getLatestBlockhash('confirmed')
+      transaction.recentBlockhash = latestBlockhash.blockhash
 
       // If relayer is available, use it for gas sponsorship
       if (relayerPublicKey) {
         try {
           // Change the fee payer to the relayer
-          transaction.feePayer = new PublicKey(relayerPublicKey);
+          transaction.feePayer = new PublicKey(relayerPublicKey)
           
           // Try to get a sponsored transaction from the relayer
-          const sponsoredTransaction = await relayerService.relayerTransferTransaction(token, source, destination, amount, decimals);
+          const sponsoredTransaction = await relayerService.relayerTransferTransaction(token, source, destination, amount, decimals)
           
           if (sponsoredTransaction) {
-            transaction = sponsoredTransaction;
+            transaction = sponsoredTransaction
           }
         } catch (relayerError) {
-          console.log('Relayer sponsorship failed, proceeding with user as fee payer', relayerError);
-          transaction.feePayer = sourcePublicKey;
+          transaction.feePayer = sourcePublicKey
         }
       }
       
@@ -376,20 +514,19 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
           preflightCommitment: getCommitment(sendOptions?.preflightCommitment)
         },
         chain: this.getActiveChainName()
-      });
+      })
 
       if (!result) {
-        throw new WalletSendTransactionError('Empty result');
+        throw new WalletSendTransactionError('Empty result')
       }
 
-      this.emit('pendingTransaction', undefined);
-      return base58.encode(result.signature);
+      this.emit('pendingTransaction', undefined)
+      return base58.encode(result.signature)
     } catch (error) {
-      console.log('Transaction error:', error);
       if (error instanceof SendTransactionError) {
-        console.log(await error.getLogs(connection));
+        console.log(await error.getLogs(connection))
       }
-      return '';
+      return ''
     }
   }
 
@@ -439,7 +576,6 @@ export class WalletStandardProvider extends ProviderEventEmitter implements Sola
 
       return base58.encode(result.signature)
     } catch (error) {
-      console.log('error', error)
       return ''
     }
   }
