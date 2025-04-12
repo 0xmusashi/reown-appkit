@@ -1,6 +1,5 @@
 import { HuobiWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets'
 
-import { BitcoinAdapter } from '@reown/appkit-adapter-bitcoin'
 import { EthersAdapter } from '@reown/appkit-adapter-ethers'
 import { SolanaAdapter } from '@reown/appkit-adapter-solana'
 import { type ChainNamespace } from '@reown/appkit-common'
@@ -65,8 +64,7 @@ export const evmAdapter = new EthersAdapter()
 export const solanaAdapter = new SolanaAdapter({
   wallets: [new HuobiWalletAdapter(), new SolflareWalletAdapter()]
 })
-export const bitcoinAdapter = new BitcoinAdapter({})
-export const allAdapters = [evmAdapter, solanaAdapter, bitcoinAdapter]
+export const allAdapters = [evmAdapter, solanaAdapter]
 
 // Metadata
 const metadata = {
@@ -107,7 +105,6 @@ initialEnabledChains.forEach(chain => {
       initialEnabledNetworks.includes(network.id)
     )
     initialNetworks.push(...enabledNetworks)
-    return adapters.push(bitcoinAdapter)
   }
 })
 
