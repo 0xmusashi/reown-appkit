@@ -7,7 +7,7 @@ import {
   useAppKitState,
   useAppKitTheme,
   useWalletInfo
-} from '@reown/appkit/react'
+} from '@nedykit/appkit/react'
 
 export function InfoList() {
   const accountState = useAppKitAccount()

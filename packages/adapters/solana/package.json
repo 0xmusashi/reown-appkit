@@ -1,6 +1,6 @@
 {
-  "name": "@reown/appkit-adapter-solana",
-  "version": "1.7.1",
+  "name": "@nedykit/appkit-adapter-solana",
+  "version": "0.1.0",
   "sideEffects": false,
   "type": "module",
   "main": "./dist/esm/src/index.js",
@@ -46,12 +46,12 @@
     }
   },
   "dependencies": {
-    "@reown/appkit": "workspace:*",
-    "@reown/appkit-common": "workspace:*",
-    "@reown/appkit-controllers": "workspace:*",
-    "@reown/appkit-polyfills": "workspace:*",
-    "@reown/appkit-utils": "workspace:*",
-    "@reown/appkit-wallet": "workspace:*",
+    "@nedykit/appkit": "workspace:*",
+    "@nedykit/appkit-common": "workspace:*",
+    "@nedykit/appkit-controllers": "workspace:*",
+    "@nedykit/appkit-polyfills": "workspace:*",
+    "@nedykit/appkit-utils": "workspace:*",
+    "@nedykit/appkit-wallet": "workspace:*",
     "@solana/spl-token": "^0.4.13",
     "@solana/wallet-adapter-base": "0.9.24",
     "@solana/wallet-standard-features": "1.3.0",
@@ -80,7 +80,7 @@
     "vitest": "2.1.9",
     "vue": "3.4.3"
   },
-  "author": "Reown <support@reown.com> (https://reown.com)",
+  "author": "Reown <support@nedykit.com> (https://reown.com)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/reown-com/appkit",
   "repository": {

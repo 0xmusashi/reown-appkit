@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
 import {
   AccountController,
   AssetController,
@@ -14,15 +14,15 @@ import {
   ModalController,
   OptionsController,
   RouterController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-balance'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon-button'
-import '@reown/appkit-ui/wui-profile-button'
-import '@reown/appkit-ui/wui-tabs'
-import '@reown/appkit-ui/wui-tooltip'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-balance'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon-button'
+import '@nedykit/appkit-ui/wui-profile-button'
+import '@nedykit/appkit-ui/wui-tabs'
+import '@nedykit/appkit-ui/wui-tooltip'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import { ConstantsUtil } from '../../utils/ConstantsUtil.js'
 import '../w3m-account-activity-widget/index.js'

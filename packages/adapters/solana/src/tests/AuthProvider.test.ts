@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { ConstantsUtil } from '@reown/appkit-common'
+import { ConstantsUtil } from '@nedykit/appkit-common'
 
 import { AuthProvider } from '../providers/AuthProvider'
 import { mockLegacyTransaction, mockVersionedTransaction } from './mocks/Transaction'

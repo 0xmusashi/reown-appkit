@@ -6,10 +6,10 @@ import { HuobiWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapte
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiProvider } from 'wagmi'
 
-import { SolanaAdapter } from '@reown/appkit-adapter-solana/react'
-import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
-import { type AppKitNetwork, mainnet } from '@reown/appkit/networks'
-import { createAppKit } from '@reown/appkit/react'
+import { SolanaAdapter } from '@nedykit/appkit-adapter-solana/react'
+import { WagmiAdapter } from '@nedykit/appkit-adapter-wagmi'
+import { type AppKitNetwork, mainnet } from '@nedykit/appkit/networks'
+import { createAppKit } from '@nedykit/appkit/react'
 
 import { AppKitButtons } from '@/src/components/AppKitButtons'
 import { AppKitInfo } from '@/src/components/AppKitInfo'

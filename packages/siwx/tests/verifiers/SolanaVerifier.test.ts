@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
-import { type SIWXSession } from '@reown/appkit-controllers'
+import { type SIWXSession } from '@nedykit/appkit-controllers'
 
 import { SolanaVerifier } from '../../src/verifiers/SolanaVerifier.js'
 import { mockSession } from '../mocks/mockSession.js'

@@ -8,9 +8,9 @@ import {
   type Connector,
   ConnectorController,
   ModalController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-wallet-button'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-wallet-button'
 
 import { ApiController } from '../../controllers/ApiController.js'
 import { ConnectorUtil } from '../../utils/ConnectorUtil.js'

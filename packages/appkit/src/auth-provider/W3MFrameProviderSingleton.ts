@@ -1,5 +1,5 @@
-import type { CaipNetworkId } from '@reown/appkit-common'
-import { W3mFrameProvider } from '@reown/appkit-wallet'
+import type { CaipNetworkId } from '@nedykit/appkit-common'
+import { W3mFrameProvider } from '@nedykit/appkit-wallet'
 
 interface W3mFrameProviderConfig {
   projectId: string

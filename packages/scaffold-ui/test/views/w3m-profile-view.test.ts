@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
 
 import { html } from 'lit'
 
-import type { ChainNamespace } from '@reown/appkit-common'
+import type { ChainNamespace } from '@nedykit/appkit-common'
 import {
   AccountController,
   type AccountType,
@@ -14,8 +14,8 @@ import {
   CoreHelperUtil,
   ModalController,
   SnackController
-} from '@reown/appkit-controllers'
-import type { W3mFrameProvider } from '@reown/appkit-wallet'
+} from '@nedykit/appkit-controllers'
+import type { W3mFrameProvider } from '@nedykit/appkit-wallet'
 
 import type { W3mProfileView } from '../../src/views/w3m-profile-view'
 import { HelpersUtil } from '../utils/HelpersUtil'

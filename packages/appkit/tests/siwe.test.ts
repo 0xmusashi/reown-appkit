@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { AppKit, type CaipNetwork } from '@reown/appkit'
+import { AppKit, type CaipNetwork } from '@nedykit/appkit'
 import {
   AccountController,
   ChainController,
@@ -9,9 +9,9 @@ import {
   OptionsController,
   RouterController,
   SIWXUtil
-} from '@reown/appkit-controllers'
-import { type AppKitSIWEClient, createSIWEConfig } from '@reown/appkit-siwe'
-import * as networks from '@reown/appkit/networks'
+} from '@nedykit/appkit-controllers'
+import { type AppKitSIWEClient, createSIWEConfig } from '@nedykit/appkit-siwe'
+import * as networks from '@nedykit/appkit/networks'
 
 import { mockUniversalAdapter } from './mocks/Adapter'
 import mockProvider from './mocks/UniversalProvider'

@@ -1,6 +1,6 @@
 /* eslint-disable max-depth */
-import { ParseUtil, type ParsedCaipAddress } from '@reown/appkit-common'
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
+import { ParseUtil, type ParsedCaipAddress } from '@nedykit/appkit-common'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
 import {
   AccountController,
   ChainController,
@@ -13,8 +13,8 @@ import {
   RouterController,
   StorageUtil,
   type WcWallet
-} from '@reown/appkit-controllers'
-import { SocialProviderEnum } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { SocialProviderEnum } from '@nedykit/appkit-utils'
 
 import { ConstantsUtil } from './ConstantsUtil.js'
 import type { SocialProvider } from './TypeUtil.js'

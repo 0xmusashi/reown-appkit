@@ -8,14 +8,14 @@ import {
   polygon,
   solana,
   solanaTestnet
-} from '@reown/appkit/networks'
+} from '@nedykit/appkit/networks'
 import {
   type CaipNetwork,
   useAppKit,
   useAppKitAccount,
   useAppKitNetwork,
   useDisconnect
-} from '@reown/appkit/react'
+} from '@nedykit/appkit/react'
 
 function getNetworkToSwitch(activeNetwork: CaipNetwork | undefined) {
   if (!activeNetwork) {

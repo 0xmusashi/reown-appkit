@@ -1,9 +1,9 @@
 'use client'
 
-import { EthersAdapter } from '@reown/appkit-adapter-ethers'
-import { CloudAuthSIWX } from '@reown/appkit-siwx'
-import { mainnet } from '@reown/appkit/networks'
-import { createAppKit } from '@reown/appkit/react'
+import { EthersAdapter } from '@nedykit/appkit-adapter-ethers'
+import { CloudAuthSIWX } from '@nedykit/appkit-siwx'
+import { mainnet } from '@nedykit/appkit/networks'
+import { createAppKit } from '@nedykit/appkit/react'
 
 import { AppKitButtons } from '@/src/components/AppKitButtons'
 import { AppKitInfo } from '@/src/components/AppKitInfo'

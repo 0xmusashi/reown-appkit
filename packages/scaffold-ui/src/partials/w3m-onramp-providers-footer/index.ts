@@ -5,13 +5,13 @@ import {
   EventsController,
   OptionsController,
   RouterController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon'
-import '@reown/appkit-ui/wui-link'
-import '@reown/appkit-ui/wui-text'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon'
+import '@nedykit/appkit-ui/wui-link'
+import '@nedykit/appkit-ui/wui-text'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import styles from './styles.js'
 

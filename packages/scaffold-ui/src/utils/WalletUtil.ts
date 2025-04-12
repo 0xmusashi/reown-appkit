@@ -4,8 +4,8 @@ import {
   CoreHelperUtil,
   OptionsController,
   StorageUtil
-} from '@reown/appkit-controllers'
-import type { ConnectMethod, Connector, Features, WcWallet } from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
+import type { ConnectMethod, Connector, Features, WcWallet } from '@nedykit/appkit-controllers'
 
 import { ConnectorUtil } from './ConnectorUtil.js'
 import { ConstantsUtil } from './ConstantsUtil.js'

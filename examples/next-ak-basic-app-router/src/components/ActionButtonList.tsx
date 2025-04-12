@@ -1,7 +1,7 @@
 'use client'
 
-import { mainnet } from '@reown/appkit/networks'
-import { useAppKit, useAppKitNetwork, useAppKitTheme, useDisconnect } from '@reown/appkit/react'
+import { mainnet } from '@nedykit/appkit/networks'
+import { useAppKit, useAppKitNetwork, useAppKitTheme, useDisconnect } from '@nedykit/appkit/react'
 
 export function ActionButtonList() {
   const modal = useAppKit()

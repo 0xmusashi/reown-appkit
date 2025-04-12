@@ -19,12 +19,12 @@ import {
   numberToHex
 } from 'viem'
 
-import { WcHelpersUtil } from '@reown/appkit'
-import type { AppKitOptions } from '@reown/appkit'
-import type { AppKit } from '@reown/appkit'
-import { ConstantsUtil } from '@reown/appkit-common'
-import type { CaipNetwork, ChainNamespace } from '@reown/appkit-common'
-import { OptionsController, StorageUtil } from '@reown/appkit-controllers'
+import { WcHelpersUtil } from '@nedykit/appkit'
+import type { AppKitOptions } from '@nedykit/appkit'
+import type { AppKit } from '@nedykit/appkit'
+import { ConstantsUtil } from '@nedykit/appkit-common'
+import type { CaipNetwork, ChainNamespace } from '@nedykit/appkit-common'
+import { OptionsController, StorageUtil } from '@nedykit/appkit-controllers'
 
 type UniversalConnector = Connector & {
   onDisplayUri(uri: string): void

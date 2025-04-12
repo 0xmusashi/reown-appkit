@@ -6,8 +6,8 @@ import {
   ChainController,
   ConnectionController,
   OptionsController
-} from '@reown/appkit-controllers'
-import type { W3mFrameProvider } from '@reown/appkit-wallet'
+} from '@nedykit/appkit-controllers'
+import type { W3mFrameProvider } from '@nedykit/appkit-wallet'
 
 import { AppKit } from '../../src/client/appkit.js'
 import { emitter, mockEvmAdapter, solanaEmitter } from '../mocks/Adapter'

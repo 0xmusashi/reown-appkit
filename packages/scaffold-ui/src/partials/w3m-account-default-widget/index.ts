@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { type ChainNamespace, ConstantsUtil } from '@reown/appkit-common'
+import { type ChainNamespace, ConstantsUtil } from '@nedykit/appkit-common'
 import {
   AccountController,
   type AccountType,
@@ -16,20 +16,20 @@ import {
   OptionsController,
   RouterController,
   SnackController
-} from '@reown/appkit-controllers'
-import { UiHelperUtil, customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-avatar'
-import '@reown/appkit-ui/wui-button'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon'
-import '@reown/appkit-ui/wui-icon-link'
-import '@reown/appkit-ui/wui-list-item'
-import '@reown/appkit-ui/wui-notice-card'
-import '@reown/appkit-ui/wui-profile-button-v2'
-import '@reown/appkit-ui/wui-tabs'
-import '@reown/appkit-ui/wui-tag'
-import '@reown/appkit-ui/wui-text'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-controllers'
+import { UiHelperUtil, customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-avatar'
+import '@nedykit/appkit-ui/wui-button'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon'
+import '@nedykit/appkit-ui/wui-icon-link'
+import '@nedykit/appkit-ui/wui-list-item'
+import '@nedykit/appkit-ui/wui-notice-card'
+import '@nedykit/appkit-ui/wui-profile-button-v2'
+import '@nedykit/appkit-ui/wui-tabs'
+import '@nedykit/appkit-ui/wui-tag'
+import '@nedykit/appkit-ui/wui-text'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import '../w3m-account-auth-button/index.js'
 import styles from './styles.js'

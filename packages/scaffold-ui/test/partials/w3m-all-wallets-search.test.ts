@@ -11,7 +11,7 @@ import {
   type ConnectorWithProviders,
   RouterController,
   type WcWallet
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 import { W3mAllWalletsSearch } from '../../src/partials/w3m-all-wallets-search'
 

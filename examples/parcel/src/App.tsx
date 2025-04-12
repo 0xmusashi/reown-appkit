@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 
-import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
-import { bsc, mainnet, polygon } from '@reown/appkit/networks'
+import { WagmiAdapter } from '@nedykit/appkit-adapter-wagmi'
+import { bsc, mainnet, polygon } from '@nedykit/appkit/networks'
 import {
   createAppKit,
   useAppKitAccount,
   useAppKitNetwork,
   useAppKitState,
   useAppKitTheme
-} from '@reown/appkit/react'
+} from '@nedykit/appkit/react'
 
 // Initialize WagmiAdapter
 const wagmiAdapter = new WagmiAdapter({

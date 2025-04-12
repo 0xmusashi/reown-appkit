@@ -1,8 +1,8 @@
 import { http } from 'viem'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { type AppKitNetwork, ConstantsUtil, type CustomRpcUrlMap } from '@reown/appkit-common'
-import { ChainController, StorageUtil } from '@reown/appkit-controllers'
+import { type AppKitNetwork, ConstantsUtil, type CustomRpcUrlMap } from '@nedykit/appkit-common'
+import { ChainController, StorageUtil } from '@nedykit/appkit-controllers'
 
 import { CaipNetworksUtil } from '../src/CaipNetworkUtil'
 

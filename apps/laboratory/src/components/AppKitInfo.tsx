@@ -11,8 +11,8 @@ import {
   Text
 } from '@chakra-ui/react'
 
-import { convertCaip10ToErc3770 } from '@reown/appkit-experimental/erc3770'
-import { useAppKitAccount, useAppKitNetwork } from '@reown/appkit/react'
+import { convertCaip10ToErc3770 } from '@nedykit/appkit-experimental/erc3770'
+import { useAppKitAccount, useAppKitNetwork } from '@nedykit/appkit/react'
 
 import { RelayClientInfo } from '@/src/components/RelayClientInfo'
 

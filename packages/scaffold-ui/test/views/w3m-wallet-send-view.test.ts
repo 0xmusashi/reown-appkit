@@ -1,8 +1,8 @@
 import { expect, fixture, html } from '@open-wc/testing'
 import { afterEach, beforeEach, describe, it, vi, expect as viExpect } from 'vitest'
 
-import type { Balance } from '@reown/appkit-common'
-import { RouterController, SendController, SwapController } from '@reown/appkit-controllers'
+import type { Balance } from '@nedykit/appkit-common'
+import { RouterController, SendController, SwapController } from '@nedykit/appkit-controllers'
 
 import { W3mWalletSendView } from '../../src/views/w3m-wallet-send-view'
 

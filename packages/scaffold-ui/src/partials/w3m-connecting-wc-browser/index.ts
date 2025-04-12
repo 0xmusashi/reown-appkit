@@ -1,11 +1,11 @@
-import type { BaseError } from '@reown/appkit-controllers'
+import type { BaseError } from '@nedykit/appkit-controllers'
 import {
   ConnectionController,
   ConnectorController,
   EventsController,
   ModalController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
 
 import { W3mConnectingWidget } from '../../utils/w3m-connecting-widget/index.js'
 

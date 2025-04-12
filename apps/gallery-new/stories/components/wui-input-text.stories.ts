@@ -2,8 +2,8 @@ import type { Meta } from '@storybook/web-components'
 
 import { html } from 'lit'
 
-import '@reown/appkit-ui-new/src/composites/wui-input-text'
-import type { WuiInputText } from '@reown/appkit-ui-new/src/composites/wui-input-text'
+import '@nedykit/appkit-ui-new/src/composites/wui-input-text'
+import type { WuiInputText } from '@nedykit/appkit-ui-new/src/composites/wui-input-text'
 
 import '../../components/gallery-container'
 import { iconOptions } from '../../utils/PresetUtils'

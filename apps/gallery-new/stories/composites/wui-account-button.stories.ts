@@ -2,8 +2,8 @@ import type { Meta } from '@storybook/web-components'
 
 import { html } from 'lit'
 
-import '@reown/appkit-ui-new/src/composites/wui-account-button'
-import type { WuiAccountButton } from '@reown/appkit-ui-new/src/composites/wui-account-button'
+import '@nedykit/appkit-ui-new/src/composites/wui-account-button'
+import type { WuiAccountButton } from '@nedykit/appkit-ui-new/src/composites/wui-account-button'
 
 import { address, avatarImageSrc, networkImageSrc } from '../../utils/PresetUtils'
 

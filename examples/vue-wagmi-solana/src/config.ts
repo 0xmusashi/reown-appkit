@@ -5,9 +5,9 @@ import {
   TrustWalletAdapter
 } from '@solana/wallet-adapter-wallets'
 
-import { SolanaAdapter } from '@reown/appkit-adapter-solana'
-import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
-import { base, mainnet, polygon, solana, solanaDevnet } from '@reown/appkit/networks'
+import { SolanaAdapter } from '@nedykit/appkit-adapter-solana'
+import { WagmiAdapter } from '@nedykit/appkit-adapter-wagmi'
+import { base, mainnet, polygon, solana, solanaDevnet } from '@nedykit/appkit/networks'
 
 export const projectId = import.meta.env.VITE_PROJECT_ID || 'b56e18d47c72ab683b10814fe9495694' // this is a public projectId only to use on localhost
 

@@ -1,9 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { ConstantsUtil } from '@reown/appkit-common'
-import { ChainController } from '@reown/appkit-controllers'
-import type { EstimateGasTransactionArgs } from '@reown/appkit-controllers'
-import { ProviderUtil } from '@reown/appkit-utils'
+import { ConstantsUtil } from '@nedykit/appkit-common'
+import { ChainController } from '@nedykit/appkit-controllers'
+import type { EstimateGasTransactionArgs } from '@nedykit/appkit-controllers'
+import { ProviderUtil } from '@nedykit/appkit-utils'
 
 import { AppKitBaseClient } from '../../src/client/appkit-base-client.js'
 import { mockEvmAdapter } from '../mocks/Adapter.js'

@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import type { ChainNamespace } from '@reown/appkit-common'
-import { ChainController, ConnectorController } from '@reown/appkit-controllers'
+import type { ChainNamespace } from '@nedykit/appkit-common'
+import { ChainController, ConnectorController } from '@nedykit/appkit-controllers'
 
 import { AppKit } from '../../src/client/appkit.js'
 import { mockBitcoinAdapter } from '../mocks/Adapter.js'

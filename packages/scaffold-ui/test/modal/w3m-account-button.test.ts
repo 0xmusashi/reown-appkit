@@ -1,15 +1,15 @@
 import { expect, fixture, html, waitUntil } from '@open-wc/testing'
 import { afterEach, describe, it, vi } from 'vitest'
 
-import type { CaipNetwork } from '@reown/appkit-common'
+import type { CaipNetwork } from '@nedykit/appkit-common'
 import {
   AccountController,
   ChainController,
   ModalController,
   OptionsController,
   RouterController
-} from '@reown/appkit-controllers'
-import type { WuiAccountButton } from '@reown/appkit-ui/wui-account-button'
+} from '@nedykit/appkit-controllers'
+import type { WuiAccountButton } from '@nedykit/appkit-ui/wui-account-button'
 
 import { W3mAccountButton } from '../../src/modal/w3m-account-button'
 import { HelpersUtil } from '../utils/HelpersUtil'

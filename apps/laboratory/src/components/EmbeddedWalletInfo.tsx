@@ -1,6 +1,6 @@
 import { Box, Heading, Stack, StackDivider, Text } from '@chakra-ui/react'
 
-import { useAppKitAccount } from '@reown/appkit/react'
+import { useAppKitAccount } from '@nedykit/appkit/react'
 
 export function EmbeddedWalletInfo() {
   const { embeddedWalletInfo } = useAppKitAccount()

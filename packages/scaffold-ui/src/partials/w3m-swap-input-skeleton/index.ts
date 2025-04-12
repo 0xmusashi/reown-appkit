@@ -1,10 +1,10 @@
 import { LitElement, html } from 'lit'
 import { property } from 'lit/decorators.js'
 
-import { type SwapInputTarget } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-shimmer'
+import { type SwapInputTarget } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-shimmer'
 
 import styles from './styles.js'
 

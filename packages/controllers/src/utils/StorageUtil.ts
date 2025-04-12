@@ -5,7 +5,7 @@ import {
   SafeLocalStorage,
   SafeLocalStorageKeys,
   getSafeConnectorIdKey
-} from '@reown/appkit-common'
+} from '@nedykit/appkit-common'
 
 import type {
   BlockchainApiBalanceResponse,

@@ -8,12 +8,12 @@ import {
   OnRampController,
   OptionsController,
   OptionsStateController
-} from '@reown/appkit-controllers'
-import type { PaymentCurrency } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-list-item'
-import '@reown/appkit-ui/wui-text'
+} from '@nedykit/appkit-controllers'
+import type { PaymentCurrency } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-list-item'
+import '@nedykit/appkit-ui/wui-text'
 
 import '../../partials/w3m-legal-checkbox/index.js'
 import '../../partials/w3m-legal-footer/index.js'

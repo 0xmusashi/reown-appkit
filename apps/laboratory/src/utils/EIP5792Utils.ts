@@ -1,7 +1,7 @@
 import { UniversalProvider } from '@walletconnect/universal-provider'
 import { type WalletCapabilities, fromHex } from 'viem'
 
-import { W3mFrameProvider } from '@reown/appkit-wallet'
+import { W3mFrameProvider } from '@nedykit/appkit-wallet'
 
 import { parseJSON } from './CommonUtils'
 import { getChain } from './NetworksUtil'

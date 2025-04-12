@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import nextAuth from 'next-auth'
 
-import { type SIWESession } from '@reown/appkit-siwe'
+import { type SIWESession } from '@nedykit/appkit-siwe'
 
 import { getAuthOptions } from '@/src/utils/auth'
 

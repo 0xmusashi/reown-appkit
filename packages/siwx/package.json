@@ -1,6 +1,6 @@
 {
-  "name": "@reown/appkit-siwx",
-  "version": "1.7.1",
+  "name": "@nedykit/appkit-siwx",
+  "version": "0.1.0",
   "sideEffects": false,
   "type": "module",
   "main": "./dist/esm/src/index.js",
@@ -18,15 +18,15 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@reown/appkit-common": "workspace:*",
-    "@reown/appkit-controllers": "workspace:*",
-    "@reown/appkit-utils": "workspace:*",
+    "@nedykit/appkit-common": "workspace:*",
+    "@nedykit/appkit-controllers": "workspace:*",
+    "@nedykit/appkit-utils": "workspace:*",
     "bip322-js": "2.0.0",
     "bs58": "6.0.0",
     "tweetnacl": "1.0.3",
     "viem": "2.23.13"
   },
-  "author": "Reown <support@reown.com> (https://reown.com)",
+  "author": "Reown <support@nedykit.com> (https://reown.com)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/reown-com/appkit",
   "repository": {

@@ -2,18 +2,18 @@ import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { DateUtil, type Transaction } from '@reown/appkit-common'
+import { DateUtil, type Transaction } from '@nedykit/appkit-common'
 import {
   AccountController,
   AssetController,
   OnRampController,
   OptionsController,
   TransactionsController
-} from '@reown/appkit-controllers'
-import { TransactionUtil, customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-text'
-import '@reown/appkit-ui/wui-transaction-list-item-loader'
+} from '@nedykit/appkit-controllers'
+import { TransactionUtil, customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-text'
+import '@nedykit/appkit-ui/wui-transaction-list-item-loader'
 
 import '../../partials/w3m-onramp-activity-item/index.js'
 import styles from './styles.js'

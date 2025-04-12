@@ -5,7 +5,7 @@ import {
   type CaipNetwork,
   type ChainNamespace,
   ConstantsUtil as CommonConstantsUtil
-} from '@reown/appkit-common'
+} from '@nedykit/appkit-common'
 import {
   AccountController,
   type AccountControllerState,
@@ -14,9 +14,9 @@ import {
   OptionsController,
   type Tokens,
   type WriteContractArgs
-} from '@reown/appkit-controllers'
-import { PresetsUtil } from '@reown/appkit-utils'
-import type { W3mFrameProvider } from '@reown/appkit-wallet'
+} from '@nedykit/appkit-controllers'
+import { PresetsUtil } from '@nedykit/appkit-utils'
+import type { W3mFrameProvider } from '@nedykit/appkit-wallet'
 
 import type { AppKitBaseClient } from '../client/appkit-base-client.js'
 import { WalletConnectConnector } from '../connectors/WalletConnectConnector.js'

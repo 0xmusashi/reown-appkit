@@ -70,8 +70,8 @@ async function checkUiPackage() {
       fail(`${f} is using @state decorator, which is not allowed in ui package`)
     }
 
-    if (diff?.added.includes('import @reown/appkit-controllers')) {
-      fail(`${f} is importing @reown/appkit-controllers, which is not allowed in ui package`)
+    if (diff?.added.includes('import @nedykit/appkit-controllers')) {
+      fail(`${f} is importing @nedykit/appkit-controllers, which is not allowed in ui package`)
     }
 
     if (!diff?.added.includes(RENDER_COMMENT) && diff?.added.includes('render()')) {
@@ -94,7 +94,7 @@ async function checkUiPackage() {
       fail(`${f} is a ui element, but does not define wui- prefix`)
     }
 
-    if (diff?.added.includes('@reown/appkit-ui/')) {
+    if (diff?.added.includes('@nedykit/appkit-ui/')) {
       fail(`${f} should use relative imports instead of direct package access`)
     }
   }
@@ -185,8 +185,8 @@ async function checkCorePackage() {
   for (const f of created_core_controllers) {
     const diff = await diffForFile(f)
 
-    if (diff?.added.includes('import @reown/appkit-ui')) {
-      fail(`${f} is importing @reown/appkit-ui, which is not allowed in core package`)
+    if (diff?.added.includes('import @nedykit/appkit-ui')) {
+      fail(`${f} is importing @nedykit/appkit-ui, which is not allowed in core package`)
     }
 
     if (!diff?.added.includes(TYPE_COMMENT)) {
@@ -205,7 +205,7 @@ async function checkCorePackage() {
       fail(`${f} is using this.state, use just state`)
     }
 
-    if (diff?.added.includes('@reown/appkit-controllers/')) {
+    if (diff?.added.includes('@nedykit/appkit-controllers/')) {
       fail(`${f} should use relative imports instead of direct package access`)
     }
 
@@ -266,9 +266,9 @@ async function checkScaffoldHtmlPackage() {
     }
 
     if (
-      diff?.added.includes('@reown/appkit-controllers/') ||
-      diff?.added.includes('@reown/appkit-ui/') ||
-      diff?.added.includes('@reown/scaffold/')
+      diff?.added.includes('@nedykit/appkit-controllers/') ||
+      diff?.added.includes('@nedykit/appkit-ui/') ||
+      diff?.added.includes('@nedykit/scaffold/')
     ) {
       fail(`${f} should use relative imports instead of direct package access`)
     }
@@ -300,12 +300,12 @@ async function checkClientPackages() {
   for (const f of client_files) {
     const diff = await diffForFile(f)
 
-    if (diff?.added.includes("from '@reown/appkit-controllers")) {
-      fail(`${f} is not allowed to import from @reown/appkit-controllers`)
+    if (diff?.added.includes("from '@nedykit/appkit-controllers")) {
+      fail(`${f} is not allowed to import from @nedykit/appkit-controllers`)
     }
 
-    if (diff?.added.includes("from '@reown/appkit-ui")) {
-      fail(`${f} is not allowed to import from @reown/appkit-ui`)
+    if (diff?.added.includes("from '@nedykit/appkit-ui")) {
+      fail(`${f} is not allowed to import from @nedykit/appkit-ui`)
     }
 
     if (containsRelativeImportWithoutJSExtension(diff?.added)) {
@@ -377,10 +377,10 @@ async function checkChangesetFiles() {
 
   const ignoredChangesetFiles = [
     '@apps/gallery-new',
-    '@reown/appkit-ui-new',
-    '@reown/appkit-scaffold-ui-new',
+    '@nedykit/appkit-ui-new',
+    '@nedykit/appkit-scaffold-ui-new',
     '@apps/laboratory-new',
-    '@reown/appkit-new'
+    '@nedykit/appkit-new'
   ]
 
   for (const f of changesetFiles) {

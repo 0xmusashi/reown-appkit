@@ -7,9 +7,9 @@ import { useTheme } from 'next-themes'
 import { Toaster } from 'sonner'
 import { useSnapshot } from 'valtio'
 
-import { AppKitNetwork, type ChainNamespace } from '@reown/appkit-common'
-import { ConnectMethod, ConstantsUtil } from '@reown/appkit-controllers'
-import { Features, ThemeMode, ThemeVariables, useAppKitState } from '@reown/appkit/react'
+import { AppKitNetwork, type ChainNamespace } from '@nedykit/appkit-common'
+import { ConnectMethod, ConstantsUtil } from '@nedykit/appkit-controllers'
+import { Features, ThemeMode, ThemeVariables, useAppKitState } from '@nedykit/appkit/react'
 
 import { AppKitContext } from '@/contexts/appkit-context'
 import {

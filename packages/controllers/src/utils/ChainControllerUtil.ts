@@ -1,5 +1,5 @@
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
-import type { ChainNamespace } from '@reown/appkit-common'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
+import type { ChainNamespace } from '@nedykit/appkit-common'
 
 import { ChainController } from '../controllers/ChainController.js'
 import { checkNamespaceConnectorId } from './ConnectorControllerUtil.js'

@@ -1,7 +1,7 @@
 import { vi } from 'vitest'
 
-import type { AppKit } from '@reown/appkit'
-import { mainnet } from '@reown/appkit/networks'
+import type { AppKit } from '@nedykit/appkit'
+import { mainnet } from '@nedykit/appkit/networks'
 
 export const mockAppKit = {
   setIsConnected: vi.fn(),

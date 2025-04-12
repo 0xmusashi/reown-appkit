@@ -1,6 +1,6 @@
 {
-  "name": "@reown/appkit-scaffold-ui",
-  "version": "1.7.1",
+  "name": "@nedykit/appkit-scaffold-ui",
+  "version": "0.1.0",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -84,14 +84,14 @@
     "test": "vitest run --coverage.enabled=true -- coverage.reporter=json --coverage.reporter=json-summary --coverage.reportOnFailure=true"
   },
   "dependencies": {
-    "@reown/appkit-common": "workspace:*",
-    "@reown/appkit-controllers": "workspace:*",
-    "@reown/appkit-ui": "workspace:*",
-    "@reown/appkit-utils": "workspace:*",
-    "@reown/appkit-wallet": "workspace:*",
+    "@nedykit/appkit-common": "workspace:*",
+    "@nedykit/appkit-controllers": "workspace:*",
+    "@nedykit/appkit-ui": "workspace:*",
+    "@nedykit/appkit-utils": "workspace:*",
+    "@nedykit/appkit-wallet": "workspace:*",
     "lit": "3.1.0"
   },
-  "author": "Reown <support@reown.com> (https://reown.com)",
+  "author": "Reown <support@nedykit.com> (https://reown.com)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/reown-com/appkit",
   "repository": {

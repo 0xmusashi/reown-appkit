@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { CaipNetwork, ChainNamespace } from '@reown/appkit-common'
+import type { CaipNetwork, ChainNamespace } from '@nedykit/appkit-common'
 import {
   AccountController,
   AssetController,
@@ -11,10 +11,10 @@ import {
   CoreHelperUtil,
   ModalController,
   OptionsController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import type { WuiAccountButton } from '@reown/appkit-ui/wui-account-button'
-import '@reown/appkit-ui/wui-account-button'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import type { WuiAccountButton } from '@nedykit/appkit-ui/wui-account-button'
+import '@nedykit/appkit-ui/wui-account-button'
 
 class W3mAccountButtonBase extends LitElement {
   // -- Members ------------------------------------------- //

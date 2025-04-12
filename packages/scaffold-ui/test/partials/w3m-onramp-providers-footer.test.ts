@@ -8,8 +8,8 @@ import {
   EventsController,
   OptionsController,
   RouterController
-} from '@reown/appkit-controllers'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-controllers'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import { W3mOnRampProvidersFooter } from '../../src/partials/w3m-onramp-providers-footer'
 

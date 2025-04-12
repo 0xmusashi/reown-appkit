@@ -1,4 +1,4 @@
-import '@reown/appkit-polyfills'
+import '@nedykit/appkit-polyfills'
 
 export { SolanaAdapter } from './client.js'
 export { RelayerService, initRelayerService, getRelayerService } from './utils/relayerService.js'

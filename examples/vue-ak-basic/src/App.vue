@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { createAppKit, useAppKitTheme } from '@reown/appkit/vue'
+import { createAppKit, useAppKitTheme } from '@nedykit/appkit/vue'
 
 import ActionButtonList from './components/ActionButton.vue'
 import Footer from './components/Footer.vue'

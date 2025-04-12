@@ -10,8 +10,8 @@ import type {
   CaipNetworkId,
   ChainNamespace,
   SdkVersion
-} from '@reown/appkit-common'
-import { ConstantsUtil, NetworkUtil, ParseUtil } from '@reown/appkit-common'
+} from '@nedykit/appkit-common'
+import { ConstantsUtil, NetworkUtil, ParseUtil } from '@nedykit/appkit-common'
 import type {
   AccountControllerState,
   ChainAdapter,
@@ -34,7 +34,7 @@ import type {
   UseAppKitNetworkReturn,
   WalletFeature,
   WriteContractArgs
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 import {
   AccountController,
   AlertController,
@@ -53,19 +53,19 @@ import {
   SnackController,
   StorageUtil,
   ThemeController
-} from '@reown/appkit-controllers'
-import { WalletUtil } from '@reown/appkit-scaffold-ui/utils'
-import { setColorTheme, setThemeVariables } from '@reown/appkit-ui'
+} from '@nedykit/appkit-controllers'
+import { WalletUtil } from '@nedykit/appkit-scaffold-ui/utils'
+import { setColorTheme, setThemeVariables } from '@nedykit/appkit-ui'
 import {
   CaipNetworksUtil,
   ErrorUtil,
   HelpersUtil,
   LoggerUtil,
   ConstantsUtil as UtilConstantsUtil
-} from '@reown/appkit-utils'
-import { ProviderUtil } from '@reown/appkit-utils'
-import type { ProviderStoreUtilState } from '@reown/appkit-utils'
-import type { W3mFrameTypes } from '@reown/appkit-wallet'
+} from '@nedykit/appkit-utils'
+import { ProviderUtil } from '@nedykit/appkit-utils'
+import type { ProviderStoreUtilState } from '@nedykit/appkit-utils'
+import type { W3mFrameTypes } from '@nedykit/appkit-wallet'
 
 import type { AdapterBlueprint } from '../adapters/index.js'
 import { UniversalAdapter } from '../universal-adapter/client.js'

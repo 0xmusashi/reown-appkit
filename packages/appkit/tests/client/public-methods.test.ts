@@ -1,14 +1,14 @@
 import type UniversalProvider from '@walletconnect/universal-provider'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import type { AuthConnector, Connector, SocialProvider } from '@reown/appkit'
+import type { AuthConnector, Connector, SocialProvider } from '@nedykit/appkit'
 import {
   type Balance,
   type CaipNetwork,
   SafeLocalStorage,
   SafeLocalStorageKeys,
   getSafeConnectorIdKey
-} from '@reown/appkit-common'
+} from '@nedykit/appkit-common'
 import {
   AccountController,
   ApiController,
@@ -27,9 +27,9 @@ import {
   SnackController,
   StorageUtil,
   ThemeController
-} from '@reown/appkit-controllers'
-import { CaipNetworksUtil } from '@reown/appkit-utils'
-import { ProviderUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { CaipNetworksUtil } from '@nedykit/appkit-utils'
+import { ProviderUtil } from '@nedykit/appkit-utils'
 
 import { AppKit } from '../../src/client/appkit.js'
 import { mockEvmAdapter, mockSolanaAdapter, mockUniversalAdapter } from '../mocks/Adapter.js'

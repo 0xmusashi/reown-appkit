@@ -3,8 +3,8 @@ import { useCallback, useEffect, useState } from 'react'
 
 import { useSnapshot } from 'valtio'
 
-import type { ParsedCaipAddress } from '@reown/appkit-common'
-import { ChainController, type Connector, ConnectorController } from '@reown/appkit-controllers'
+import type { ParsedCaipAddress } from '@nedykit/appkit-common'
+import { ChainController, type Connector, ConnectorController } from '@nedykit/appkit-controllers'
 
 import { ApiController } from '../src/controllers/ApiController.js'
 import { WalletButtonController } from '../src/controllers/WalletButtonController.js'

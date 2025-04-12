@@ -1,10 +1,10 @@
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
-import { type Connector, ConnectorController, OptionsController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import { ConstantsUtil as AppKitConstantsUtil } from '@reown/appkit-utils'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
+import { type Connector, ConnectorController, OptionsController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import { ConstantsUtil as AppKitConstantsUtil } from '@nedykit/appkit-utils'
 
 @customElement('w3m-email-login-view')
 export class W3mEmailLoginView extends LitElement {

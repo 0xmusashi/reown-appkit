@@ -5,7 +5,7 @@ import { type Address, parseGwei } from 'viem'
 import { useAccount } from 'wagmi'
 import { useSendCalls } from 'wagmi/experimental'
 
-import { useAppKitAccount } from '@reown/appkit/react'
+import { useAppKitAccount } from '@nedykit/appkit/react'
 
 import { useChakraToast } from '@/src/components/Toast'
 import { useWagmiAvailableCapabilities } from '@/src/hooks/useWagmiActiveCapabilities'

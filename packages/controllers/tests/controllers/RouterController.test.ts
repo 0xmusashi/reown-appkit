@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { ConstantsUtil } from '@reown/appkit-common'
+import { ConstantsUtil } from '@nedykit/appkit-common'
 
 import { RouterController } from '../../exports/index.js'
 

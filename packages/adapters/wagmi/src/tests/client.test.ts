@@ -21,8 +21,8 @@ import { mainnet } from '@wagmi/core/chains'
 import type UniversalProvider from '@walletconnect/universal-provider'
 import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { ConstantsUtil } from '@reown/appkit-common'
-import { CaipNetworksUtil } from '@reown/appkit-utils'
+import { ConstantsUtil } from '@nedykit/appkit-common'
+import { CaipNetworksUtil } from '@nedykit/appkit-utils'
 
 import { WagmiAdapter } from '../client'
 import { LimitterUtil } from '../utils/LimitterUtil'

@@ -6,7 +6,7 @@ import {
   type ChainNamespace,
   ConstantsUtil,
   getW3mThemeVariables
-} from '@reown/appkit-common'
+} from '@nedykit/appkit-common'
 import {
   ApiController,
   ConnectionController,
@@ -15,7 +15,7 @@ import {
   ConstantsUtil as CoreConstantsUtil,
   EventsController,
   type Metadata
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 import {
   AccountController,
   AlertController,
@@ -24,16 +24,16 @@ import {
   OptionsController,
   StorageUtil,
   ThemeController
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 import {
   ErrorUtil,
   HelpersUtil,
   ProviderUtil,
   ConstantsUtil as UtilConstantsUtil
-} from '@reown/appkit-utils'
-import { W3mFrameHelpers, W3mFrameProvider } from '@reown/appkit-wallet'
-import type { W3mFrameTypes } from '@reown/appkit-wallet'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-utils'
+import { W3mFrameHelpers, W3mFrameProvider } from '@nedykit/appkit-wallet'
+import type { W3mFrameTypes } from '@nedykit/appkit-wallet'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import type { AdapterBlueprint } from '../adapters/ChainAdapterBlueprint.js'
 import { W3mFrameProviderSingleton } from '../auth-provider/W3MFrameProviderSingleton.js'
@@ -541,41 +541,41 @@ export class AppKit extends AppKitBaseClient {
         // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
         const usingEmbeddedWallet = features.email || (features.socials && features.socials.length)
         if (usingEmbeddedWallet) {
-          featureImportPromises.push(import('@reown/appkit-scaffold-ui/embedded-wallet'))
+          featureImportPromises.push(import('@nedykit/appkit-scaffold-ui/embedded-wallet'))
         }
 
         if (features.email) {
-          featureImportPromises.push(import('@reown/appkit-scaffold-ui/email'))
+          featureImportPromises.push(import('@nedykit/appkit-scaffold-ui/email'))
         }
         if (features.socials) {
-          featureImportPromises.push(import('@reown/appkit-scaffold-ui/socials'))
+          featureImportPromises.push(import('@nedykit/appkit-scaffold-ui/socials'))
         }
 
         if (features.swaps) {
-          featureImportPromises.push(import('@reown/appkit-scaffold-ui/swaps'))
+          featureImportPromises.push(import('@nedykit/appkit-scaffold-ui/swaps'))
         }
 
         if (features.send) {
-          featureImportPromises.push(import('@reown/appkit-scaffold-ui/send'))
+          featureImportPromises.push(import('@nedykit/appkit-scaffold-ui/send'))
         }
 
         if (features.receive) {
-          featureImportPromises.push(import('@reown/appkit-scaffold-ui/receive'))
+          featureImportPromises.push(import('@nedykit/appkit-scaffold-ui/receive'))
         }
 
         if (features.onramp) {
-          featureImportPromises.push(import('@reown/appkit-scaffold-ui/onramp'))
+          featureImportPromises.push(import('@nedykit/appkit-scaffold-ui/onramp'))
         }
 
         if (features.history) {
-          featureImportPromises.push(import('@reown/appkit-scaffold-ui/transactions'))
+          featureImportPromises.push(import('@nedykit/appkit-scaffold-ui/transactions'))
         }
       }
 
       await Promise.all([
         ...featureImportPromises,
-        import('@reown/appkit-scaffold-ui'),
-        import('@reown/appkit-scaffold-ui/w3m-modal')
+        import('@nedykit/appkit-scaffold-ui'),
+        import('@nedykit/appkit-scaffold-ui/w3m-modal')
       ])
       const isElementCreated = document.querySelector('w3m-modal')
       if (!isElementCreated) {

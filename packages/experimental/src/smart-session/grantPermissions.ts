@@ -1,11 +1,11 @@
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
 import {
   ChainController,
   ConnectionController,
   OptionsController,
   RouterController
-} from '@reown/appkit-controllers'
-import { ProviderUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { ProviderUtil } from '@nedykit/appkit-utils'
 
 import {
   assertWalletGrantPermissionsResponse,

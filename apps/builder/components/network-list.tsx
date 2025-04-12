@@ -1,7 +1,7 @@
 'use client'
 
-import { ConstantsUtil } from '@reown/appkit-common'
-import { useAppKitAccount } from '@reown/appkit-controllers/react'
+import { ConstantsUtil } from '@nedykit/appkit-common'
+import { useAppKitAccount } from '@nedykit/appkit-controllers/react'
 
 import { ExclamationMarkIcon } from '@/components/icon/exclamation-mark'
 import { AlertDescription } from '@/components/ui/alert'

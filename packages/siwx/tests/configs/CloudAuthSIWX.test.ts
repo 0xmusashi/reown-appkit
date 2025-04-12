@@ -4,8 +4,8 @@ import {
   AccountController,
   BlockchainApiController,
   ChainController
-} from '@reown/appkit-controllers'
-import { ConstantsUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { ConstantsUtil } from '@nedykit/appkit-utils'
 
 import { CloudAuthSIWX } from '../../src/configs/CloudAuthSIWX'
 import { mockSession } from '../mocks/mockSession'

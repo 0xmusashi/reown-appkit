@@ -12,8 +12,8 @@ import {
   OnRampController,
   type OnRampProvider,
   RouterController
-} from '@reown/appkit-controllers'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-controllers'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import { W3mOnRampProvidersView } from '../../src/views/w3m-onramp-providers-view'
 

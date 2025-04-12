@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 
-import { NumberUtil } from '@reown/appkit-common'
+import { NumberUtil } from '@nedykit/appkit-common'
 import {
   AccountController,
   ChainController,
@@ -12,13 +12,13 @@ import {
   SwapController,
   type SwapInputTarget,
   type SwapToken
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-button'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon'
-import '@reown/appkit-ui/wui-text'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-button'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon'
+import '@nedykit/appkit-ui/wui-text'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import '../../partials/w3m-swap-details/index.js'
 import '../../partials/w3m-swap-input-skeleton/index.js'

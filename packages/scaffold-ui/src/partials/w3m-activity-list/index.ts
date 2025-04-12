@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 
-import { DateUtil } from '@reown/appkit-common'
-import type { Transaction, TransactionImage } from '@reown/appkit-common'
+import { DateUtil } from '@nedykit/appkit-common'
+import type { Transaction, TransactionImage } from '@nedykit/appkit-common'
 import {
   AccountController,
   ChainController,
@@ -11,16 +11,16 @@ import {
   OptionsController,
   RouterController,
   TransactionsController
-} from '@reown/appkit-controllers'
-import { TransactionUtil, customElement } from '@reown/appkit-ui'
-import type { TransactionType } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon-box'
-import '@reown/appkit-ui/wui-link'
-import '@reown/appkit-ui/wui-text'
-import '@reown/appkit-ui/wui-transaction-list-item'
-import '@reown/appkit-ui/wui-transaction-list-item-loader'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-controllers'
+import { TransactionUtil, customElement } from '@nedykit/appkit-ui'
+import type { TransactionType } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon-box'
+import '@nedykit/appkit-ui/wui-link'
+import '@nedykit/appkit-ui/wui-text'
+import '@nedykit/appkit-ui/wui-transaction-list-item'
+import '@nedykit/appkit-ui/wui-transaction-list-item-loader'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import styles from './styles.js'
 

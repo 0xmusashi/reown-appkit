@@ -3,12 +3,12 @@ import { state } from 'lit/decorators.js'
 import { createRef, ref } from 'lit/directives/ref.js'
 import type { Ref } from 'lit/directives/ref.js'
 
-import { ConnectorController } from '@reown/appkit-controllers'
-import { EventsController, RouterController, SnackController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-button'
-import '@reown/appkit-ui/wui-email-input'
-import '@reown/appkit-ui/wui-flex'
+import { ConnectorController } from '@nedykit/appkit-controllers'
+import { EventsController, RouterController, SnackController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-button'
+import '@nedykit/appkit-ui/wui-email-input'
+import '@nedykit/appkit-ui/wui-flex'
 
 import styles from './styles.js'
 

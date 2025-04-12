@@ -5,9 +5,9 @@ import { UniversalProvider } from '@walletconnect/universal-provider'
 import { ethers } from 'ethers5'
 import type { Address } from 'viem'
 
-import type { Provider as RawProvider } from '@reown/appkit'
-import { W3mFrameProvider } from '@reown/appkit-wallet'
-import { useAppKitAccount, useAppKitNetwork, useAppKitProvider } from '@reown/appkit/react'
+import type { Provider as RawProvider } from '@nedykit/appkit'
+import { W3mFrameProvider } from '@nedykit/appkit-wallet'
+import { useAppKitAccount, useAppKitNetwork, useAppKitProvider } from '@nedykit/appkit/react'
 
 import { useChakraToast } from '@/src/components/Toast'
 import { vitalikEthAddress } from '@/src/utils/DataUtil'

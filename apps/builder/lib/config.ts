@@ -1,9 +1,9 @@
 import { HuobiWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets'
 
-import { EthersAdapter } from '@reown/appkit-adapter-ethers'
-import { SolanaAdapter } from '@reown/appkit-adapter-solana'
-import { type ChainNamespace } from '@reown/appkit-common'
-import { ChainAdapter, ConstantsUtil } from '@reown/appkit-controllers'
+import { EthersAdapter } from '@nedykit/appkit-adapter-ethers'
+import { SolanaAdapter } from '@nedykit/appkit-adapter-solana'
+import { type ChainNamespace } from '@nedykit/appkit-common'
+import { ChainAdapter, ConstantsUtil } from '@nedykit/appkit-controllers'
 import {
   type AppKitNetwork,
   arbitrum,
@@ -18,8 +18,8 @@ import {
   solana,
   solanaDevnet,
   zksync
-} from '@reown/appkit/networks'
-import { CreateAppKit } from '@reown/appkit/react'
+} from '@nedykit/appkit/networks'
+import { CreateAppKit } from '@nedykit/appkit/react'
 
 import { urlStateUtils } from '@/lib/url-state'
 

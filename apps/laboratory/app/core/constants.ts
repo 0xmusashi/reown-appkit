@@ -1,5 +1,5 @@
-import type { AppKitNetwork } from '@reown/appkit/networks'
-import { bitcoin, mainnet, polygon, solana } from '@reown/appkit/networks'
+import type { AppKitNetwork } from '@nedykit/appkit/networks'
+import { bitcoin, mainnet, polygon, solana } from '@nedykit/appkit/networks'
 
 import { ConstantsUtil } from '@/src/utils/ConstantsUtil'
 

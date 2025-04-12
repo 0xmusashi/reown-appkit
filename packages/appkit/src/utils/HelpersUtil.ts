@@ -1,8 +1,8 @@
 import type { SessionTypes } from '@walletconnect/types'
 import type { Namespace, NamespaceConfig } from '@walletconnect/universal-provider'
 
-import type { CaipNetwork, CaipNetworkId, ChainNamespace } from '@reown/appkit-common'
-import { EnsController, type OptionsControllerState } from '@reown/appkit-controllers'
+import type { CaipNetwork, CaipNetworkId, ChainNamespace } from '@nedykit/appkit-common'
+import { EnsController, type OptionsControllerState } from '@nedykit/appkit-controllers'
 
 import { solana, solanaDevnet } from '../networks/index.js'
 

@@ -2,8 +2,8 @@ import type { Meta } from '@storybook/web-components'
 
 import { html } from 'lit'
 
-import '@reown/appkit-ui-new/src/composites/wui-chip'
-import type { WuiChip } from '@reown/appkit-ui-new/src/composites/wui-chip'
+import '@nedykit/appkit-ui-new/src/composites/wui-chip'
+import type { WuiChip } from '@nedykit/appkit-ui-new/src/composites/wui-chip'
 
 import {
   chipVariants,

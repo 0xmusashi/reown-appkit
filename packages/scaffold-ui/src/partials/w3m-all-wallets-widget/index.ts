@@ -9,9 +9,9 @@ import {
   EventsController,
   OptionsController,
   RouterController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-list-wallet'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-list-wallet'
 
 @customElement('w3m-all-wallets-widget')
 export class W3mAllWalletsWidget extends LitElement {

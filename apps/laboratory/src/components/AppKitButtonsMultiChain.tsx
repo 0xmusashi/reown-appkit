@@ -10,7 +10,7 @@ import {
   Text
 } from '@chakra-ui/react'
 
-import { useAppKit, useAppKitAccount, useDisconnect } from '@reown/appkit/react'
+import { useAppKit, useAppKitAccount, useDisconnect } from '@nedykit/appkit/react'
 
 export function AppKitButtonsMultiChain() {
   const { open } = useAppKit()

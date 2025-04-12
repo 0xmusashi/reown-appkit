@@ -1,16 +1,16 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import type { MockInstance } from 'vitest'
 
-import type { CaipNetwork } from '@reown/appkit-common'
+import type { CaipNetwork } from '@nedykit/appkit-common'
 import {
   AccountController,
   type Connector,
   ConnectorController,
   type ConnectorType,
   StorageUtil
-} from '@reown/appkit-controllers'
-import { ConstantsUtil as UtilConstantsUtil } from '@reown/appkit-utils'
-import { ProviderUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { ConstantsUtil as UtilConstantsUtil } from '@nedykit/appkit-utils'
+import { ProviderUtil } from '@nedykit/appkit-utils'
 
 import { AppKit } from '../../src/client/appkit.js'
 import { mockEvmAdapter, mockSolanaAdapter } from '../mocks/Adapter.js'

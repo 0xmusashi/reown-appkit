@@ -6,7 +6,7 @@ import type {
   TransactionDirection,
   TransactionImage,
   TransactionStatus
-} from '@reown/appkit-common'
+} from '@nedykit/appkit-common'
 
 import '../../components/wui-icon/index.js'
 import '../../components/wui-text/index.js'

@@ -1,7 +1,7 @@
 import { vi } from 'vitest'
 
-import { type W3mFrameTypes } from '@reown/appkit-wallet'
-import { W3mFrameProviderSingleton } from '@reown/appkit/auth-provider'
+import { type W3mFrameTypes } from '@nedykit/appkit-wallet'
+import { W3mFrameProviderSingleton } from '@nedykit/appkit/auth-provider'
 
 import type { AuthProvider } from '../../providers/AuthProvider.js'
 import { TestConstants } from '../util/TestConstants.js'

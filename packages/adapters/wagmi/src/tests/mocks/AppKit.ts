@@ -1,7 +1,7 @@
 import { vi } from 'vitest'
 
-import type { AppKit } from '@reown/appkit'
-import { type Chain, mainnet } from '@reown/appkit/networks'
+import type { AppKit } from '@nedykit/appkit'
+import { type Chain, mainnet } from '@nedykit/appkit/networks'
 
 export const mockCaipNetworks = [mainnet] as [Chain, ...Chain[]]
 export const mockAddress = '0xf5B035287c1465F29C7e08FbB5c3b8a4975Bf831'

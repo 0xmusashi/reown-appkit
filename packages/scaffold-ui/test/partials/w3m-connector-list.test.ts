@@ -8,7 +8,7 @@ import {
   ConnectorController,
   type ConnectorTypeOrder,
   CoreHelperUtil
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 import { W3mConnectorList } from '../../src/partials/w3m-connector-list'
 import { ConnectorUtil } from '../../src/utils/ConnectorUtil'

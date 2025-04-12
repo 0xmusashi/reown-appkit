@@ -1,4 +1,4 @@
-import { ChainNamespace } from '@reown/appkit-common'
+import { ChainNamespace } from '@nedykit/appkit-common'
 import {
   type AppKitNetwork,
   arbitrum,
@@ -13,7 +13,7 @@ import {
   solana,
   solanaDevnet,
   zksync
-} from '@reown/appkit/networks'
+} from '@nedykit/appkit/networks'
 
 import { bellota, breeSerif, domine, ebGaramond, inter, notoSans } from '@/lib/fonts'
 

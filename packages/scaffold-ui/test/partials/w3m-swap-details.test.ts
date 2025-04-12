@@ -3,10 +3,10 @@ import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
 
 import { html } from 'lit'
 
-import { NumberUtil } from '@reown/appkit-common'
-import type { CaipNetwork } from '@reown/appkit-common'
-import { ChainController, SwapController } from '@reown/appkit-controllers'
-import type { SwapTokenWithBalance } from '@reown/appkit-controllers'
+import { NumberUtil } from '@nedykit/appkit-common'
+import type { CaipNetwork } from '@nedykit/appkit-common'
+import { ChainController, SwapController } from '@nedykit/appkit-controllers'
+import type { SwapTokenWithBalance } from '@nedykit/appkit-controllers'
 
 import { WuiSwapDetails } from '../../src/partials/w3m-swap-details'
 import { HelpersUtil } from '../utils/HelpersUtil'

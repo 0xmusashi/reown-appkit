@@ -1,7 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
-import { getW3mThemeVariables } from '@reown/appkit-common'
-import type { ThemeType, ThemeVariables } from '@reown/appkit-common'
+import { getW3mThemeVariables } from '@nedykit/appkit-common'
+import type { ThemeType, ThemeVariables } from '@nedykit/appkit-common'
 
 // -- Utilities ---------------------------------------------------------------
 let themeTag: HTMLStyleElement | undefined = undefined

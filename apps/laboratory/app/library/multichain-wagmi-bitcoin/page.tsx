@@ -5,24 +5,19 @@ import React from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiProvider } from 'wagmi'
 
-import { BitcoinAdapter } from '@reown/appkit-adapter-bitcoin'
-import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
-import { type AppKitNetwork, mainnet } from '@reown/appkit/networks'
-import { createAppKit } from '@reown/appkit/react'
+import { WagmiAdapter } from '@nedykit/appkit-adapter-wagmi'
+import { type AppKitNetwork, mainnet } from '@nedykit/appkit/networks'
+import { createAppKit } from '@nedykit/appkit/react'
 
 import { AppKitButtons } from '@/src/components/AppKitButtons'
 import { AppKitInfo } from '@/src/components/AppKitInfo'
-import { BitcoinTests } from '@/src/components/Bitcoin/BitcoinTests'
 import { WagmiTests } from '@/src/components/Wagmi/WagmiTests'
 import { ConstantsUtil } from '@/src/utils/ConstantsUtil'
 import { ThemeStore } from '@/src/utils/StoreUtil'
 
 const queryClient = new QueryClient()
 
-const networks = [...ConstantsUtil.EvmNetworks, ...ConstantsUtil.BitcoinNetworks] as [
-  AppKitNetwork,
-  ...AppKitNetwork[]
-]
+const networks = [...ConstantsUtil.EvmNetworks] as [AppKitNetwork, ...AppKitNetwork[]]
 
 const wagmiAdapter = new WagmiAdapter({
   ssr: true,
@@ -30,10 +25,8 @@ const wagmiAdapter = new WagmiAdapter({
   projectId: ConstantsUtil.ProjectId
 })
 
-const bitcoinAdapter = new BitcoinAdapter()
-
 const modal = createAppKit({
-  adapters: [wagmiAdapter, bitcoinAdapter],
+  adapters: [wagmiAdapter],
   networks,
   defaultNetwork: mainnet,
   projectId: ConstantsUtil.ProjectId,
@@ -52,7 +45,6 @@ export default function MultiChainWagmiSolana() {
         <AppKitButtons />
         <AppKitInfo />
         <WagmiTests />
-        <BitcoinTests />
       </QueryClientProvider>
     </WagmiProvider>
   )

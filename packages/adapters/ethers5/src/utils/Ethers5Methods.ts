@@ -1,14 +1,14 @@
 /* eslint-disable max-params */
 import { Contract, ethers } from 'ethers'
 
-import { WcHelpersUtil } from '@reown/appkit'
-import { type CaipNetwork, isReownName } from '@reown/appkit-common'
+import { WcHelpersUtil } from '@nedykit/appkit'
+import { type CaipNetwork, isReownName } from '@nedykit/appkit-common'
 import type {
   EstimateGasTransactionArgs,
   SendTransactionArgs,
   WriteContractArgs
-} from '@reown/appkit-controllers'
-import { type Provider } from '@reown/appkit-utils/ethers'
+} from '@nedykit/appkit-controllers'
+import { type Provider } from '@nedykit/appkit-utils/ethers'
 
 export const Ethers5Methods = {
   signMessage: async (message: string, provider: Provider, address: string) => {

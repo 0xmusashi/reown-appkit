@@ -2,8 +2,8 @@ import UniversalProvider from '@walletconnect/universal-provider'
 import * as ethers from 'ethers'
 import { formatEther } from 'ethers/lib/utils.js'
 
-import { type AppKitOptions, WcConstantsUtil } from '@reown/appkit'
-import { ConstantsUtil as CommonConstantsUtil, ParseUtil } from '@reown/appkit-common'
+import { type AppKitOptions, WcConstantsUtil } from '@nedykit/appkit'
+import { ConstantsUtil as CommonConstantsUtil, ParseUtil } from '@nedykit/appkit-common'
 import {
   type CombinedProvider,
   type Connector,
@@ -12,13 +12,13 @@ import {
   OptionsController,
   type Provider,
   StorageUtil
-} from '@reown/appkit-controllers'
-import { ConstantsUtil, PresetsUtil } from '@reown/appkit-utils'
-import { ProviderUtil } from '@reown/appkit-utils'
-import { EthersHelpersUtil, type ProviderType } from '@reown/appkit-utils/ethers'
-import type { W3mFrameProvider } from '@reown/appkit-wallet'
-import { AdapterBlueprint } from '@reown/appkit/adapters'
-import { WalletConnectConnector } from '@reown/appkit/connectors'
+} from '@nedykit/appkit-controllers'
+import { ConstantsUtil, PresetsUtil } from '@nedykit/appkit-utils'
+import { ProviderUtil } from '@nedykit/appkit-utils'
+import { EthersHelpersUtil, type ProviderType } from '@nedykit/appkit-utils/ethers'
+import type { W3mFrameProvider } from '@nedykit/appkit-wallet'
+import { AdapterBlueprint } from '@nedykit/appkit/adapters'
+import { WalletConnectConnector } from '@nedykit/appkit/connectors'
 
 import { Ethers5Methods } from './utils/Ethers5Methods.js'
 

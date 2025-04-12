@@ -27,7 +27,7 @@
       "matchPackageNames": [
         "@walletconnect/universal-provider",
         "@walletconnect/utils",
-        "@reown/{/,}**"
+        "@nedykit/{/,}**"
       ],
       "groupName": "walletconnect",
       "prPriority": 10

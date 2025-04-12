@@ -1,4 +1,4 @@
-import type { ChainNamespace } from '@reown/appkit-common'
+import type { ChainNamespace } from '@nedykit/appkit-common'
 
 import { ConnectorController } from '../controllers/ConnectorController.js'
 

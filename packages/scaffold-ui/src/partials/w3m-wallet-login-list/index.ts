@@ -2,8 +2,8 @@ import { LitElement, html } from 'lit'
 import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
 
 import '../w3m-all-wallets-widget/index.js'
 import '../w3m-connector-list/index.js'

@@ -8,7 +8,7 @@ import {
   type ChainNamespace,
   ConstantsUtil as CommonConstantsUtil,
   NetworkUtil
-} from '@reown/appkit-common'
+} from '@nedykit/appkit-common'
 
 import { getChainsToDisconnect } from '../utils/ChainControllerUtil.js'
 import { ConstantsUtil } from '../utils/ConstantsUtil.js'

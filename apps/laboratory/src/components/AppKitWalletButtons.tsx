@@ -12,9 +12,9 @@ import {
   Text
 } from '@chakra-ui/react'
 
-import type { Wallet } from '@reown/appkit-wallet-button'
-import { useAppKitUpdateEmail, useAppKitWallet } from '@reown/appkit-wallet-button/react'
-import { type SocialProvider, useAppKitAccount } from '@reown/appkit/react'
+import type { Wallet } from '@nedykit/appkit-wallet-button'
+import { useAppKitUpdateEmail, useAppKitWallet } from '@nedykit/appkit-wallet-button/react'
+import { type SocialProvider, useAppKitAccount } from '@nedykit/appkit/react'
 
 import { ConstantsUtil } from '@/src/utils/ConstantsUtil'
 

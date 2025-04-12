@@ -1,7 +1,7 @@
 import { Box, Card, CardBody, CardHeader, Heading, Stack, StackDivider } from '@chakra-ui/react'
 import type { Config } from 'wagmi'
 
-import { useAppKitAccount } from '@reown/appkit/react'
+import { useAppKitAccount } from '@nedykit/appkit/react'
 
 import { WagmiDisconnectTest } from './WagmiDisconnectTest'
 import { WagmiGetCallsStatusTest } from './WagmiGetCallsStatusTest'

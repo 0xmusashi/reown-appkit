@@ -1,6 +1,6 @@
 import { type BrowserContext, test } from '@playwright/test'
 
-import type { CaipNetworkId } from '@reown/appkit'
+import type { CaipNetworkId } from '@nedykit/appkit'
 import {
   bitcoin,
   bitcoinTestnet,
@@ -8,7 +8,7 @@ import {
   polygon,
   solana,
   solanaTestnet
-} from '@reown/appkit/networks'
+} from '@nedykit/appkit/networks'
 
 import { DEFAULT_CHAIN_NAME } from './shared/constants'
 import { ModalPage } from './shared/pages/ModalPage'

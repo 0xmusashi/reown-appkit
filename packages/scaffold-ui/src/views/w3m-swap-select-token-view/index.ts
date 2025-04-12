@@ -5,15 +5,15 @@ import {
   RouterController,
   SwapController,
   type SwapTokenWithBalance
-} from '@reown/appkit-controllers'
-import { MathUtil, customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-button'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon'
-import '@reown/appkit-ui/wui-input-text'
-import '@reown/appkit-ui/wui-text'
-import '@reown/appkit-ui/wui-token-button'
-import '@reown/appkit-ui/wui-token-list-item'
+} from '@nedykit/appkit-controllers'
+import { MathUtil, customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-button'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon'
+import '@nedykit/appkit-ui/wui-input-text'
+import '@nedykit/appkit-ui/wui-text'
+import '@nedykit/appkit-ui/wui-token-button'
+import '@nedykit/appkit-ui/wui-token-list-item'
 
 import styles from './styles.js'
 

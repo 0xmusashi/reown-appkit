@@ -1,6 +1,6 @@
 {
   "name": "@examples/next-ak-basic-up-app-router",
-  "version": "1.0.5",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reown/appkit": "workspace:*",
+    "@nedykit/appkit": "workspace:*",
     "@tanstack/react-query": "5.56.2",
     "@walletconnect/universal-provider": "2.19.1",
     "next": "14.2.25",

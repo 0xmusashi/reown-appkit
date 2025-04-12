@@ -8,11 +8,11 @@ import {
   OptionsController,
   RouterController,
   type SocialProvider
-} from '@reown/appkit-controllers'
-import { executeSocialLogin } from '@reown/appkit-controllers/utils'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-list-social'
+} from '@nedykit/appkit-controllers'
+import { executeSocialLogin } from '@nedykit/appkit-controllers/utils'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-list-social'
 
 import styles from './styles.js'
 

@@ -5,13 +5,13 @@ import { UniversalProvider } from '@walletconnect/universal-provider'
 import { ethers } from 'ethers5'
 import { parseGwei } from 'viem'
 
-import { W3mFrameProvider } from '@reown/appkit-wallet'
+import { W3mFrameProvider } from '@nedykit/appkit-wallet'
 import {
   type Provider,
   useAppKitAccount,
   useAppKitNetwork,
   useAppKitProvider
-} from '@reown/appkit/react'
+} from '@nedykit/appkit/react'
 
 import { useChakraToast } from '@/src/components/Toast'
 import { vitalikEthAddress } from '@/src/utils/DataUtil'

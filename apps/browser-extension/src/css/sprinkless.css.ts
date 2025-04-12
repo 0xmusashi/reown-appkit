@@ -1,6 +1,6 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
 
-import { borderRadius, colors, spacing } from '@reown/appkit-ui-new'
+import { borderRadius, colors, spacing } from '@nedykit/appkit-ui-new'
 
 const flexAlignments = ['flex-start', 'flex-end', 'center']
 

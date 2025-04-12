@@ -11,8 +11,8 @@ import type {
   ChainNamespace,
   SdkFramework,
   Transaction
-} from '@reown/appkit-common'
-import type { W3mFrameProvider, W3mFrameTypes } from '@reown/appkit-wallet'
+} from '@nedykit/appkit-common'
+import type { W3mFrameProvider, W3mFrameTypes } from '@nedykit/appkit-wallet'
 
 import type { AccountControllerState } from '../controllers/AccountController.js'
 import type { ConnectionControllerClient } from '../controllers/ConnectionController.js'

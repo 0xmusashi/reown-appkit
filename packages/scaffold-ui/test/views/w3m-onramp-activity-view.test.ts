@@ -3,14 +3,14 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { html } from 'lit'
 
-import { type Transaction } from '@reown/appkit-common'
+import { type Transaction } from '@nedykit/appkit-common'
 import {
   AccountController,
   AssetController,
   OnRampController,
   OptionsController,
   TransactionsController
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 import { W3mOnRampActivityView } from '../../src/views/w3m-onramp-activity-view'
 

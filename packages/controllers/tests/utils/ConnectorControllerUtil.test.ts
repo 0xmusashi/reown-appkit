@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { type ChainNamespace } from '@reown/appkit-common'
+import { type ChainNamespace } from '@nedykit/appkit-common'
 
 import { ConnectorController } from '../../src/controllers/ConnectorController.js'
 import { checkNamespaceConnectorId } from '../../src/utils/ConnectorControllerUtil.js'

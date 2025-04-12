@@ -1,8 +1,8 @@
 'use client'
 
-import { Ethers5Adapter } from '@reown/appkit-adapter-ethers5'
-import { mainnet } from '@reown/appkit/networks'
-import { createAppKit } from '@reown/appkit/react'
+import { Ethers5Adapter } from '@nedykit/appkit-adapter-ethers5'
+import { mainnet } from '@nedykit/appkit/networks'
+import { createAppKit } from '@nedykit/appkit/react'
 
 import { AppKitButtons } from '@/src/components/AppKitButtons'
 import { AppKitInfo } from '@/src/components/AppKitInfo'

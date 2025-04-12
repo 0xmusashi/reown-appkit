@@ -11,14 +11,14 @@ import {
   toUtf8Bytes
 } from 'ethers'
 
-import { WcHelpersUtil } from '@reown/appkit'
-import { type CaipNetwork, isReownName } from '@reown/appkit-common'
+import { WcHelpersUtil } from '@nedykit/appkit'
+import { type CaipNetwork, isReownName } from '@nedykit/appkit-common'
 import type {
   EstimateGasTransactionArgs,
   Provider,
   SendTransactionArgs,
   WriteContractArgs
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 export const EthersMethods = {
   signMessage: async (message: string, provider: Provider, address: string) => {

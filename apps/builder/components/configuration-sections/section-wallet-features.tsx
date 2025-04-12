@@ -1,7 +1,7 @@
 import { UniqueIdentifier } from '@dnd-kit/core'
 
-import { ConstantsUtil, WalletFeature } from '@reown/appkit-controllers'
-import { useAppKitAccount } from '@reown/appkit-controllers/react'
+import { ConstantsUtil, WalletFeature } from '@nedykit/appkit-controllers'
+import { useAppKitAccount } from '@nedykit/appkit-controllers/react'
 
 import { ExclamationMarkIcon } from '@/components/icon/exclamation-mark'
 import { SortableWalletFeatureList } from '@/components/sortable-list-wallet-features'

@@ -1,4 +1,4 @@
-import { ConstantsUtil, ThemeMode } from '@reown/appkit-controllers'
+import { ConstantsUtil, ThemeMode } from '@nedykit/appkit-controllers'
 
 export const defaultCustomizationConfig = {
   features: ConstantsUtil.DEFAULT_FEATURES,

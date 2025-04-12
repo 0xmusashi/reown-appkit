@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import type { CaipNetwork } from '@reown/appkit-common'
+import type { CaipNetwork } from '@nedykit/appkit-common'
 
 import { ChainController, ConnectionController, ConnectorController } from '../../exports/index.js'
 import { useAppKitAccount, useAppKitNetworkCore, useDisconnect } from '../../exports/react.js'

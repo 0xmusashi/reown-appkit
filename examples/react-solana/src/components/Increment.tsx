@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-import { useAppKitAccount, useAppKitProvider } from "@reown/appkit/react";
+import { useAppKitAccount, useAppKitProvider } from "@nedykit/appkit/react";
 import { Connection, PublicKey, Transaction, TransactionInstruction, type AccountMeta } from '@solana/web3.js'
 import { sha256 } from 'js-sha256'
-import type { Provider } from "@reown/appkit-adapter-solana";
+import type { Provider } from "@nedykit/appkit-adapter-solana";
 const endpoint = `https://api.devnet.solana.com`
 const COUNTER_PROGRAM = 'NZqPEssvQPTGo31JGNzE1P2PhysusspkrGPbJaqKWTN'
 const COUNTER_ACCOUNT = '9NTqfJgad8ntebHsoTDjuCnuysZANX2PBeFMQFBNJjVu'

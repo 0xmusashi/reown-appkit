@@ -1,7 +1,7 @@
 {
-  "name": "@reown/appkit-ui-new",
+  "name": "@nedykit/appkit-ui-new",
   "private": true,
-  "version": "1.4.1",
+  "version": "0.1.0",
   "type": "module",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -23,9 +23,9 @@
   },
   "devDependencies": {
     "@types/qrcode": "1.5.5",
-    "@reown/appkit-common": "workspace:*",
-    "@reown/appkit-wallet": "workspace:*",
-    "@reown/appkit-controllers": "workspace:*",
+    "@nedykit/appkit-common": "workspace:*",
+    "@nedykit/appkit-wallet": "workspace:*",
+    "@nedykit/appkit-controllers": "workspace:*",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.4",
     "@vitest/coverage-v8": "2.1.9",
@@ -35,7 +35,7 @@
     "react-dom": "19.0.0",
     "vitest": "2.1.9"
   },
-  "author": "Reown <support@reown.com> (https://reown.com)",
+  "author": "Reown <support@nedykit.com> (https://reown.com)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/reown-com/appkit",
   "repository": {

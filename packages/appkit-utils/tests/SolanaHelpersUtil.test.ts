@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
-import type { CaipNetwork } from '@reown/appkit-common'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
+import type { CaipNetwork } from '@nedykit/appkit-common'
 
 import { SolConstantsUtil } from '../src/solana/SolanaConstantsUtil.js'
 import { SolHelpersUtil } from '../src/solana/SolanaHelpersUtils.js'

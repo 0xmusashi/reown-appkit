@@ -1,12 +1,12 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import type { CaipNetwork } from '@reown/appkit-common'
+import type { CaipNetwork } from '@nedykit/appkit-common'
 import {
   AccountController,
   ChainController,
   OptionsController,
   type SIWXSession
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 import { createSIWEConfig, mapToSIWX } from '../exports'
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useAppKitAccount, useAppKitProvider } from "@reown/appkit/react";
-import type { Provider } from "@reown/appkit-adapter-solana";
+import { useAppKitAccount, useAppKitProvider } from "@nedykit/appkit/react";
+import type { Provider } from "@nedykit/appkit-adapter-solana";
 
 export function SignMessage() {
   const { address } = useAppKitAccount();

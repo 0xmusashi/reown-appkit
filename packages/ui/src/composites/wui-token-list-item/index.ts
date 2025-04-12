@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 
-import { NumberUtil } from '@reown/appkit-common'
+import { NumberUtil } from '@nedykit/appkit-common'
 
 import '../../components/wui-icon/index.js'
 import '../../components/wui-image/index.js'

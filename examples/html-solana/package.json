@@ -1,14 +1,14 @@
 {
   "name": "@examples/html-solana",
   "private": true,
-  "version": "1.2.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite --port 3011",
     "build": "vite build"
   },
   "dependencies": {
-    "@reown/appkit-adapter-solana": "workspace:*",
-    "@reown/appkit": "workspace:*"
+    "@nedykit/appkit-adapter-solana": "workspace:*",
+    "@nedykit/appkit": "workspace:*"
   },
   "devDependencies": {
     "vite": "5.4.12"

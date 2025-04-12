@@ -3,15 +3,15 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vite
 
 import { html } from 'lit'
 
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
-import type { ConnectorType, ConnectorWithProviders } from '@reown/appkit-controllers'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
+import type { ConnectorType, ConnectorWithProviders } from '@nedykit/appkit-controllers'
 import {
   AssetController,
   ConnectorController,
   CoreHelperUtil,
   RouterController
-} from '@reown/appkit-controllers'
-import { ConstantsUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { ConstantsUtil } from '@nedykit/appkit-utils'
 
 import { W3mConnectWalletConnectWidget } from '../../src/partials/w3m-connect-walletconnect-widget'
 import { HelpersUtil } from '../utils/HelpersUtil'

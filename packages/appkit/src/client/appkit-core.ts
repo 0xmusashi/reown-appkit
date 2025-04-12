@@ -1,12 +1,12 @@
-import { type ChainNamespace } from '@reown/appkit-common'
-import type { ChainAdapter } from '@reown/appkit-controllers'
+import { type ChainNamespace } from '@nedykit/appkit-common'
+import type { ChainAdapter } from '@nedykit/appkit-controllers'
 import {
   AccountController,
   ConnectionController,
   ConnectorController,
   CoreHelperUtil,
   OptionsController
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 import type { AdapterBlueprint } from '../adapters/ChainAdapterBlueprint.js'
 import { AppKitBaseClient } from './appkit-base-client.js'
@@ -86,8 +86,8 @@ export class AppKit extends AppKitBaseClient {
 
   protected override async injectModalUi() {
     if (!isInitialized && CoreHelperUtil.isClient()) {
-      await import('@reown/appkit-scaffold-ui/basic')
-      await import('@reown/appkit-scaffold-ui/w3m-modal')
+      await import('@nedykit/appkit-scaffold-ui/basic')
+      await import('@nedykit/appkit-scaffold-ui/w3m-modal')
 
       const isElementCreated = document.querySelector('w3m-modal')
       if (!isElementCreated) {

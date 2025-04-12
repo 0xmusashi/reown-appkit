@@ -28,15 +28,15 @@ import {
 } from '@wallet-standard/features'
 import base58 from 'bs58'
 
-import { type CaipNetwork, ConstantsUtil } from '@reown/appkit-common'
-import type { RequestArguments } from '@reown/appkit-controllers'
-import type { Provider as CoreProvider } from '@reown/appkit-controllers'
-import { PresetsUtil } from '@reown/appkit-utils'
+import { type CaipNetwork, ConstantsUtil } from '@nedykit/appkit-common'
+import type { RequestArguments } from '@nedykit/appkit-controllers'
+import type { Provider as CoreProvider } from '@nedykit/appkit-controllers'
+import { PresetsUtil } from '@nedykit/appkit-utils'
 import type {
   AnyTransaction,
   GetActiveChain,
   Provider as SolanaProvider
-} from '@reown/appkit-utils/solana'
+} from '@nedykit/appkit-utils/solana'
 
 import { solanaChains } from '../utils/chains.js'
 import { WalletStandardFeatureNotSupportedError } from './shared/Errors.js'

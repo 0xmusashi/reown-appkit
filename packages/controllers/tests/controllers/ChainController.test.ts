@@ -6,8 +6,8 @@ import {
   type ChainNamespace,
   ConstantsUtil,
   SafeLocalStorageKeys
-} from '@reown/appkit-common'
-import { SafeLocalStorage } from '@reown/appkit-common'
+} from '@nedykit/appkit-common'
+import { SafeLocalStorage } from '@nedykit/appkit-common'
 
 import type { ChainAdapter, NetworkControllerClient } from '../../exports/index.js'
 import { ChainController } from '../../src/controllers/ChainController.js'

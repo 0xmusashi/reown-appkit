@@ -3,7 +3,7 @@ import { beforeAll, beforeEach, describe, expect, test, vi } from 'vitest'
 
 import { html } from 'lit'
 
-import { ParseUtil } from '@reown/appkit-common'
+import { ParseUtil } from '@nedykit/appkit-common'
 import {
   ChainController,
   ConnectorController,
@@ -11,7 +11,7 @@ import {
   ModalController,
   RouterController,
   type WcWallet
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 import { ApiController } from '../../controllers/ApiController.js'
 import '../../scaffold-ui/appkit-wallet-button/index.js'

@@ -4,8 +4,8 @@ import type { DraggableSyntheticListeners } from '@dnd-kit/core'
 import type { Transform } from '@dnd-kit/utilities'
 import classNames from 'classnames'
 
-import { SocialProvider } from '@reown/appkit-controllers'
-import '@reown/appkit-ui/jsx'
+import { SocialProvider } from '@nedykit/appkit-controllers'
+import '@nedykit/appkit-ui/jsx'
 
 import { useAppKitContext } from '@/hooks/use-appkit'
 

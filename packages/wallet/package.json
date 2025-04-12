@@ -1,6 +1,6 @@
 {
-  "name": "@reown/appkit-wallet",
-  "version": "1.7.1",
+  "name": "@nedykit/appkit-wallet",
+  "version": "0.1.0",
   "sideEffects": false,
   "type": "module",
   "main": "./dist/esm/exports/index.js",
@@ -30,12 +30,12 @@
     "test": "vitest run --dir tests"
   },
   "dependencies": {
-    "@reown/appkit-common": "workspace:*",
-    "@reown/appkit-polyfills": "workspace:*",
+    "@nedykit/appkit-common": "workspace:*",
+    "@nedykit/appkit-polyfills": "workspace:*",
     "@walletconnect/logger": "2.1.2",
     "zod": "3.22.4"
   },
-  "author": "Reown <support@reown.com> (https://reown.com)",
+  "author": "Reown <support@nedykit.com> (https://reown.com)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/reown-com/appkit",
   "repository": {

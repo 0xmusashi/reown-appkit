@@ -11,16 +11,16 @@ import {
   RouterController,
   SnackController,
   ThemeController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-button'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon'
-import '@reown/appkit-ui/wui-icon-box'
-import '@reown/appkit-ui/wui-link'
-import '@reown/appkit-ui/wui-loading-thumbnail'
-import '@reown/appkit-ui/wui-text'
-import '@reown/appkit-ui/wui-visual'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-button'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon'
+import '@nedykit/appkit-ui/wui-icon-box'
+import '@nedykit/appkit-ui/wui-link'
+import '@nedykit/appkit-ui/wui-loading-thumbnail'
+import '@nedykit/appkit-ui/wui-text'
+import '@nedykit/appkit-ui/wui-visual'
 
 import styles from './styles.js'
 

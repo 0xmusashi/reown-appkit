@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit'
 
-import { AccountController, OptionsController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-visual-thumbnail'
+import { AccountController, OptionsController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-visual-thumbnail'
 
 import styles from './styles.js'
 

@@ -1,4 +1,4 @@
-import type { TransactionDirection, TransactionStatus } from '@reown/appkit-common'
+import type { TransactionDirection, TransactionStatus } from '@nedykit/appkit-common'
 import type {
   AccountEntryType,
   BackgroundType,
@@ -28,7 +28,7 @@ import type {
   ThemeType,
   TransactionType,
   VisualType
-} from '@reown/appkit-ui/src/utils/TypeUtil'
+} from '@nedykit/appkit-ui/src/utils/TypeUtil'
 
 export const colorOptions: ColorType[] = [
   'accent-100',

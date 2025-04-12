@@ -7,8 +7,8 @@ import {
   RouterController,
   SwapController,
   type SwapTokenWithBalance
-} from '@reown/appkit-controllers'
-import { EventsController } from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
+import { EventsController } from '@nedykit/appkit-controllers'
 
 import { W3mSwapView } from '../../src/views/w3m-swap-view'
 

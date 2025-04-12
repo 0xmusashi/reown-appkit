@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import type { ChainNamespace, SdkVersion } from '@reown/appkit-common'
-import { AlertController, OptionsController } from '@reown/appkit-controllers'
-import { ErrorUtil } from '@reown/appkit-utils'
+import type { ChainNamespace, SdkVersion } from '@nedykit/appkit-common'
+import { AlertController, OptionsController } from '@nedykit/appkit-controllers'
+import { ErrorUtil } from '@nedykit/appkit-utils'
 
 import type { AdapterBlueprint } from '../../src/adapters'
 import { AppKitBaseClient, type AppKitOptionsWithSdk } from '../../src/client/appkit-base-client'

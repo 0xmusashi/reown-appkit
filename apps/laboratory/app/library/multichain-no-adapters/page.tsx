@@ -1,7 +1,7 @@
 'use client'
 
-import { type AppKitNetwork, bitcoin, mainnet, solana } from '@reown/appkit/networks'
-import { createAppKit, useAppKitNetwork } from '@reown/appkit/react'
+import { type AppKitNetwork, bitcoin, mainnet, solana } from '@nedykit/appkit/networks'
+import { createAppKit, useAppKitNetwork } from '@nedykit/appkit/react'
 
 import { AppKitButtons } from '@/src/components/AppKitButtons'
 import { AppKitInfo } from '@/src/components/AppKitInfo'

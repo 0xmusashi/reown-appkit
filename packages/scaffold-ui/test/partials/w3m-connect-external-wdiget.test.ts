@@ -3,9 +3,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { html } from 'lit'
 
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
-import type { ConnectorWithProviders } from '@reown/appkit-controllers'
-import { ConnectorController, RouterController } from '@reown/appkit-controllers'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
+import type { ConnectorWithProviders } from '@nedykit/appkit-controllers'
+import { ConnectorController, RouterController } from '@nedykit/appkit-controllers'
 
 import { W3mConnectExternalWidget } from '../../src/partials/w3m-connect-external-widget'
 import { HelpersUtil } from '../utils/HelpersUtil'

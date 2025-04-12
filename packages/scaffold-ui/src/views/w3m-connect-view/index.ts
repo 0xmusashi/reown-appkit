@@ -4,7 +4,7 @@ import { state } from 'lit/decorators/state.js'
 import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { ConstantsUtil } from '@reown/appkit-common'
+import { ConstantsUtil } from '@nedykit/appkit-common'
 import {
   ChainController,
   ConnectionController,
@@ -16,12 +16,12 @@ import {
   OptionsStateController,
   RouterController,
   type WalletGuideType
-} from '@reown/appkit-controllers'
-import { MathUtil, customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-list-button'
-import '@reown/appkit-ui/wui-separator'
-import { ConstantsUtil as AppKitConstantsUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { MathUtil, customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-list-button'
+import '@nedykit/appkit-ui/wui-separator'
+import { ConstantsUtil as AppKitConstantsUtil } from '@nedykit/appkit-utils'
 
 import '../../partials/w3m-email-login-widget/index.js'
 import '../../partials/w3m-legal-checkbox/index.js'

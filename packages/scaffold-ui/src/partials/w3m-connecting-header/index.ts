@@ -1,11 +1,11 @@
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 
-import type { Platform } from '@reown/appkit-controllers'
-import { ConnectionController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-tabs'
+import type { Platform } from '@nedykit/appkit-controllers'
+import { ConnectionController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-tabs'
 
 @customElement('w3m-connecting-header')
 export class W3mConnectingHeader extends LitElement {

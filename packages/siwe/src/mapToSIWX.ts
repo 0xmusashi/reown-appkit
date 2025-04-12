@@ -1,12 +1,12 @@
-import { ConstantsUtil, NetworkUtil } from '@reown/appkit-common'
+import { ConstantsUtil, NetworkUtil } from '@nedykit/appkit-common'
 import {
   ChainController,
   CoreHelperUtil,
   type SIWXConfig,
   type SIWXMessage,
   type SIWXSession
-} from '@reown/appkit-controllers'
-import { HelpersUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { HelpersUtil } from '@nedykit/appkit-utils'
 
 import type { AppKitSIWEClient } from '../exports/index.js'
 

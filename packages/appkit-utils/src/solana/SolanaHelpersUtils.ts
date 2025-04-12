@@ -1,5 +1,5 @@
-import type { CaipNetwork } from '@reown/appkit-common'
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
+import type { CaipNetwork } from '@nedykit/appkit-common'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
 
 import { SolConstantsUtil } from './SolanaConstantsUtil.js'
 import type { Provider } from './SolanaTypesUtil.js'

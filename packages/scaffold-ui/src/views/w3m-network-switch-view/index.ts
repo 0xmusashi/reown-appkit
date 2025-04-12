@@ -2,21 +2,21 @@ import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { type ChainNamespace, ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
+import { type ChainNamespace, ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
 import {
   AssetUtil,
   ChainController,
   ConnectorController,
   RouterController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-button'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon'
-import '@reown/appkit-ui/wui-icon-box'
-import '@reown/appkit-ui/wui-loading-hexagon'
-import '@reown/appkit-ui/wui-network-image'
-import '@reown/appkit-ui/wui-text'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-button'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon'
+import '@nedykit/appkit-ui/wui-icon-box'
+import '@nedykit/appkit-ui/wui-loading-hexagon'
+import '@nedykit/appkit-ui/wui-network-image'
+import '@nedykit/appkit-ui/wui-text'
 
 import styles from './styles.js'
 

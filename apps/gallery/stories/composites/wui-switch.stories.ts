@@ -2,8 +2,8 @@ import type { Meta } from '@storybook/web-components'
 
 import { html } from 'lit'
 
-import '@reown/appkit-ui/src/composites/wui-switch'
-import type { WuiSwitch } from '@reown/appkit-ui/src/composites/wui-switch'
+import '@nedykit/appkit-ui/src/composites/wui-switch'
+import type { WuiSwitch } from '@nedykit/appkit-ui/src/composites/wui-switch'
 
 import '../../components/gallery-container'
 

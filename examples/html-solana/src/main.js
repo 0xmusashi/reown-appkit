@@ -1,6 +1,6 @@
-import { createAppKit } from '@reown/appkit'
-import { SolanaAdapter } from '@reown/appkit-adapter-solana'
-import { solana, solanaDevnet, solanaTestnet } from '@reown/appkit/networks'
+import { createAppKit } from '@nedykit/appkit'
+import { SolanaAdapter } from '@nedykit/appkit-adapter-solana'
+import { solana, solanaDevnet, solanaTestnet } from '@nedykit/appkit/networks'
 
 // Get projectId
 export const projectId = import.meta.env.VITE_PROJECT_ID || 'b56e18d47c72ab683b10814fe9495694' // this is a public projectId only to use on localhost

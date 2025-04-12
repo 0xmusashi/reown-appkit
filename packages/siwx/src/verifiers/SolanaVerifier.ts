@@ -1,8 +1,8 @@
 import bs58 from 'bs58'
 import nacl from 'tweetnacl'
 
-import { ConstantsUtil } from '@reown/appkit-common'
-import type { SIWXSession } from '@reown/appkit-controllers'
+import { ConstantsUtil } from '@nedykit/appkit-common'
+import type { SIWXSession } from '@nedykit/appkit-controllers'
 
 import { SIWXVerifier } from '../core/SIWXVerifier.js'
 

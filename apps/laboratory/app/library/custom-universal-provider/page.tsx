@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 
 import Provider, { UniversalProvider } from '@walletconnect/universal-provider'
 
-import { mainnet } from '@reown/appkit/networks'
-import { AppKit, createAppKit } from '@reown/appkit/react'
+import { mainnet } from '@nedykit/appkit/networks'
+import { AppKit, createAppKit } from '@nedykit/appkit/react'
 
 import { AppKitButtons } from '@/src/components/AppKitButtons'
 import { MultiChainInfo } from '@/src/components/MultiChainInfo'

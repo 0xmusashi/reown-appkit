@@ -1,5 +1,5 @@
-import type { AppKitOptions, ChainAdapter } from '@reown/appkit'
-import { solana } from '@reown/appkit/networks'
+import type { AppKitOptions, ChainAdapter } from '@nedykit/appkit'
+import { solana } from '@nedykit/appkit/networks'
 
 export const mockSolanaChainImage =
   'https://assets.coingecko.com/coins/images/4128/large/solana.png'

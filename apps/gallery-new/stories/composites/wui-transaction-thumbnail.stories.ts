@@ -2,8 +2,8 @@ import type { Meta } from '@storybook/web-components'
 
 import { html } from 'lit'
 
-import '@reown/appkit-ui-new/src/composites/wui-transaction-thumbnail'
-import type { WuiTransactionThumbnail } from '@reown/appkit-ui-new/src/composites/wui-transaction-thumbnail'
+import '@nedykit/appkit-ui-new/src/composites/wui-transaction-thumbnail'
+import type { WuiTransactionThumbnail } from '@nedykit/appkit-ui-new/src/composites/wui-transaction-thumbnail'
 
 import { networkImageSrc, transactionThumbnailOptions } from '../../utils/PresetUtils'
 

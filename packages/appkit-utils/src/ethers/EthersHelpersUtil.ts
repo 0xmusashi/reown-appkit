@@ -1,4 +1,4 @@
-import type { CaipNetwork } from '@reown/appkit-common'
+import type { CaipNetwork } from '@nedykit/appkit-common'
 
 import { PresetsUtil } from '../PresetsUtil.js'
 import type { Provider } from './EthersTypesUtil.js'

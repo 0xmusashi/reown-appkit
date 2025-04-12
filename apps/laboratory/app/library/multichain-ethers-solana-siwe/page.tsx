@@ -2,10 +2,10 @@
 
 import { HuobiWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets'
 
-import { EthersAdapter } from '@reown/appkit-adapter-ethers'
-import { SolanaAdapter } from '@reown/appkit-adapter-solana'
-import { type AppKitNetwork, mainnet } from '@reown/appkit/networks'
-import { createAppKit } from '@reown/appkit/react'
+import { EthersAdapter } from '@nedykit/appkit-adapter-ethers'
+import { SolanaAdapter } from '@nedykit/appkit-adapter-solana'
+import { type AppKitNetwork, mainnet } from '@nedykit/appkit/networks'
+import { createAppKit } from '@nedykit/appkit/react'
 
 import { AppKitButtons } from '@/src/components/AppKitButtons'
 import { AppKitInfo } from '@/src/components/AppKitInfo'

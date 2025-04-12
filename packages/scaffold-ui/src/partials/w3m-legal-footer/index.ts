@@ -1,10 +1,10 @@
 import { LitElement, html } from 'lit'
 
-import { OptionsController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-text'
-import '@reown/appkit-ui/wui-ux-by-reown'
+import { OptionsController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-text'
+import '@nedykit/appkit-ui/wui-ux-by-reown'
 
 import styles from './styles.js'
 

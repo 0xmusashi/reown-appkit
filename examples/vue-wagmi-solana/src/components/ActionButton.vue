@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import { mainnet } from '@reown/appkit/networks'
-import { useAppKit, useAppKitNetwork, useAppKitTheme, useDisconnect } from '@reown/appkit/vue'
+import { mainnet } from '@nedykit/appkit/networks'
+import { useAppKit, useAppKitNetwork, useAppKitTheme, useDisconnect } from '@nedykit/appkit/vue'
 
 export default {
   name: 'ActionButtonList',

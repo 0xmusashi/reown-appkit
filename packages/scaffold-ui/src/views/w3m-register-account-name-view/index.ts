@@ -2,23 +2,23 @@ import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { type Ref, createRef, ref } from 'lit/directives/ref.js'
 
-import { ConstantsUtil } from '@reown/appkit-common'
+import { ConstantsUtil } from '@nedykit/appkit-common'
 import {
   AccountController,
   CoreHelperUtil,
   EnsController,
   EventsController,
   SnackController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-ens-input'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon'
-import '@reown/appkit-ui/wui-icon-link'
-import '@reown/appkit-ui/wui-loading-spinner'
-import '@reown/appkit-ui/wui-tag'
-import '@reown/appkit-ui/wui-text'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-ens-input'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon'
+import '@nedykit/appkit-ui/wui-icon-link'
+import '@nedykit/appkit-ui/wui-loading-spinner'
+import '@nedykit/appkit-ui/wui-tag'
+import '@nedykit/appkit-ui/wui-text'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import styles from './styles.js'
 

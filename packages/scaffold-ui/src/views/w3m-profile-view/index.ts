@@ -12,15 +12,15 @@ import {
   ModalController,
   RouterController,
   SnackController
-} from '@reown/appkit-controllers'
-import { UiHelperUtil, customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-avatar'
-import '@reown/appkit-ui/wui-button'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon-link'
-import '@reown/appkit-ui/wui-list-account'
-import '@reown/appkit-ui/wui-text'
-import type { W3mFrameTypes } from '@reown/appkit-wallet'
+} from '@nedykit/appkit-controllers'
+import { UiHelperUtil, customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-avatar'
+import '@nedykit/appkit-ui/wui-button'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon-link'
+import '@nedykit/appkit-ui/wui-list-account'
+import '@nedykit/appkit-ui/wui-text'
+import type { W3mFrameTypes } from '@nedykit/appkit-wallet'
 
 import styles from './styles.js'
 

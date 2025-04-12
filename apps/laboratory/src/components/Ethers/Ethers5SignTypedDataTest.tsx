@@ -7,7 +7,7 @@ import {
   useAppKitAccount,
   useAppKitNetwork,
   useAppKitProvider
-} from '@reown/appkit/react'
+} from '@nedykit/appkit/react'
 
 import { useChakraToast } from '@/src/components/Toast'
 

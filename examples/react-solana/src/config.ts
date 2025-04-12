@@ -5,8 +5,8 @@ import {
   TrustWalletAdapter
 } from '@solana/wallet-adapter-wallets'
 
-import { SolanaAdapter } from '@reown/appkit-adapter-solana/react'
-import { solana, solanaDevnet, solanaTestnet } from '@reown/appkit/networks'
+import { SolanaAdapter } from '@nedykit/appkit-adapter-solana/react'
+import { solana, solanaDevnet, solanaTestnet } from '@nedykit/appkit/networks'
 import {
   createAppKit,
   useAppKit,
@@ -17,7 +17,7 @@ import {
   useAppKitTheme,
   useDisconnect,
   useWalletInfo
-} from '@reown/appkit/react'
+} from '@nedykit/appkit/react'
 
 // @ts-expect-error Get projectId
 export const projectId = import.meta.env.VITE_PROJECT_ID || 'b56e18d47c72ab683b10814fe9495694' // this is a public projectId only to use on localhost

@@ -1,8 +1,8 @@
 import { parseUnits } from 'viem'
 import { beforeAll, describe, expect, it, vi } from 'vitest'
 
-import type { CaipNetwork, CaipNetworkId } from '@reown/appkit-common'
-import { ConstantsUtil } from '@reown/appkit-common'
+import type { CaipNetwork, CaipNetworkId } from '@nedykit/appkit-common'
+import { ConstantsUtil } from '@nedykit/appkit-common'
 
 import {
   AccountController,

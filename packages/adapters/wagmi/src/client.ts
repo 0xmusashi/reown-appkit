@@ -30,29 +30,29 @@ import type UniversalProvider from '@walletconnect/universal-provider'
 import { type GetEnsAddressReturnType, type Hex, formatUnits, parseUnits } from 'viem'
 import { normalize } from 'viem/ens'
 
-import { AppKit, type AppKitOptions, WcHelpersUtil } from '@reown/appkit'
+import { AppKit, type AppKitOptions, WcHelpersUtil } from '@nedykit/appkit'
 import type {
   AppKitNetwork,
   BaseNetwork,
   CaipNetwork,
   ChainNamespace,
   CustomRpcUrlMap
-} from '@reown/appkit-common'
+} from '@nedykit/appkit-common'
 import {
   ConstantsUtil as CommonConstantsUtil,
   NetworkUtil,
   isReownName
-} from '@reown/appkit-common'
-import { CoreHelperUtil, OptionsController, StorageUtil } from '@reown/appkit-controllers'
+} from '@nedykit/appkit-common'
+import { CoreHelperUtil, OptionsController, StorageUtil } from '@nedykit/appkit-controllers'
 import {
   type ConnectorType,
   ConstantsUtil as CoreConstantsUtil,
   type Provider
-} from '@reown/appkit-controllers'
-import { CaipNetworksUtil, PresetsUtil } from '@reown/appkit-utils'
-import type { W3mFrameProvider } from '@reown/appkit-wallet'
-import { AdapterBlueprint } from '@reown/appkit/adapters'
-import { WalletConnectConnector } from '@reown/appkit/connectors'
+} from '@nedykit/appkit-controllers'
+import { CaipNetworksUtil, PresetsUtil } from '@nedykit/appkit-utils'
+import type { W3mFrameProvider } from '@nedykit/appkit-wallet'
+import { AdapterBlueprint } from '@nedykit/appkit/adapters'
+import { WalletConnectConnector } from '@nedykit/appkit/connectors'
 
 import { authConnector } from './connectors/AuthConnector.js'
 import { walletConnect } from './connectors/UniversalConnector.js'

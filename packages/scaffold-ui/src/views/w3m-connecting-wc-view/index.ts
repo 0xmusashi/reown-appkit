@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 
-import type { BaseError, Platform } from '@reown/appkit-controllers'
+import type { BaseError, Platform } from '@nedykit/appkit-controllers'
 import {
   ChainController,
   ConnectionController,
@@ -11,8 +11,8 @@ import {
   OptionsController,
   RouterController,
   SnackController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
 
 import '../../partials/w3m-connecting-header/index.js'
 import '../../partials/w3m-connecting-wc-browser/index.js'

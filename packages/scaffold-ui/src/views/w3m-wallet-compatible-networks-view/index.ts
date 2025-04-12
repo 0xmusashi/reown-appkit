@@ -7,12 +7,12 @@ import {
   AssetUtil,
   ChainController,
   CoreHelperUtil
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-banner'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-list-network'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-banner'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-list-network'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import styles from './styles.js'
 

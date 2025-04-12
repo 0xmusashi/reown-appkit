@@ -1,6 +1,6 @@
 {
-  "name": "@reown/appkit",
-  "version": "1.7.1",
+  "name": "@nedykit/appkit",
+  "version": "0.1.0",
   "type": "module",
   "main": "./dist/esm/exports/index.js",
   "types": "./dist/types/exports/index.d.ts",
@@ -122,13 +122,13 @@
     }
   },
   "dependencies": {
-    "@reown/appkit-common": "workspace:*",
-    "@reown/appkit-controllers": "workspace:*",
-    "@reown/appkit-polyfills": "workspace:*",
-    "@reown/appkit-scaffold-ui": "workspace:*",
-    "@reown/appkit-ui": "workspace:*",
-    "@reown/appkit-utils": "workspace:*",
-    "@reown/appkit-wallet": "workspace:*",
+    "@nedykit/appkit-common": "workspace:*",
+    "@nedykit/appkit-controllers": "workspace:*",
+    "@nedykit/appkit-polyfills": "workspace:*",
+    "@nedykit/appkit-scaffold-ui": "workspace:*",
+    "@nedykit/appkit-ui": "workspace:*",
+    "@nedykit/appkit-utils": "workspace:*",
+    "@nedykit/appkit-wallet": "workspace:*",
     "@walletconnect/types": "2.19.1",
     "@walletconnect/universal-provider": "2.19.1",
     "bs58": "6.0.0",
@@ -136,7 +136,7 @@
     "viem": ">=2.23.11"
   },
   "devDependencies": {
-    "@reown/appkit-siwe": "workspace:*",
+    "@nedykit/appkit-siwe": "workspace:*",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
     "@vitest/coverage-v8": "2.1.9",
@@ -149,7 +149,7 @@
     "vitest": "2.1.9",
     "vue": "3.x"
   },
-  "author": "Reown <support@reown.com> (https://reown.com)",
+  "author": "Reown <support@nedykit.com> (https://reown.com)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/reown-com/appkit",
   "repository": {

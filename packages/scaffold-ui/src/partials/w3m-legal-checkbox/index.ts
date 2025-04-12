@@ -1,10 +1,10 @@
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 
-import { OptionsController, OptionsStateController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-checkbox'
-import '@reown/appkit-ui/wui-text'
+import { OptionsController, OptionsStateController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-checkbox'
+import '@nedykit/appkit-ui/wui-text'
 
 import styles from './styles.js'
 

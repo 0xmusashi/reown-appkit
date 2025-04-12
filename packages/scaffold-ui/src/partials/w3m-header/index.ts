@@ -14,13 +14,13 @@ import {
   OptionsController,
   RouterController,
   SIWXUtil
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon-link'
-import '@reown/appkit-ui/wui-select'
-import '@reown/appkit-ui/wui-tag'
-import '@reown/appkit-ui/wui-text'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon-link'
+import '@nedykit/appkit-ui/wui-select'
+import '@nedykit/appkit-ui/wui-tag'
+import '@nedykit/appkit-ui/wui-text'
 
 import { ConstantsUtil } from '../../utils/ConstantsUtil.js'
 import styles from './styles.js'

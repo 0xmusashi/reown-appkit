@@ -1,5 +1,5 @@
-import { CoreHelperUtil, EventsController, RouterController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
+import { CoreHelperUtil, EventsController, RouterController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
 
 import { W3mEmailOtpWidget } from '../../utils/w3m-email-otp-widget/index.js'
 import type { OnOtpSubmitFn } from '../../utils/w3m-email-otp-widget/index.js'

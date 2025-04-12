@@ -1,4 +1,4 @@
-# @reown/appkit-cli
+# @nedykit/appkit-cli
 
 ## 1.7.1
 
@@ -104,7 +104,7 @@
   **TypeScript Example usage**
 
   ```ts
-  import { createAppKitWalletButton } from '@reown/appkit-wallet-button'
+  import { createAppKitWalletButton } from '@nedykit/appkit-wallet-button'
 
   const appKitWalletButton = createAppKitWalletButton()
 
@@ -124,7 +124,7 @@
   **React Hook Example usage**
 
   ```tsx
-  import { useAppKitUpdateEmail, useAppKitWallet } from '@reown/appkit-wallet-button/react'
+  import { useAppKitUpdateEmail, useAppKitWallet } from '@nedykit/appkit-wallet-button/react'
 
   export function ConnectEmail() {
     const { data, error, isPending, isSuccess, isError, connect } = useAppKitWallet({
@@ -162,7 +162,7 @@
   **Example usage**
 
   ```tsx
-  import { createAppKit } from '@reown/appkit'
+  import { createAppKit } from '@nedykit/appkit'
 
   const modal = createAppKit({
     adapters: [], // Add your adapters here
@@ -178,7 +178,7 @@
 
 ### Minor Changes
 
-- [#3976](https://github.com/reown-com/appkit/pull/3976) [`cbd929f`](https://github.com/reown-com/appkit/commit/cbd929f839ad7ee4c7838fa980bcfd63b40b1415) Thanks [@tomiir](https://github.com/tomiir)! - Adds @reown/appkit-controllers. Proxies @reown/appkit-core to the new controllers package to maintain backwards compatibility.
+- [#3976](https://github.com/reown-com/appkit/pull/3976) [`cbd929f`](https://github.com/reown-com/appkit/commit/cbd929f839ad7ee4c7838fa980bcfd63b40b1415) Thanks [@tomiir](https://github.com/tomiir)! - Adds @nedykit/appkit-controllers. Proxies @nedykit/appkit-core to the new controllers package to maintain backwards compatibility.
 
 ### Patch Changes
 
@@ -249,7 +249,7 @@
   ### Example Usage
 
   ```tsx
-  import { useAppKitAccount } from '@reown/appkit/react'
+  import { useAppKitAccount } from '@nedykit/appkit/react'
 
   const accountState = useAppKitAccount() // Returns active chain's account state
   const evmAccountState = useAppKitAccount({ chainNamespace: 'eip155' }) // Returns EVM chain's account state
@@ -370,7 +370,7 @@
   **Example usage**
 
   ```tsx
-  import { createAppKit } from '@reown/appkit'
+  import { createAppKit } from '@nedykit/appkit'
 
   const VIEWS = [
     { label: 'Open "On-Ramp" modal view', view: 'Swap' },
@@ -403,14 +403,14 @@
 
 - [#3717](https://github.com/reown-com/appkit/pull/3717) [`72b14ce`](https://github.com/reown-com/appkit/commit/72b14ce20fdde3b0162e496756fdd96ac14ab901) Thanks [@zoruka](https://github.com/zoruka)! - Update @walletconnect packages to latest version.
 
-- [#3640](https://github.com/reown-com/appkit/pull/3640) [`2935978`](https://github.com/reown-com/appkit/commit/293597872b31eecf7c4d04e0f875688f6c795af4) Thanks [@magiziz](https://github.com/magiziz)! - Added `createAppKitWalletButton` function to `@reown/appkit-wallet-button` package for easier implementation of the Wallet Button feature without relying solely on hooks.
+- [#3640](https://github.com/reown-com/appkit/pull/3640) [`2935978`](https://github.com/reown-com/appkit/commit/293597872b31eecf7c4d04e0f875688f6c795af4) Thanks [@magiziz](https://github.com/magiziz)! - Added `createAppKitWalletButton` function to `@nedykit/appkit-wallet-button` package for easier implementation of the Wallet Button feature without relying solely on hooks.
 
   **Example usage**
 
   ```tsx
   import { useEffect, useState } from 'react'
 
-  import { createAppKitWalletButton } from '@reown/appkit-wallet-button'
+  import { createAppKitWalletButton } from '@nedykit/appkit-wallet-button'
 
   const appKitWalletButton = createAppKitWalletButton()
 
@@ -511,8 +511,8 @@
   **Example usage**
 
   ```ts
-  import { createSIWEConfig } from '@reown/appkit-siwe'
-  import type { SIWECreateMessageArgs, SIWEVerifyMessageArgs } from '@reown/appkit-siwe'
+  import { createSIWEConfig } from '@nedykit/appkit-siwe'
+  import type { SIWECreateMessageArgs, SIWEVerifyMessageArgs } from '@nedykit/appkit-siwe'
 
   export const siweConfig = createSIWEConfig({
     required: false, // Optional - defaults to true
@@ -554,7 +554,7 @@
   **Example usage**
 
   ```tsx
-  import { useAppKitAccount } from '@reown/appkit/react'
+  import { useAppKitAccount } from '@nedykit/appkit/react'
 
   export function YourApp() {
     const { embeddedWalletInfo } = useAppKitAccount()
@@ -578,7 +578,7 @@
   **Example usage**
 
   ```ts
-  import { createAppKit } from '@reown/appkit/react'
+  import { createAppKit } from '@nedykit/appkit/react'
 
   const modal = createAppKit({
     adapters: [
@@ -750,7 +750,7 @@
   **Example usage**
 
   ```ts
-  import { createAppKit } from '@reown/appkit'
+  import { createAppKit } from '@nedykit/appkit'
 
   const modal = createAppKit({
     adapters: [
@@ -773,7 +773,7 @@
   Components example:
 
   ```tsx
-  import '@reown/appkit-wallet-button'
+  import '@nedykit/appkit-wallet-button'
 
   export function YourApp() {
     return (
@@ -799,7 +799,7 @@
   Hook example:
 
   ```tsx
-  import { useAppKitWallet } from '@reown/appkit-wallet-button/react'
+  import { useAppKitWallet } from '@nedykit/appkit-wallet-button/react'
 
   export function YourApp() {
     const { data, error, isPending, isSuccess, isError, connect } = useAppKitWallet({
@@ -824,7 +824,7 @@
   Additionally a new theme variable property called `--w3m-qr-color` was added where you can configure a custom color for the QR code.
 
   ```tsx
-  import { createAppKit } from '@reown/appkit/react'
+  import { createAppKit } from '@nedykit/appkit/react'
 
   const modal = createAppKit({
     /* Your Config */

@@ -4,7 +4,7 @@ import { Button, Flex, Stack, Text } from '@chakra-ui/react'
 import { encodeFunctionData, parseEther } from 'viem'
 import { useReadContract } from 'wagmi'
 
-import type { SmartSessionGrantPermissionsResponse } from '@reown/appkit-experimental/smart-session'
+import type { SmartSessionGrantPermissionsResponse } from '@nedykit/appkit-experimental/smart-session'
 
 import { useChakraToast } from '@/src/components/Toast'
 import { useLocalEcdsaKey } from '@/src/context/LocalEcdsaKeyContext'

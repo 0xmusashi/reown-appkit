@@ -1,24 +1,24 @@
 ---
-'@reown/appkit-wallet-button': patch
-'@reown/appkit': patch
-'@reown/appkit-adapter-bitcoin': patch
-'@reown/appkit-adapter-ethers': patch
-'@reown/appkit-adapter-ethers5': patch
-'@reown/appkit-adapter-solana': patch
-'@reown/appkit-adapter-wagmi': patch
-'@reown/appkit-utils': patch
-'@reown/appkit-cdn': patch
-'@reown/appkit-cli': patch
-'@reown/appkit-common': patch
-'@reown/appkit-controllers': patch
-'@reown/appkit-core': patch
-'@reown/appkit-experimental': patch
-'@reown/appkit-polyfills': patch
-'@reown/appkit-scaffold-ui': patch
-'@reown/appkit-siwe': patch
-'@reown/appkit-siwx': patch
-'@reown/appkit-ui': patch
-'@reown/appkit-wallet': patch
+'@nedykit/appkit-wallet-button': patch
+'@nedykit/appkit': patch
+'@nedykit/appkit-adapter-bitcoin': patch
+'@nedykit/appkit-adapter-ethers': patch
+'@nedykit/appkit-adapter-ethers5': patch
+'@nedykit/appkit-adapter-solana': patch
+'@nedykit/appkit-adapter-wagmi': patch
+'@nedykit/appkit-utils': patch
+'@nedykit/appkit-cdn': patch
+'@nedykit/appkit-cli': patch
+'@nedykit/appkit-common': patch
+'@nedykit/appkit-controllers': patch
+'@nedykit/appkit-core': patch
+'@nedykit/appkit-experimental': patch
+'@nedykit/appkit-polyfills': patch
+'@nedykit/appkit-scaffold-ui': patch
+'@nedykit/appkit-siwe': patch
+'@nedykit/appkit-siwx': patch
+'@nedykit/appkit-ui': patch
+'@nedykit/appkit-wallet': patch
 ---
 
 Fixed an issue where the WalletConnect wallet button wasn't opening the "All Wallets" modal view on mobile devices

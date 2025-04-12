@@ -1,14 +1,14 @@
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 
-import { getW3mThemeVariables } from '@reown/appkit-common'
+import { getW3mThemeVariables } from '@nedykit/appkit-common'
 import {
   ConnectorController,
   ModalController,
   RouterController,
   ThemeController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
 
 import styles from './styles.js'
 

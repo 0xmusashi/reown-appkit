@@ -1,7 +1,7 @@
 import { expect, fixture, html } from '@open-wc/testing'
 import { afterEach, beforeEach, describe, it, vi, expect as viExpect } from 'vitest'
 
-import type { Balance, CaipAddress, CaipNetwork, ChainNamespace } from '@reown/appkit-common'
+import type { Balance, CaipAddress, CaipNetwork, ChainNamespace } from '@nedykit/appkit-common'
 import {
   type ChainAdapter,
   ChainController,
@@ -9,7 +9,7 @@ import {
   type NetworkControllerClient,
   RouterController,
   SendController
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 import { W3mWalletSendPreviewView } from '../../src/views/w3m-wallet-send-preview-view'
 

@@ -1,16 +1,16 @@
 {
   "name": "@examples/react-solana",
   "private": true,
-  "version": "1.2.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite --port 3002",
     "build": "vite build"
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.29.0",
-    "@reown/appkit": "workspace:*",
-    "@reown/appkit-adapter-solana": "workspace:*",
-    "@reown/appkit-wallet-button": "^1.7.2",
+    "@nedykit/appkit": "workspace:*",
+    "@nedykit/appkit-adapter-solana": "workspace:*",
+    "@nedykit/appkit-wallet-button": "workspace:*",
     "@solana/spl-token": "^0.4.13",
     "@solana/wallet-adapter-backpack": "0.1.14",
     "@solana/wallet-adapter-wallets": "0.19.32",

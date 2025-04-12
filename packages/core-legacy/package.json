@@ -1,6 +1,6 @@
 {
-  "name": "@reown/appkit-core",
-  "version": "1.7.1",
+  "name": "@nedykit/appkit-core",
+  "version": "0.1.0",
   "sideEffects": false,
   "type": "module",
   "main": "./dist/esm/exports/index.js",
@@ -45,14 +45,14 @@
     }
   },
   "dependencies": {
-    "@reown/appkit-controllers": "workspace:*"
+    "@nedykit/appkit-controllers": "workspace:*"
   },
   "peerDependencies": {},
   "devDependencies": {
     "vitest": "2.1.9",
     "@vitest/coverage-v8": "2.1.9"
   },
-  "author": "Reown <support@reown.com> (https://reown.com)",
+  "author": "Reown <support@nedykit.com> (https://reown.com)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/reown-com/appkit",
   "repository": {

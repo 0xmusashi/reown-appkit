@@ -3,13 +3,13 @@ import { useState } from 'react'
 import { Button, Link, Spacer, Stack, Text } from '@chakra-ui/react'
 import { BrowserProvider, JsonRpcSigner, ethers } from 'ethers'
 
-import { mainnet } from '@reown/appkit/networks'
+import { mainnet } from '@nedykit/appkit/networks'
 import {
   type Provider,
   useAppKitAccount,
   useAppKitNetwork,
   useAppKitProvider
-} from '@reown/appkit/react'
+} from '@nedykit/appkit/react'
 
 import { useChakraToast } from '@/src/components/Toast'
 import { vitalikEthAddress } from '@/src/utils/DataUtil'

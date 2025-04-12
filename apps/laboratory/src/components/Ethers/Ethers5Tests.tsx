@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Box, Card, CardBody, CardHeader, Heading, Stack, StackDivider } from '@chakra-ui/react'
 
-import { useAppKitAccount } from '@reown/appkit/react'
+import { useAppKitAccount } from '@nedykit/appkit/react'
 
 import { EthersGetCallsStatusTest } from './EthersGetCallsStatusTest'
 import { EthersSendCallsTest } from './EthersSendCallsTest'

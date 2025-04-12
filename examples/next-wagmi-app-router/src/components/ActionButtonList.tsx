@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes'
 
-import { mainnet } from '@reown/appkit/networks'
+import { mainnet } from '@nedykit/appkit/networks'
 
 import { useAppKit, useAppKitNetwork, useAppKitTheme, useDisconnect } from '@/config'
 

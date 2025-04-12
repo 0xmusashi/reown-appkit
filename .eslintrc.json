@@ -62,7 +62,7 @@
           {
             "name": "lit/decorators.js",
             "importNames": ["customElement"],
-            "message": "Use import 'customElement' from '@reown/appkit-ui' instead."
+            "message": "Use import 'customElement' from '@nedykit/appkit-ui' instead."
           }
         ]
       }

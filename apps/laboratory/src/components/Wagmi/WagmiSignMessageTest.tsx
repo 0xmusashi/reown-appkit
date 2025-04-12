@@ -4,7 +4,7 @@ import { Button } from '@chakra-ui/react'
 import { type Address } from 'viem'
 import { useSignMessage } from 'wagmi'
 
-import { useAppKitAccount } from '@reown/appkit/react'
+import { useAppKitAccount } from '@nedykit/appkit/react'
 
 import { useChakraToast } from '@/src/components/Toast'
 import { ConstantsUtil } from '@/src/utils/ConstantsUtil'

@@ -8,8 +8,8 @@ import {
   ConstantsUtil,
   type CustomRpcUrl,
   type CustomRpcUrlMap
-} from '@reown/appkit-common'
-import { ChainController, StorageUtil } from '@reown/appkit-controllers'
+} from '@nedykit/appkit-common'
+import { ChainController, StorageUtil } from '@nedykit/appkit-controllers'
 
 import { PresetsUtil } from './PresetsUtil.js'
 

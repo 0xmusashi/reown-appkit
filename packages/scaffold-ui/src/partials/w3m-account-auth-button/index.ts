@@ -1,17 +1,17 @@
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
 import {
   ChainController,
   ConnectorController,
   RouterController,
   type SocialProvider,
   StorageUtil
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-list-item'
-import '@reown/appkit-ui/wui-text'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-list-item'
+import '@nedykit/appkit-ui/wui-text'
 
 @customElement('w3m-account-auth-button')
 export class W3mAccountAuthButton extends LitElement {

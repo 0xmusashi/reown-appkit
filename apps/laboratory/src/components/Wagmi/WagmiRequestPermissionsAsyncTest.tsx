@@ -8,8 +8,8 @@ import {
   createSubscription,
   grantPermissions,
   isSmartSessionSupported
-} from '@reown/appkit-experimental/smart-session'
-import { useAppKitAccount, useAppKitNetwork } from '@reown/appkit/react'
+} from '@nedykit/appkit-experimental/smart-session'
+import { useAppKitAccount, useAppKitNetwork } from '@nedykit/appkit/react'
 
 import { useChakraToast } from '@/src/components/Toast'
 import { useLocalEcdsaKey } from '@/src/context/LocalEcdsaKeyContext'

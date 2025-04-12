@@ -2,11 +2,11 @@ import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { Connector } from '@reown/appkit-controllers'
-import { AssetUtil, ConnectorController, RouterController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-list-wallet'
+import type { Connector } from '@nedykit/appkit-controllers'
+import { AssetUtil, ConnectorController, RouterController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-list-wallet'
 
 @customElement('w3m-connect-multi-chain-widget')
 export class W3mConnectMultiChainWidget extends LitElement {

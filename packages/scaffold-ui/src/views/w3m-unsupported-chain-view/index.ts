@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { CaipNetwork } from '@reown/appkit-common'
+import type { CaipNetwork } from '@nedykit/appkit-common'
 import {
   AccountController,
   AssetController,
@@ -15,14 +15,14 @@ import {
   ModalController,
   RouterController,
   SnackController
-} from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon'
-import '@reown/appkit-ui/wui-list-item'
-import '@reown/appkit-ui/wui-list-network'
-import '@reown/appkit-ui/wui-separator'
-import '@reown/appkit-ui/wui-text'
+} from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon'
+import '@nedykit/appkit-ui/wui-list-item'
+import '@nedykit/appkit-ui/wui-list-network'
+import '@nedykit/appkit-ui/wui-separator'
+import '@nedykit/appkit-ui/wui-text'
 
 import styles from './styles.js'
 

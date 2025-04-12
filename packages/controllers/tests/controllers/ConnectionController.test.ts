@@ -5,7 +5,7 @@ import {
   type CaipNetwork,
   type ChainNamespace,
   ConstantsUtil as CommonConstantsUtil
-} from '@reown/appkit-common'
+} from '@nedykit/appkit-common'
 
 import type {
   ChainAdapter,

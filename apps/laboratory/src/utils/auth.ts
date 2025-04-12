@@ -1,7 +1,7 @@
 import { type AuthOptions, getServerSession } from 'next-auth'
 import credentialsProvider from 'next-auth/providers/credentials'
 
-import { getAddressFromMessage, getChainIdFromMessage, verifySignature } from '@reown/appkit-siwe'
+import { getAddressFromMessage, getChainIdFromMessage, verifySignature } from '@nedykit/appkit-siwe'
 
 export function getAuthOptions(isDefaultSigninPage: boolean | undefined): AuthOptions {
   const nextAuthSecret = process.env['NEXTAUTH_SECRET']

@@ -1,6 +1,6 @@
 {
-  "name": "@reown/appkit-controllers",
-  "version": "1.7.1",
+  "name": "@nedykit/appkit-controllers",
+  "version": "0.1.0",
   "sideEffects": false,
   "type": "module",
   "main": "./dist/esm/exports/index.js",
@@ -50,8 +50,8 @@
     }
   },
   "dependencies": {
-    "@reown/appkit-common": "workspace:*",
-    "@reown/appkit-wallet": "workspace:*",
+    "@nedykit/appkit-common": "workspace:*",
+    "@nedykit/appkit-wallet": "workspace:*",
     "@walletconnect/universal-provider": "2.19.1",
     "valtio": "1.13.2",
     "viem": ">=2.23.11"
@@ -61,7 +61,7 @@
     "vitest": "2.1.9",
     "vue": "3.5.13"
   },
-  "author": "Reown <support@reown.com> (https://reown.com)",
+  "author": "Reown <support@nedykit.com> (https://reown.com)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/reown-com/appkit",
   "repository": {

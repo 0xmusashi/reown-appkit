@@ -1,13 +1,13 @@
 {
   "name": "@examples/react-ak-basic-sign-client",
   "private": true,
-  "version": "1.2.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite --port 3012",
     "build": "vite build"
   },
   "dependencies": {
-    "@reown/appkit": "workspace:*",
+    "@nedykit/appkit": "workspace:*",
     "@walletconnect/sign-client": "2.19.1",
     "@walletconnect/types": "2.19.1",
     "ethers": "6.13.5",

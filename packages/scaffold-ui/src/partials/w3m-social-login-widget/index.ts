@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
 import {
   ChainController,
   ConnectorController,
@@ -11,12 +11,12 @@ import {
   RouterController,
   type SocialProvider,
   type WalletGuideType
-} from '@reown/appkit-controllers'
-import { executeSocialLogin } from '@reown/appkit-controllers/utils'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-list-social'
-import '@reown/appkit-ui/wui-logo-select'
+} from '@nedykit/appkit-controllers'
+import { executeSocialLogin } from '@nedykit/appkit-controllers/utils'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-list-social'
+import '@nedykit/appkit-ui/wui-logo-select'
 
 import styles from './styles.js'
 

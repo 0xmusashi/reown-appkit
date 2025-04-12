@@ -2,7 +2,7 @@
 import type { BrowserContext, Locator, Page } from '@playwright/test'
 import { expect } from '@playwright/test'
 
-import type { WalletFeature } from '@reown/appkit'
+import type { WalletFeature } from '@nedykit/appkit'
 
 import { getNamespaceByLibrary } from '@/tests/shared/utils/namespace'
 

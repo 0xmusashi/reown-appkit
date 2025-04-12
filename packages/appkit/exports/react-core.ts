@@ -1,6 +1,6 @@
-import { type UseAppKitNetworkReturn } from '@reown/appkit-controllers'
-import { useAppKitNetworkCore } from '@reown/appkit-controllers/react'
-import type { AppKitNetwork } from '@reown/appkit/networks'
+import { type UseAppKitNetworkReturn } from '@nedykit/appkit-controllers'
+import { useAppKitNetworkCore } from '@nedykit/appkit-controllers/react'
+import type { AppKitNetwork } from '@nedykit/appkit/networks'
 
 import { AppKit } from '../src/client/appkit-core.js'
 import { getAppKit } from '../src/library/react/index.js'
@@ -12,9 +12,9 @@ export * from '../src/library/react/index.js'
 
 // -- Utils & Other -----------------------------------------------------
 export * from '../src/utils/index.js'
-export type * from '@reown/appkit-controllers'
-export type { CaipNetwork, CaipAddress, CaipNetworkId } from '@reown/appkit-common'
-export { CoreHelperUtil, AccountController } from '@reown/appkit-controllers'
+export type * from '@nedykit/appkit-controllers'
+export type { CaipNetwork, CaipAddress, CaipNetworkId } from '@nedykit/appkit-common'
+export { CoreHelperUtil, AccountController } from '@nedykit/appkit-controllers'
 
 export let modal: AppKit | undefined = undefined
 
@@ -54,4 +54,4 @@ export function useAppKitNetwork(): UseAppKitNetworkReturn {
   }
 }
 
-export { useAppKitAccount } from '@reown/appkit-controllers/react'
+export { useAppKitAccount } from '@nedykit/appkit-controllers/react'

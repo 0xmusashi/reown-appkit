@@ -1,5 +1,5 @@
-import type { CaipNetwork, SocialProvider } from '@reown/appkit'
-import type { Wallet } from '@reown/appkit-wallet-button'
+import type { CaipNetwork, SocialProvider } from '@nedykit/appkit'
+import type { Wallet } from '@nedykit/appkit-wallet-button'
 import {
   arbitrum,
   aurora,
@@ -20,8 +20,8 @@ import {
   solanaTestnet,
   unichainSepolia,
   zkSync
-} from '@reown/appkit/networks'
-import type { AppKitNetwork } from '@reown/appkit/networks'
+} from '@nedykit/appkit/networks'
+import type { AppKitNetwork } from '@nedykit/appkit/networks'
 
 import { getLocalStorageItem } from './LocalStorage'
 

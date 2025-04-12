@@ -1,12 +1,12 @@
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 
-import { AccountController, EventsController, RouterController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-list-description'
-import '@reown/appkit-ui/wui-list-token'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+import { AccountController, EventsController, RouterController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-list-description'
+import '@nedykit/appkit-ui/wui-list-token'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import styles from './styles.js'
 

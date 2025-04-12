@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-import { useAppKitAccount, useAppKitProvider } from "@reown/appkit/react";
+import { useAppKitAccount, useAppKitProvider } from "@nedykit/appkit/react";
 
-import type { Provider } from "@reown/appkit-adapter-solana";
+import type { Provider } from "@nedykit/appkit-adapter-solana";
 import { Connection } from '@solana/web3.js';
 const TOKEN_MINT = 'BomroFd4tDAGmSRcNCt7TZLkeaeH815KYzfCpSTjHSfP'
 const endpoint = `https://api.devnet.solana.com`

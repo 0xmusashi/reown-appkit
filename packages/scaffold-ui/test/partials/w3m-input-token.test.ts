@@ -3,9 +3,9 @@ import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
 
 import { html } from 'lit'
 
-import type { Balance } from '@reown/appkit-common'
-import { ConstantsUtil, RouterController, SendController } from '@reown/appkit-controllers'
-import { UiHelperUtil } from '@reown/appkit-ui'
+import type { Balance } from '@nedykit/appkit-common'
+import { ConstantsUtil, RouterController, SendController } from '@nedykit/appkit-controllers'
+import { UiHelperUtil } from '@nedykit/appkit-ui'
 
 import { W3mInputToken } from '../../src/partials/w3m-input-token'
 

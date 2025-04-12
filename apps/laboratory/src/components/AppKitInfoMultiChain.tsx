@@ -12,7 +12,7 @@ import {
   Text
 } from '@chakra-ui/react'
 
-import { type UseAppKitAccountReturn, useAppKitAccount } from '@reown/appkit/react'
+import { type UseAppKitAccountReturn, useAppKitAccount } from '@nedykit/appkit/react'
 
 function namespaceToTitle(namespace: string | undefined) {
   if (!namespace) {

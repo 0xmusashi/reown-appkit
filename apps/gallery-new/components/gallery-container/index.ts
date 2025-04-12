@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { property } from 'lit/decorators.js'
 
-import { customElement } from '@reown/appkit-ui-new'
+import { customElement } from '@nedykit/appkit-ui-new'
 
 import styles from './styles'
 

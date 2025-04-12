@@ -4,19 +4,19 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { createRef, ref } from 'lit/directives/ref.js'
 import type { Ref } from 'lit/directives/ref.js'
 
-import { type ChainNamespace, ConstantsUtil } from '@reown/appkit-common'
+import { type ChainNamespace, ConstantsUtil } from '@nedykit/appkit-common'
 import {
   ChainController,
   ConnectionController,
   ConnectorController,
   CoreHelperUtil
-} from '@reown/appkit-controllers'
-import { EventsController, RouterController, SnackController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-email-input'
-import '@reown/appkit-ui/wui-icon-link'
-import '@reown/appkit-ui/wui-loading-spinner'
-import '@reown/appkit-ui/wui-text'
+} from '@nedykit/appkit-controllers'
+import { EventsController, RouterController, SnackController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-email-input'
+import '@nedykit/appkit-ui/wui-icon-link'
+import '@nedykit/appkit-ui/wui-loading-spinner'
+import '@nedykit/appkit-ui/wui-text'
 
 import styles from './styles.js'
 

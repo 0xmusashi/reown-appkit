@@ -3,7 +3,7 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vite
 
 import { html } from 'lit'
 
-import { type CaipNetwork } from '@reown/appkit-common'
+import { type CaipNetwork } from '@nedykit/appkit-common'
 import {
   AlertController,
   ApiController,
@@ -12,9 +12,9 @@ import {
   OptionsController,
   RouterController,
   SIWXUtil
-} from '@reown/appkit-controllers'
-import type { AccountControllerState, SIWXConfig } from '@reown/appkit-controllers'
-import { ErrorUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import type { AccountControllerState, SIWXConfig } from '@nedykit/appkit-controllers'
+import { ErrorUtil } from '@nedykit/appkit-utils'
 
 import { W3mModal } from '../../src/modal/w3m-modal'
 import { HelpersUtil } from '../utils/HelpersUtil'

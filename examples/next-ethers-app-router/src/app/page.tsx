@@ -1,6 +1,6 @@
 'use client'
 
-import { useAppKitTheme } from '@reown/appkit/react'
+import { useAppKitTheme } from '@nedykit/appkit/react'
 
 import { ActionButtonList } from '@/components/ActionButtonList'
 import { Footer } from '@/components/Footer'

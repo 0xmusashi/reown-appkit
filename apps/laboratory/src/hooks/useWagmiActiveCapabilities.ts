@@ -5,8 +5,8 @@ import { type Address, type WalletCapabilities } from 'viem'
 import { type Connector, useAccount } from 'wagmi'
 import { type Chain } from 'wagmi/chains'
 
-import { W3mFrameProvider } from '@reown/appkit-wallet'
-import { useAppKitAccount } from '@reown/appkit/react'
+import { W3mFrameProvider } from '@nedykit/appkit-wallet'
+import { useAppKitAccount } from '@nedykit/appkit/react'
 
 import {
   EIP_5792_RPC_METHODS,

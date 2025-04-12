@@ -1,7 +1,7 @@
 import { mainnet } from 'viem/chains'
 import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { type Balance, type CaipNetwork, ConstantsUtil } from '@reown/appkit-common'
+import { type Balance, type CaipNetwork, ConstantsUtil } from '@nedykit/appkit-common'
 
 import {
   AccountController,

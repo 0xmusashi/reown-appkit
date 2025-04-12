@@ -1,12 +1,12 @@
 import { LitElement, html } from 'lit'
 import { property } from 'lit/decorators.js'
 
-import { UiHelperUtil, customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-button'
-import '@reown/appkit-ui/wui-details-group'
-import '@reown/appkit-ui/wui-details-group-item'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-text'
+import { UiHelperUtil, customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-button'
+import '@nedykit/appkit-ui/wui-details-group'
+import '@nedykit/appkit-ui/wui-details-group-item'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-text'
 
 import styles from './styles.js'
 

@@ -1,4 +1,4 @@
-import type { CaipAddress } from '@reown/appkit-common'
+import type { CaipAddress } from '@nedykit/appkit-common'
 
 export const tokensResponse = {
   tokens: [

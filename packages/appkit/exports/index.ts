@@ -1,4 +1,4 @@
-import { CoreHelperUtil } from '@reown/appkit-controllers'
+import { CoreHelperUtil } from '@nedykit/appkit-controllers'
 
 import { AppKit } from '../src/client/appkit.js'
 import type { AppKitOptions } from '../src/utils/TypesUtil.js'
@@ -6,9 +6,9 @@ import { PACKAGE_VERSION } from './constants.js'
 
 // -- Utils & Other -----------------------------------------------------
 export * from '../src/utils/index.js'
-export type * from '@reown/appkit-controllers'
-export type { CaipNetwork, CaipAddress, CaipNetworkId } from '@reown/appkit-common'
-export { CoreHelperUtil, AccountController } from '@reown/appkit-controllers'
+export type * from '@nedykit/appkit-controllers'
+export type { CaipNetwork, CaipAddress, CaipNetworkId } from '@nedykit/appkit-common'
+export { CoreHelperUtil, AccountController } from '@nedykit/appkit-controllers'
 
 export type CreateAppKit = Omit<AppKitOptions, 'sdkType' | 'sdkVersion' | 'basic'>
 

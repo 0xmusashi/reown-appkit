@@ -1,4 +1,4 @@
-import { ConstantsUtil } from '@reown/appkit-common'
+import { ConstantsUtil } from '@nedykit/appkit-common'
 import {
   ApiController,
   ChainController,
@@ -11,8 +11,8 @@ import {
   OptionsController,
   StorageUtil,
   type WcWallet
-} from '@reown/appkit-controllers'
-import { HelpersUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { HelpersUtil } from '@nedykit/appkit-utils'
 
 import { WalletUtil } from './WalletUtil.js'
 

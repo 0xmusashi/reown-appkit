@@ -1,5 +1,5 @@
-import { ConnectionController, CoreHelperUtil, EventsController } from '@reown/appkit-controllers'
-import { customElement } from '@reown/appkit-ui'
+import { ConnectionController, CoreHelperUtil, EventsController } from '@nedykit/appkit-controllers'
+import { customElement } from '@nedykit/appkit-ui'
 
 import { W3mConnectingWidget } from '../../utils/w3m-connecting-widget/index.js'
 

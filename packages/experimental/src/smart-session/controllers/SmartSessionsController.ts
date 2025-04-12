@@ -1,7 +1,7 @@
 import { proxy } from 'valtio/vanilla'
 import { subscribeKey as subKey } from 'valtio/vanilla/utils'
 
-import { ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
+import { ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
 import {
   AccountController,
   BlockchainApiController,
@@ -10,8 +10,8 @@ import {
   OptionsController,
   RouterController,
   SnackController
-} from '@reown/appkit-controllers'
-import { ProviderUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { ProviderUtil } from '@nedykit/appkit-utils'
 
 import {
   assertWalletGrantPermissionsResponse,

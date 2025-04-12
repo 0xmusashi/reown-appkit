@@ -1,14 +1,14 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { type AppKitNetwork } from '@reown/appkit-common'
+import { type AppKitNetwork } from '@nedykit/appkit-common'
 import {
   AlertController,
   ChainController,
   EventsController,
   OptionsController,
   StorageUtil
-} from '@reown/appkit-controllers'
-import { ErrorUtil } from '@reown/appkit-utils'
+} from '@nedykit/appkit-controllers'
+import { ErrorUtil } from '@nedykit/appkit-utils'
 
 import { AppKit } from '../../src/client/appkit.js'
 import { mainnet, polygon, sepolia, solana } from '../mocks/Networks'

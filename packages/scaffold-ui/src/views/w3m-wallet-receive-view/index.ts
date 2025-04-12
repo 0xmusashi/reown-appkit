@@ -10,14 +10,14 @@ import {
   RouterController,
   SnackController,
   ThemeController
-} from '@reown/appkit-controllers'
-import { UiHelperUtil, customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-chip-button'
-import '@reown/appkit-ui/wui-compatible-network'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-qr-code'
-import '@reown/appkit-ui/wui-text'
-import { W3mFrameRpcConstants } from '@reown/appkit-wallet/utils'
+} from '@nedykit/appkit-controllers'
+import { UiHelperUtil, customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-chip-button'
+import '@nedykit/appkit-ui/wui-compatible-network'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-qr-code'
+import '@nedykit/appkit-ui/wui-text'
+import { W3mFrameRpcConstants } from '@nedykit/appkit-wallet/utils'
 
 import styles from './styles.js'
 

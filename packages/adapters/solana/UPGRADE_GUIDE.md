@@ -29,7 +29,7 @@ Copy the built adapter from `packages/adapters/solana/dist` to your project:
 
 ```bash
 # From the appkit repository
-cp -r packages/adapters/solana/dist /path/to/your/project/node_modules/@reown/adapters-solana/
+cp -r packages/adapters/solana/dist /path/to/your/project/node_modules/@nedykit/adapters-solana/
 ```
 
 ### Option 2: Link Locally
@@ -41,7 +41,7 @@ Alternatively, you can link the package locally for development:
 npm link
 
 # Then, in your project directory
-npm link @reown/adapters-solana
+npm link @nedykit/adapters-solana
 ```
 
 ## 3. Update Your Code
@@ -50,7 +50,7 @@ Update your code to use the gas sponsorship feature:
 
 ```typescript
 // Before
-import { SolanaAdapter } from '@reown/adapters-solana'
+import { SolanaAdapter } from '@nedykit/adapters-solana'
 
 const solanaAdapter = new SolanaAdapter({
   connectionSettings: 'confirmed',
@@ -58,7 +58,7 @@ const solanaAdapter = new SolanaAdapter({
 })
 
 // After
-import { SolanaAdapter } from '@reown/adapters-solana'
+import { SolanaAdapter } from '@nedykit/adapters-solana'
 
 const solanaAdapter = new SolanaAdapter({
   connectionSettings: 'confirmed',

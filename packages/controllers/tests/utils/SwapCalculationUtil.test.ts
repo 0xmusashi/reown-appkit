@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { NumberUtil } from '@reown/appkit-common'
+import { NumberUtil } from '@nedykit/appkit-common'
 
 import { INITIAL_GAS_LIMIT } from '../../src/controllers/SwapController.js'
 import { SwapApiUtil } from '../../src/utils/SwapApiUtil.js'

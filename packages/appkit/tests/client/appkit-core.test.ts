@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import type { ChainNamespace } from '@reown/appkit-common'
+import type { ChainNamespace } from '@nedykit/appkit-common'
 import {
   AccountController,
   type AccountControllerState,
@@ -9,7 +9,7 @@ import {
   ConnectionController,
   ConnectorController,
   ModalController
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 import { AppKit } from '../../src/client/appkit-core'
 import { mockOptions } from '../mocks/Options'

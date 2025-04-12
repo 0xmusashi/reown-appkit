@@ -2,7 +2,7 @@ import { Button } from '@chakra-ui/react'
 import { BrowserProvider, JsonRpcSigner } from 'ethers'
 import type { TypedDataField } from 'ethers'
 
-import { type Provider, useAppKitAccount, useAppKitProvider } from '@reown/appkit/react'
+import { type Provider, useAppKitAccount, useAppKitProvider } from '@nedykit/appkit/react'
 
 import { useChakraToast } from '@/src/components/Toast'
 

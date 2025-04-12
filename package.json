@@ -1,13 +1,13 @@
 {
-  "name": "@reown/appkit-monorepo",
-  "version": "1.7.1",
+  "name": "@nedykit/appkit-monorepo",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "author": "Reown <support@reown.com> (https://reown.com)",
+  "author": "NedyKit <support@nedykit.com> (https://nedykit.com)",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/reown-com/appkit",
+  "homepage": "https://github.com/nedykit/appkit",
   "bugs": {
-    "url": "https://github.com/reown-com/appkit/issues"
+    "url": "https://github.com/nedykit/appkit/issues"
   },
   "scripts": {
     "prebuild": "node scripts/inject-version.js",

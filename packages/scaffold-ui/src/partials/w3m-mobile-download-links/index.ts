@@ -1,10 +1,10 @@
 import { LitElement, html } from 'lit'
 import { property } from 'lit/decorators.js'
 
-import type { WcWallet } from '@reown/appkit-controllers'
-import { CoreHelperUtil, RouterController } from '@reown/appkit-controllers'
-import { UiHelperUtil, customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-cta-button'
+import type { WcWallet } from '@nedykit/appkit-controllers'
+import { CoreHelperUtil, RouterController } from '@nedykit/appkit-controllers'
+import { UiHelperUtil, customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-cta-button'
 
 import styles from './styles.js'
 

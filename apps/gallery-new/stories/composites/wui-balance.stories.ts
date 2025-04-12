@@ -2,8 +2,8 @@ import type { Meta } from '@storybook/web-components'
 
 import { html } from 'lit'
 
-import '@reown/appkit-ui-new/src/composites/wui-balance'
-import type { WuiBalance } from '@reown/appkit-ui-new/src/composites/wui-balance'
+import '@nedykit/appkit-ui-new/src/composites/wui-balance'
+import type { WuiBalance } from '@nedykit/appkit-ui-new/src/composites/wui-balance'
 
 type Component = Meta<WuiBalance>
 

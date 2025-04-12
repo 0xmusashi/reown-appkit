@@ -1,7 +1,7 @@
 import { proxy, subscribe as sub } from 'valtio/vanilla'
 import { subscribeKey as subKey } from 'valtio/vanilla/utils'
 
-import type { ChainNamespace } from '@reown/appkit-common'
+import type { ChainNamespace } from '@nedykit/appkit-common'
 
 import { CoreHelperUtil } from '../utils/CoreHelperUtil.js'
 import { AccountController } from './AccountController.js'

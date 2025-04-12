@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { type CaipNetwork, ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
-import { PresetsUtil } from '@reown/appkit-utils'
-import { mainnet } from '@reown/appkit/networks'
+import { type CaipNetwork, ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
+import { PresetsUtil } from '@nedykit/appkit-utils'
+import { mainnet } from '@nedykit/appkit/networks'
 
 import {
   CoinbaseWalletProvider,

@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { type CaipNetwork, type ChainNamespace, ConstantsUtil } from '@reown/appkit-common'
-import { SIWXUtil } from '@reown/appkit-controllers'
-import { PresetsUtil } from '@reown/appkit-utils'
+import { type CaipNetwork, type ChainNamespace, ConstantsUtil } from '@nedykit/appkit-common'
+import { SIWXUtil } from '@nedykit/appkit-controllers'
+import { PresetsUtil } from '@nedykit/appkit-utils'
 
 import { WalletConnectConnector } from '../../src/connectors'
 import { bitcoin, mainnet, solana } from '../../src/networks'

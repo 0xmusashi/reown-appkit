@@ -1,4 +1,4 @@
-import { type ChainNamespace } from '@reown/appkit-common'
+import { type ChainNamespace } from '@nedykit/appkit-common'
 
 import type { DefaultAccountTypes, Features, SocialProvider } from './TypeUtil.js'
 

@@ -2,8 +2,8 @@ import type { Meta } from '@storybook/web-components'
 
 import { html } from 'lit'
 
-import '@reown/appkit-ui/src/composites/wui-list-content'
-import type { WuiListContent } from '@reown/appkit-ui/src/composites/wui-list-content'
+import '@nedykit/appkit-ui/src/composites/wui-list-content'
+import type { WuiListContent } from '@nedykit/appkit-ui/src/composites/wui-list-content'
 
 import '../../components/gallery-container'
 import { networkImageSrc } from '../../utils/PresetUtils'

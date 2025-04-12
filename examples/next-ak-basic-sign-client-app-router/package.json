@@ -1,6 +1,6 @@
 {
   "name": "@examples/next-ak-basic-sign-client-app-router",
-  "version": "1.0.5",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reown/appkit": "workspace:*",
+    "@nedykit/appkit": "workspace:*",
     "@tanstack/react-query": "5.56.2",
     "@walletconnect/sign-client": "2.19.1",
     "@walletconnect/types": "2.19.1",

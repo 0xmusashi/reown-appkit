@@ -17,17 +17,17 @@ This adapter allows integrating Solana blockchain into your dApp using nedy-appk
 ## Installation
 
 ```bash
-npm install @reown/adapters-solana
+npm install @nedykit/adapters-solana
 # or
-yarn add @reown/adapters-solana
+yarn add @nedykit/adapters-solana
 # or
-pnpm add @reown/adapters-solana
+pnpm add @nedykit/adapters-solana
 ```
 
 ## Usage
 
 ```typescript
-import { SolanaAdapter } from '@reown/adapters-solana'
+import { SolanaAdapter } from '@nedykit/adapters-solana'
 
 // Create a new instance of the Solana adapter
 const solanaAdapter = new SolanaAdapter({
@@ -51,7 +51,7 @@ This adapter supports gas sponsorship for Solana transactions through a relayer 
 To enable gas sponsorship, you need to initialize the Solana adapter with the following options:
 
 ```typescript
-import { SolanaAdapter } from '@reown/adapters-solana'
+import { SolanaAdapter } from '@nedykit/adapters-solana'
 
 // Create a new instance of the Solana adapter with gas sponsorship enabled
 const solanaAdapter = new SolanaAdapter({

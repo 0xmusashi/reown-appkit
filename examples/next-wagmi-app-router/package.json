@@ -1,6 +1,6 @@
 {
   "name": "@examples/next-wagmi-app-router",
-  "version": "1.0.5",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reown/appkit": "workspace:*",
-    "@reown/appkit-adapter-wagmi": "workspace:*",
+    "@nedykit/appkit": "workspace:*",
+    "@nedykit/appkit-adapter-wagmi": "workspace:*",
     "@tanstack/react-query": "5.56.2",
     "@wagmi/core": "2.16.7",
     "next": "14.2.25",

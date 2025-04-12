@@ -1,6 +1,6 @@
 {
-  "name": "@reown/appkit-cdn",
-  "version": "1.7.1",
+  "name": "@nedykit/appkit-cdn",
+  "version": "0.1.0",
   "sideEffects": false,
   "main": "dist/wagmi.js",
   "type": "module",
@@ -29,12 +29,12 @@
     }
   },
   "dependencies": {
-    "@reown/appkit": "workspace:*",
-    "@reown/appkit-adapter-ethers": "workspace:*",
-    "@reown/appkit-adapter-ethers5": "workspace:*",
-    "@reown/appkit-adapter-solana": "workspace:*",
-    "@reown/appkit-adapter-wagmi": "workspace:*",
-    "@reown/appkit-polyfills": "workspace:*",
+    "@nedykit/appkit": "workspace:*",
+    "@nedykit/appkit-adapter-ethers": "workspace:*",
+    "@nedykit/appkit-adapter-ethers5": "workspace:*",
+    "@nedykit/appkit-adapter-solana": "workspace:*",
+    "@nedykit/appkit-adapter-wagmi": "workspace:*",
+    "@nedykit/appkit-polyfills": "workspace:*",
     "@wagmi/connectors": "5.7.11",
     "@wagmi/core": "2.16.7",
     "viem": "2.23.13",

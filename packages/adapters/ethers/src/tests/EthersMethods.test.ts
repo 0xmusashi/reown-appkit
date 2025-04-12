@@ -10,8 +10,8 @@ import {
 } from 'ethers'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { WcHelpersUtil } from '@reown/appkit'
-import { isReownName } from '@reown/appkit-common'
+import { WcHelpersUtil } from '@nedykit/appkit'
+import { isReownName } from '@nedykit/appkit-common'
 
 import { EthersMethods } from '../utils/EthersMethods'
 
@@ -36,14 +36,14 @@ vi.mock('ethers', async () => {
 })
 
 // Mock WcHelpersUtil
-vi.mock('@reown/appkit', () => ({
+vi.mock('@nedykit/appkit', () => ({
   WcHelpersUtil: {
     resolveReownName: vi.fn()
   }
 }))
 
 // Mock isReownName
-vi.mock('@reown/appkit-common', () => ({
+vi.mock('@nedykit/appkit-common', () => ({
   isReownName: vi.fn()
 }))
 

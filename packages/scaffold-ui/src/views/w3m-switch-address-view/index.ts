@@ -2,8 +2,8 @@ import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { CaipAddress, ChainNamespace } from '@reown/appkit-common'
-import { ConstantsUtil } from '@reown/appkit-common'
+import type { CaipAddress, ChainNamespace } from '@nedykit/appkit-common'
+import { ConstantsUtil } from '@nedykit/appkit-common'
 import {
   AccountController,
   type AccountType,
@@ -12,14 +12,14 @@ import {
   ConnectorController,
   ModalController,
   OptionsController
-} from '@reown/appkit-controllers'
-import { UiHelperUtil, customElement } from '@reown/appkit-ui'
-import '@reown/appkit-ui/wui-avatar'
-import '@reown/appkit-ui/wui-banner-img'
-import '@reown/appkit-ui/wui-button'
-import '@reown/appkit-ui/wui-flex'
-import '@reown/appkit-ui/wui-icon-box'
-import '@reown/appkit-ui/wui-text'
+} from '@nedykit/appkit-controllers'
+import { UiHelperUtil, customElement } from '@nedykit/appkit-ui'
+import '@nedykit/appkit-ui/wui-avatar'
+import '@nedykit/appkit-ui/wui-banner-img'
+import '@nedykit/appkit-ui/wui-button'
+import '@nedykit/appkit-ui/wui-flex'
+import '@nedykit/appkit-ui/wui-icon-box'
+import '@nedykit/appkit-ui/wui-text'
 
 import styles from './styles.js'
 

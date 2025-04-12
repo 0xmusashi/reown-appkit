@@ -4,20 +4,20 @@ import { Connection, PublicKey } from '@solana/web3.js'
 import UniversalProvider from '@walletconnect/universal-provider'
 import bs58 from 'bs58'
 
-import { type AppKit, type AppKitOptions } from '@reown/appkit'
-import { type CaipNetwork, ConstantsUtil as CommonConstantsUtil } from '@reown/appkit-common'
+import { type AppKit, type AppKitOptions } from '@nedykit/appkit'
+import { type CaipNetwork, ConstantsUtil as CommonConstantsUtil } from '@nedykit/appkit-common'
 import {
   AlertController,
   ChainController,
   CoreHelperUtil,
   type Provider as CoreProvider,
   StorageUtil
-} from '@reown/appkit-controllers'
-import { ErrorUtil } from '@reown/appkit-utils'
-import { SolConstantsUtil } from '@reown/appkit-utils/solana'
-import type { Provider as SolanaProvider } from '@reown/appkit-utils/solana'
-import { W3mFrameProvider } from '@reown/appkit-wallet'
-import { AdapterBlueprint } from '@reown/appkit/adapters'
+} from '@nedykit/appkit-controllers'
+import { ErrorUtil } from '@nedykit/appkit-utils'
+import { SolConstantsUtil } from '@nedykit/appkit-utils/solana'
+import type { Provider as SolanaProvider } from '@nedykit/appkit-utils/solana'
+import { W3mFrameProvider } from '@nedykit/appkit-wallet'
+import { AdapterBlueprint } from '@nedykit/appkit/adapters'
 
 import { AuthProvider } from './providers/AuthProvider.js'
 import {

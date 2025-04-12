@@ -7,7 +7,7 @@ import {
   CoreHelperUtil,
   OptionsController,
   type WcWallet
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 import { ConnectorUtil } from '../../src/utils/ConnectorUtil'
 

@@ -1,8 +1,8 @@
 import { type PublicClient, createPublicClient, http } from 'viem'
 import { beforeEach, describe, expect, test, vi } from 'vitest'
 
-import type { CaipNetwork } from '@reown/appkit-common'
-import { ChainController } from '@reown/appkit-controllers'
+import type { CaipNetwork } from '@nedykit/appkit-common'
+import { ChainController } from '@nedykit/appkit-controllers'
 
 import { EIP155Verifier } from '../../src/index.js'
 import { mockSession } from '../mocks/mockSession.js'

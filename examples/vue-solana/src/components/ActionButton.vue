@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import { solana } from '@reown/appkit/networks'
-import { useAppKit, useAppKitNetwork, useAppKitTheme, useDisconnect } from '@reown/appkit/vue'
+import { solana } from '@nedykit/appkit/networks'
+import { useAppKit, useAppKitNetwork, useAppKitTheme, useDisconnect } from '@nedykit/appkit/vue'
 
 export default {
   name: 'ActionButtonList',

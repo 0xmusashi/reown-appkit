@@ -11,7 +11,7 @@ import {
   Text
 } from '@chakra-ui/react'
 
-import { useAppKitAccount, useAppKitNetwork } from '@reown/appkit/react'
+import { useAppKitAccount, useAppKitNetwork } from '@nedykit/appkit/react'
 
 export function AppKitNetworkInfo() {
   const { address } = useAppKitAccount()

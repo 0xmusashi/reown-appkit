@@ -1,6 +1,6 @@
-import type { CaipNetwork } from '@reown/appkit'
-import { ConstantsUtil } from '@reown/appkit-common'
-import { CaipNetworksUtil } from '@reown/appkit-utils'
+import type { CaipNetwork } from '@nedykit/appkit'
+import { ConstantsUtil } from '@nedykit/appkit-common'
+import { CaipNetworksUtil } from '@nedykit/appkit-utils'
 
 import {
   base as baseNetwork,

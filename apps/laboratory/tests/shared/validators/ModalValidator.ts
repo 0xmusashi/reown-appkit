@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test'
 import type { Page } from '@playwright/test'
 
-import type { CaipNetworkId } from '@reown/appkit'
+import type { CaipNetworkId } from '@nedykit/appkit'
 
 import { ConstantsUtil } from '../../../src/utils/ConstantsUtil'
 import { verifySignature } from '../../../src/utils/SignatureUtil'

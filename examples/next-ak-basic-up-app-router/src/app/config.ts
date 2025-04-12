@@ -1,7 +1,7 @@
 import UniversalProvider from '@walletconnect/universal-provider'
 
-import { createAppKit } from '@reown/appkit'
-import { mainnet, solana } from '@reown/appkit/networks'
+import { createAppKit } from '@nedykit/appkit'
+import { mainnet, solana } from '@nedykit/appkit/networks'
 
 export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID || 'b56e18d47c72ab683b10814fe9495694' // this is a public projectId only to use on localhost
 

@@ -10,15 +10,15 @@ import type { SessionTypes } from '@walletconnect/types'
 import UniversalProvider from '@walletconnect/universal-provider'
 import base58 from 'bs58'
 
-import { type RequestArguments, WcHelpersUtil } from '@reown/appkit'
-import { type CaipAddress, type CaipNetwork, ParseUtil } from '@reown/appkit-common'
-import { SolConstantsUtil } from '@reown/appkit-utils/solana'
+import { type RequestArguments, WcHelpersUtil } from '@nedykit/appkit'
+import { type CaipAddress, type CaipNetwork, ParseUtil } from '@nedykit/appkit-common'
+import { SolConstantsUtil } from '@nedykit/appkit-utils/solana'
 import type {
   AnyTransaction,
   Provider,
   ProviderEventEmitterMethods
-} from '@reown/appkit-utils/solana'
-import { WalletConnectConnector } from '@reown/appkit/connectors'
+} from '@nedykit/appkit-utils/solana'
+import { WalletConnectConnector } from '@nedykit/appkit/connectors'
 
 import { WalletConnectMethodNotSupportedError } from './shared/Errors.js'
 import { ProviderEventEmitter } from './shared/ProviderEventEmitter.js'

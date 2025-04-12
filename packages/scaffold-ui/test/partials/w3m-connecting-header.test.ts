@@ -3,8 +3,8 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { html } from 'lit'
 
-import type { Platform } from '@reown/appkit-controllers'
-import type { WuiTabs } from '@reown/appkit-ui/wui-tabs'
+import type { Platform } from '@nedykit/appkit-controllers'
+import type { WuiTabs } from '@nedykit/appkit-ui/wui-tabs'
 
 import { W3mConnectingHeader } from '../../src/partials/w3m-connecting-header'
 import { HelpersUtil } from '../utils/HelpersUtil'

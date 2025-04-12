@@ -1,11 +1,11 @@
-import type { ChainNamespace } from '@reown/appkit-common'
+import type { ChainNamespace } from '@nedykit/appkit-common'
 import {
   ConnectMethod,
   Features,
   ThemeMode,
   ThemeVariables,
   WalletFeature
-} from '@reown/appkit-controllers'
+} from '@nedykit/appkit-controllers'
 
 import { defaultCustomizationConfig } from '@/lib/defaultConfig'
 

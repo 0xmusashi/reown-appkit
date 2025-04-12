@@ -1,6 +1,6 @@
 {
-  "name": "@reown/appkit-adapter-wagmi",
-  "version": "1.7.1",
+  "name": "@nedykit/appkit-adapter-wagmi",
+  "version": "0.1.0",
   "sideEffects": false,
   "type": "module",
   "main": "./dist/esm/src/index.js",
@@ -18,13 +18,13 @@
     "test": "vitest run --coverage.enabled=true --coverage.reporter=json --coverage.reporter=json-summary --coverage.reportOnFailure=true"
   },
   "dependencies": {
-    "@reown/appkit": "workspace:*",
-    "@reown/appkit-common": "workspace:*",
-    "@reown/appkit-controllers": "workspace:*",
-    "@reown/appkit-polyfills": "workspace:*",
-    "@reown/appkit-scaffold-ui": "workspace:*",
-    "@reown/appkit-utils": "workspace:*",
-    "@reown/appkit-wallet": "workspace:*",
+    "@nedykit/appkit": "workspace:*",
+    "@nedykit/appkit-common": "workspace:*",
+    "@nedykit/appkit-controllers": "workspace:*",
+    "@nedykit/appkit-polyfills": "workspace:*",
+    "@nedykit/appkit-scaffold-ui": "workspace:*",
+    "@nedykit/appkit-utils": "workspace:*",
+    "@nedykit/appkit-wallet": "workspace:*",
     "@walletconnect/universal-provider": "2.19.1",
     "valtio": "1.13.2"
   },
@@ -43,7 +43,7 @@
     "@walletconnect/types": "2.19.1",
     "vitest": "2.1.9"
   },
-  "author": "Reown <support@reown.com> (https://reown.com)",
+  "author": "Reown <support@nedykit.com> (https://reown.com)",
   "license": "Apache-2.0",
   "homepage": "https://github.com/reown-com/appkit",
   "repository": {

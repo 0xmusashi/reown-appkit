@@ -17,8 +17,8 @@ import SignClient from '@walletconnect/sign-client'
 import base58 from 'bs58'
 import { toHex } from 'viem'
 
-import { createAppKit } from '@reown/appkit/core'
-import { bitcoin, solana } from '@reown/appkit/networks'
+import { createAppKit } from '@nedykit/appkit/core'
+import { bitcoin, solana } from '@nedykit/appkit/networks'
 
 import { useChakraToast } from '@/src/components/Toast'
 import { ConstantsUtil } from '@/src/utils/ConstantsUtil'

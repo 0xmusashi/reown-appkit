@@ -5,7 +5,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import { useSnapshot } from 'valtio'
 
-import { ThemeMode } from '@reown/appkit/react'
+import { ThemeMode } from '@nedykit/appkit/react'
 
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'

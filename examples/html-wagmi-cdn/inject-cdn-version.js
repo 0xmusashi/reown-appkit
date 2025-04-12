@@ -12,10 +12,10 @@ const mainJsPath = path.join(__dirname, 'src/main.js')
 let mainJsContent = fs.readFileSync(mainJsPath, 'utf8')
 
 // Regular expression to match both __VERSION__ and any semver version
-const versionRegex = /@reown\/appkit-cdn@(__VERSION__|[\d.]+)/
+const versionRegex = /@nedykit\/appkit-cdn@(__VERSION__|[\d.]+)/
 
 if (versionRegex.test(mainJsContent)) {
-  mainJsContent = mainJsContent.replace(versionRegex, `@reown/appkit-cdn@${appkitVersion}`)
+  mainJsContent = mainJsContent.replace(versionRegex, `@nedykit/appkit-cdn@${appkitVersion}`)
   fs.writeFileSync(mainJsPath, mainJsContent, 'utf8')
   console.log(`Version ${appkitVersion} injected into main.js file.`)
 } else {

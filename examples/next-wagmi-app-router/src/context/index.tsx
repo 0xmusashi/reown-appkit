@@ -6,8 +6,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ThemeProvider } from 'next-themes'
 import { type Config, WagmiProvider, cookieToInitialState } from 'wagmi'
 
-import { mainnet } from '@reown/appkit/networks'
-import { createAppKit } from '@reown/appkit/react'
+import { mainnet } from '@nedykit/appkit/networks'
+import { createAppKit } from '@nedykit/appkit/react'
 
 import { networks, projectId, wagmiAdapter } from '@/config'
 
