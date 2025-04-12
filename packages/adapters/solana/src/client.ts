@@ -27,21 +27,17 @@ import {
 import { SolanaWalletConnectProvider } from './providers/SolanaWalletConnectProvider.js'
 import { SolStoreUtil } from './utils/SolanaStoreUtil.js'
 import { createSendTransaction } from './utils/createSendTransaction.js'
-import { getRelayerService, initRelayerService } from './utils/relayerService.js'
 import { watchStandard } from './utils/watchStandard.js'
 
 export interface AdapterOptions {
   connectionSettings?: Commitment | ConnectionConfig
   wallets?: BaseWalletAdapter[]
-  relayerUrl?: string
-  enableGasSponsorship?: boolean
 }
 
 export class SolanaAdapter extends AdapterBlueprint<SolanaProvider> {
   private connectionSettings: Commitment | ConnectionConfig
   public wallets?: BaseWalletAdapter[]
   private balancePromises: Record<string, Promise<AdapterBlueprint.GetBalanceResult>> = {}
-  private enableGasSponsorship: boolean = false
 
   constructor(options: AdapterOptions = {}) {
     super({
@@ -50,12 +46,6 @@ export class SolanaAdapter extends AdapterBlueprint<SolanaProvider> {
     })
     this.connectionSettings = options.connectionSettings || 'confirmed'
     this.wallets = options.wallets
-    this.enableGasSponsorship = options.enableGasSponsorship || false
-
-    // Initialize the relayer service if gas sponsorship is enabled and a relayer URL is provided
-    if (this.enableGasSponsorship && options.relayerUrl) {
-      initRelayerService(options.relayerUrl)
-    }
   }
 
   public override construct(params: AdapterBlueprint.Params): void {
@@ -205,21 +195,7 @@ export class SolanaAdapter extends AdapterBlueprint<SolanaProvider> {
       value: params.value as number
     })
 
-    // Apply gas sponsorship if enabled
-    let transactionToSend = transaction
-
-    try {
-      if (this.enableGasSponsorship) {
-        const relayerService = getRelayerService()
-        transactionToSend = await relayerService.relayerSignTransaction(transaction)
-      }
-    } catch (error) {
-      console.error('Error sponsoring transaction, falling back to original transaction:', error)
-      // Fall back to the original transaction if sponsorship fails
-      transactionToSend = transaction
-    }
-
-    const result = await provider.sendTransaction(transactionToSend, connection)
+    const result = await provider.sendTransaction(transaction, connection)
 
     await new Promise<void>(resolve => {
       const interval = setInterval(async () => {
